@@ -1,0 +1,109 @@
+window.langZH = {
+    nav: {
+      intro: "作者介绍",
+      structure: "代码结构",
+      drawbacks: "不足之处",
+      future: "后续优化方向",
+      feedback: "反馈"
+    },
+    intro: `
+        <h2>👤 作者介绍</h2>
+        <p>这是一个 FCUL 信息工程专业 2024/25 学年 IPM 科目的作业，目标是开发一个高保真（PAF）原型，
+        用于模拟一个组织社交活动的移动端 App（为主）和智能手表端（为辅）的基本功能。</p>
+        <p>由于该课程的实验部分主要教授的是 HTML、CSS 和 JavaScript，因此我选择使用这些原生语言进行开发，
+        而非使用 Justinmind、Angular 等其他工具。</p>
+        <p>本作者页主要用于整理项目结构、编程逻辑与后续计划。目前包含如下部分：</p>
+        <ul>
+          <li>📌 项目介绍与动机</li>
+          <li>🧩 代码结构解读</li>
+          <li>⚠️ 当前不足</li>
+          <li>🚀 后续优化方向</li>
+        </ul>
+        <p>未来内容可能根据代码迭代进行更新，也可能增加新的导航栏目（如：操作说明、启发式评估等）。
+        当前版本为 <strong>v1.0.0</strong>。</p>
+
+        <hr>
+        <p>经过老师的反馈与建议，在新版本中我对原型进行了一些功能上的改进与补充。为便于记录与展示改动，我在本作者页中新增了一个“📣 反馈”模块，专门用于整理教师意见、我的解决方案以及后续改进计划。</p>
+        <p>此外，由于下次课程将由同学们对本原型进行启发式评估，该部分反馈内容也将收录在该模块中。</p>
+        <p>本次迭代版本中，代码结构整体保持不变（至少目前我自己是没动……有点晕乎了 😵‍💫），“🚀 后续优化方向”与“⚠️ 不足之处”部分也计划继续完善和续写，记录开发中的思路与遗憾。</p>
+        <p>当前版本为 <strong>v1.0.1</strong>。</p>
+      `,
+      structure: `
+      <h2>📂 代码结构</h2>
+      <p>本项目使用了 HTML、CSS、JavaScript 以及 LocalStorage 技术。HTML 文件中包含了手机和手表的所有主要内容，各个页面和弹窗均集成在同一页面中，通过「显示 / 隐藏」元素的方式实现切换。这种设计虽然在实现上较为直接，但对于后续维护和功能拓展并不友好——这一点在项目早期已考虑到，但为降低开发复杂度，最终仍采用了当前方案。如果未来要进一步完善系统，可能会改为多 HTML 页面模块的架构方式。</p>
+      <p>在 CSS 和 JavaScript 层面，我使用了嵌套式文件结构，将各个功能模块清晰拆分，有效实现样式与逻辑的分离，有利于版面控制与事件绑定。然而，由于 CSS 部分组件间存在耦合关系，导致某些样式规则冲突，结构不稳定；又因为模块之间层级关系复杂，排查问题与修复相对困难。</p>
+      <p>以下是当前版本的核心目录结构（v1.0.0）：</p>
+      <ul style="padding-left: 24px;">
+        <li><strong>main/</strong>：项目主目录，包含入口页面与核心资源</li>
+        <li>├── index.html</li>
+        <li>├── main.css</li>
+        <li><strong>author-page/</strong>：作者页面专属资源</li>
+        <li><strong>button/</strong>：通用按钮样式文件</li>
+        <li><strong>data/</strong>：示例数据（如初始化活动信息）</li>
+        <li><strong>icons/</strong>：全部图标资源（中英葡国旗、功能图标等）</li>
+        <li><strong>smartphone/</strong>：手机页面全部内容</li>
+        <li>├── css/：样式文件</li>
+        <li>│   ├── phone.css：手机模型外观布局</li>
+        <li>│   ├── nav.css：底部导航栏</li>
+        <li>│   └── warn.css：未开发功能弹窗反馈</li>
+        <li>├── js/：交互逻辑</li>
+        <li>│   ├── nav.js、warn.js、header.js 等</li>
+        <li>└── content/：内容区域页面</li>
+        <li>    ├── home/、event/、discover/、help/、menu/：五个主页面</li>
+        <li>    └── event-detail/：子页面，用于查看单个活动详情</li>
+        <li><strong>smartwatch/</strong>：智能手表内容</li>
+        <li>├── watch.css：手表造型及布局</li>
+        <li>└── content/：手表界面内容（如 Check-in 流程）</li>
+      </ul>
+      <p>关于 <code>event-detail</code> 独立抽出作为独立页面，而非归入 <code>event</code> 文件夹，是因为该页面既可从 Events 页面跳转，也可从 Discover 页面进入，因此将其独立管理更加合理。</p>
+      <p>以上结构为当前版本（v1.0.0）设计方案，未来版本可能根据扩展与用户体验优化进一步迭代与调整。</p>
+    `,
+      drawbacks: `
+        <h2>⚠️ 不足之处</h2>
+        <p>本项目仍有不少不足和可以优化的地方。以下问题尚未严格排序，后续可能会根据优先级进行调整。</p>
+        <ul>
+            <li>📦 HTML、CSS 与 JS 结构嵌套较混乱，逻辑交织复杂，排查困难。</li>
+            <li>💡 <strong>解决方式：</strong>未来可能考虑使用 Angular 或其他前端框架重构结构。</li>
+            <li>📱 Home 和 Help 页面的滚动条问题导致手机 header 跟随滚动，因此采用字体缩放规避，但这可能影响用户体验。</li>
+            <li>💡 <strong>原因：</strong>CSS 部分存在逻辑冲突。</li>
+            <li>⌚ 手表部分排版较为粗糙，不如手机部分美观。</li>
+            <li>💡 <strong>原因：</strong>身体原因，开发后期太累，耐心下降。</li>
+            <li>🚫 手机部分功能的 warning 弹窗并非全都以手机组件形式展示，而是网页上独立的提示。</li>
+            <li>💡 <strong>原因：</strong>我太懒了（但这部分容易改）。</li>
+            <li>🧑‍🤝‍🧑 删除成员没有设定管理员权限，所有人都可踢人。</li>
+            <li>💡 <strong>原因：</strong>实现逻辑较复杂，使用 LocalStorage 很难实现角色识别和权限控制，如要实现需要更完备的 JSON 架构。这属于后端范畴。</li>
+            <li>🔁 Discover 页面中的 member list 与 Event Detail 页面中的 member list 无法双向同步。</li>
+            <li>💡 <strong>原因：</strong>我太懒了，不想做。</li>
+        </ul>
+        <p>总之，懒，是一切 Bug 的根源。</p>
+        `,
+      future: `
+        <h2>🚀 后续优化方向</h2>
+        <ol>
+          <li>对“不足之处”部分提到的所有问题进行优化。</li>
+          <li>在 <strong>Events 页面</strong> 增加排序功能（如：按添加时间、字母顺序、日期排序等），并提供切换按钮实现排序方式切换。</li>
+          <li><strong>Menu 部分</strong> 仍为待开发状态，但由于涉及页面众多，计划在重构架构之后再进行开发。</li>
+          <li>Event Details 成员数多时将自动折叠，显示“...”图标，点击后展开完整成员列表。</li>
+          <li>成员头像样式较单一：当前前端原型仅使用静态图标，未来如结合后端（如 Node.js）后将进行个性化头像开发。</li>
+          <li>系统仍有大量可优化的地方，将根据需要逐步进行改进。</li>
+        </ol>
+        <p>当前版本为 <strong>v1.0.1</strong>。</p>
+        `,
+        feedback: `
+        <h2>📣 教师反馈 · v1.0.0 -> v1.0.1</h2>
+        <ul>
+          <li><strong>Event 页面无法区分来源：</strong> 初始事件为蓝色边框，用户创建事件使用绿色边框，Discover 导入的事件沿用黄色边框（与 Discover 页面保持一致）。</li>
+          <li><strong>创建事件界面布局较差：</strong> 后续优化 CSS，使表单更贴合手机屏幕比例。</li>
+          <li><strong>Event Details 页面成员过多难以展示：</strong> 若成员数超过阈值，将自动折叠，并显示一个 “...” 图标，点击后展开完整成员列表。<em style="color:#888">（此功能暂时放弃，已移至后续开发方向）</em></li>
+          <li><strong>搜索功能不够精细：</strong> 将新增折叠栏，支持按 name、tags、location 分类搜索，默认按 name。</li>
+          <li><strong>成员头像过于单一：</strong> 虽然当前为前端原型，暂时仅支持静态头像，但未来如结合后端（Node.js 等），将开发更多多样化头像管理。</li>
+          <li><strong>Smartwatch 引导性不强：</strong> 已对 GPS（未激活）按钮添加闪烁效果，引导用户完成签到。</li>
+        </ul>
+        <p>另外，为了配合下周学生评估，还计划：</p>
+        <ul>
+          <li>📌 新增主页 Tarefa 按钮，展示当前任务清单</li>
+          <li>📌 根据任务难度和优先级重新排序</li>
+          <li>📌 进一步解决“不足之处”中提出的若干问题</li>
+        </ul>
+      ` 
+  };

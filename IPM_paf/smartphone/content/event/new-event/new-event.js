@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: "Manager", gender: "manager", phone: "99999" }
           ]
         };    
+        newEvent.from = "self";
       
         let eventList = JSON.parse(localStorage.getItem('myEvents')) || [];
         eventList.push(newEvent);

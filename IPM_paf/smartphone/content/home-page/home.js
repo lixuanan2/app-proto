@@ -39,6 +39,23 @@ document.addEventListener('DOMContentLoaded', () => {
         setLang(lang);
       });
     });
+
+    // 点击卡片切换页面
+  document.querySelectorAll('.home-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.dataset.target;
+      document.getElementById('page-home').style.display = 'none';
+      document.getElementById(targetId).style.display = 'block';
+    });
+  });
+
+  // 返回按钮统一绑定逻辑
+  document.querySelectorAll('.back-home-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.page-section').forEach(sec => sec.style.display = 'none');
+      document.getElementById('page-home').style.display = 'block';
+    });
+  });
   });
 
   

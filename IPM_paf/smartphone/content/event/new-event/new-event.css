@@ -1,11 +1,9 @@
 .event-add-page h2 {
-    position: sticky;
-    top: 0;
+    top: 0px;
     z-index: 3;
     background-color: #f7f9fc;
     padding: 8px 16px;
     font-size: 18px;
-    
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
   }
@@ -16,7 +14,15 @@
     flex-direction: column;
     gap: 12px;
     padding: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+  }
+
+  .event-create-form input {
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 6px;          /* ✅ 添加圆角 */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
   }
   
   .input-desc {
@@ -25,7 +31,7 @@
     margin: -8px 0 6px 2px;
   }
   
-  /* 标签展示区域（默认：tags: null） */
+  /* 标签展示区域 */
 .tag-list {
     font-size: 12px;              /* 字体较小 */
     color: #888;                  /* 淡灰色 */
@@ -35,4 +41,37 @@
     padding-left: 2px;
     min-height: 20px;             /* 预留高度防止空时塌陷 */
     word-wrap: break-word;
+  }
+
+  .tag-area {
+    display: flex;
+    gap: 8px;           /* ✅ 左右按钮间距设置在这里！ */
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  /* 按钮行左右分布 */
+  .btn-group {
+    display: flex;
+    justify-content: space-between;   /* ✅ 一左一右 */
+    padding: 0 8px;
+    margin-top: 16px;
+  }
+
+  /* 单个按钮样式微调 */
+  .btn-group button {
+    font-size: 15px;            /* ✅ 稍微大一点 */
+    padding: 8px 16px;
+    border-radius: 6px;         /* ✅ 圆角 */
+    border: 1px solid #aaa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+  }
+
+  .btn-group button:hover {
+    background-color: #e6e6e6;
   }

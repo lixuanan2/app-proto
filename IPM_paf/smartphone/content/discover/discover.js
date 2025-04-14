@@ -21,16 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const removeBtn = document.getElementById('remove-member-confirm');
       if (removeBtn) removeBtn.style.display = 'inline-block';
+
       const events = window.discoverEvents || [];
       listContainer.innerHTML = '';
-  
+
       const lowerFilter = filter.toLowerCase();
+      const type = document.getElementById('discover-search-type')?.value || 'name';
+
       const filtered = events.filter(ev => {
-        return (
-          ev.name.toLowerCase().includes(lowerFilter) ||
-          //ev.location.toLowerCase().includes(lowerFilter) || //location
-          ev.tags.some(tag => tag.toLowerCase().includes(lowerFilter))
-        );
+        if (type === 'name') {
+          return ev.name.toLowerCase().includes(lowerFilter);
+        } else if (type === 'tags') {
+          return ev.tags.some(tag => tag.toLowerCase().includes(lowerFilter));
+        } else if (type === 'location') {
+          return ev.location.toLowerCase().includes(lowerFilter);
+        }
+        return true;
       });
   
       filtered.forEach(event => {
@@ -45,12 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
         title.className = 'discover-title';
         title.textContent = event.name;
   
-        const meta = document.createElement('div');
-        meta.className = 'discover-meta';
-        meta.textContent = `📅 ${event.date} · 📍 ${event.location}`;
+        const dateLine = document.createElement('div');
+        dateLine.className = 'discover-info-line';
+        dateLine.textContent = `📅 ${event.date}`;
+
+        const locationLine = document.createElement('div');
+        locationLine.className = 'discover-info-line';
+        locationLine.textContent = `📍 ${event.location}`;
   
         info.appendChild(title);
-        info.appendChild(meta);
+        info.appendChild(dateLine);
+        info.appendChild(locationLine);
 
         
   

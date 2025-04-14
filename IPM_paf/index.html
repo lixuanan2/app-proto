@@ -64,25 +64,81 @@
         <hr>
         <!-- ======= 📄 页面内容区域 ======= -->
         <!-- === 1. Home 页面 === -->
-        <!-- === Home 页面 === -->
-        <!-- === Home 页面 === -->
+        <!-- === Home 页面总入口 === -->
         <div class="page-section" id="page-home">
-          <!-- 固定标题栏 -->
           <div class="home-header">
-            <span>📖 Introduction</span>
+            <span>📖 Home</span>
+          </div>
+
+          <div class="home-scroll-area">
+            <!-- 模块列表 -->
+            <div class="home-card" data-target="home-intro">📖 Introduction</div>
+            <div class="home-card" data-target="home-tarefa">📝 Tarefa</div>
+            <!-- 可继续扩展其他模块 -->
+          </div>
+        </div>
+
+        <!-- === Introdução 页面 === -->
+        <div class="page-section" id="home-intro" style="display: none;">
+          <div class="home-header">
+            <div style="display: flex; align-items: center;">
+              <button class="back-home-btn">🔙</button>
+              <span style="margin-left: 8px;">📖 Introduction</span>
+            </div>
+        
+            <!-- ✅ 语言切换按钮只出现在此 -->
             <div class="lang-buttons">
               <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
               <img src="icons/home/uk.png" class="lang-icon" data-lang="en" title="English">
               <img src="icons/home/cn.png" class="lang-icon" data-lang="zh" title="中文">
             </div>
           </div>
-          <!-- 滚动内容区域 -->
+        
           <div class="home-scroll-area">
             <div class="home-content">
               <p id="home-message" class="home-message">...</p>
             </div>
           </div>
         </div>
+
+        <!-- === Tarefa 页面 === -->
+        <div class="page-section" id="home-tarefa" style="display: none;">
+          <div class="home-header">
+            <button class="back-home-btn">🔙</button>
+            <span>📝 Tarefa</span>
+          </div>
+          <div class="home-scroll-area">
+            <div class="home-content">
+              <table class="task-table">
+                <thead>
+                  <tr>
+                    <th>Tarefa</th>
+                    <th>Dificuldade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>📍 Juntar-se a um evento através da página Discover</td>
+                    <td><span class="diff-baixa">baixa</span></td>
+                  </tr>
+                  <tr>
+                    <td>📝 Criar um novo evento na página de Events</td>
+                    <td><span class="diff-media">média</span></td>
+                  </tr>
+                  <tr>
+                    <td>👥 Remover e reinvitar um membro na página de Event Detail</td>
+                    <td><span class="diff-alta">alta</span></td>
+                  </tr>
+                  <tr>
+                    <td>⌚ Concluir o check-in na aplicação MyApp do smartwatch</td>
+                    <td><span class="diff-media">média</span></td>
+                  </tr>
+                </tbody>
+              </table>              
+            </div>            
+          </div>
+        </div>
+
 
 
         <!-- === 2. Events 页面 === -->
@@ -247,7 +303,14 @@
         
           <!-- 搜索框区域 -->
           <div class="search-bar">
-            <input type="text" id="discover-search-input" placeholder="🔍 Search by name, tags...">
+            <div class="search-wrapper">
+              <select id="discover-search-type">
+                <option value="name">🔤 Name</option>
+                <option value="tags">🏷️ Tags</option>
+                <option value="location">📍 Location</option>
+              </select>
+              <input type="text" id="discover-search-input" placeholder="🔍 Search events">
+            </div>
           </div>
         
           <!-- 活动列表（由 JS 动态填充） -->
@@ -373,7 +436,7 @@
 
             <!-- 默认 Event 名字 -->
             <p class="event-or-status" id="watch-event-text">🏷️ Party Sunset</p>
-            <img src="icons/smartwatch/gps.png" alt="gps" class="gps-icon" id="gps-icon">
+            <img src="icons/smartwatch/gps.png" alt="gps" class="gps-icon blink" id="gps-icon">
           </div>
 
 

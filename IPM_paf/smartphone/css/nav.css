@@ -47,3 +47,9 @@
     /* ... 其它已有样式 ... */
     padding-bottom: 60px; /* 让内容能滚动到导航栏上方 */
   }
+
+  /* 默认图标缩放动画 */
+  .nav-item:not(.active):hover .nav-icon {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+  }

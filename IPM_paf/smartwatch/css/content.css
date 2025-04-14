@@ -73,7 +73,10 @@
   display: block;
 }
 
-
+/* GPS 图标闪烁效果 */
+.blink {
+  animation: blink 1s infinite;
+}
 
 @keyframes blink {
   0%   { opacity: 1; }

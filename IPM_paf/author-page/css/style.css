@@ -123,3 +123,6 @@
     padding-left: 24px; /* 或 30px，根据你视觉喜好调整 */
   }
   
+  hr {
+    margin: 12px 0;
+  }

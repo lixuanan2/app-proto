@@ -10,6 +10,12 @@ function updateEventList() {
     const card = document.createElement('div');
     card.className = 'event-card';
 
+    if (event.from === 'discover') {
+      card.classList.add('from-discover');
+    } else if (event.from === 'self') {
+      card.classList.add('from-self');
+    }
+    
     const title = document.createElement('div');
     title.className = 'event-title';
     title.textContent = event.name;

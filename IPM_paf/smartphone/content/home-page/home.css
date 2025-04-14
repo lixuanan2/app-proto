@@ -9,9 +9,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 18px;
   }
   
-  /* 内容区域：负责滚动 */
   /* 内容区域：负责滚动 */
 .home-scroll-area {
     height: 90%;
@@ -42,7 +42,10 @@
   .lang-buttons {
     display: flex;
     gap: 8px;
+    justify-content: flex-end;
+    margin-left: auto;
   }
+  
   
   .lang-icon {
     width: 26px;
@@ -52,6 +55,84 @@
   }
   
   .lang-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .home-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 16px 20px;
+    margin: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .home-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .back-home-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  #home-tarefa .home-header {
+    justify-content: flex-start;
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  
+  .task-table th,
+  .task-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+  }
+
+  /* 左列任务名左对齐 */
+  .task-table td:first-child,
+  .task-table th:first-child {
+    text-align: left;
+  }
+
+  /* 右列难度值居中对齐 */
+  .task-table td:last-child,
+  .task-table th:last-child {
+    text-align: center;
+  }
+  
+  .task-table th {
+    background-color: #f0f4f8;
+    font-weight: bold;
+  }
+  
+  .diff-baixa {
+    color: #2b9348;
+    font-weight: 500;
+  }
+  
+  .diff-media {
+    color: #f9a825;
+    font-weight: 500;
+  }
+  
+  .diff-alta {
+    color: #d62828;
+    font-weight: 500;
+  }
+  
+  .back-home-btn:hover {
     transform: scale(1.1);
   }
   

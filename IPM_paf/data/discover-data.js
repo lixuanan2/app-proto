@@ -9,7 +9,8 @@ const discoverEvents = [
       { name: "Manager", gender: "manager", phone: "99999" },
       { "name": "Alice", "gender": "female", "phone": "123456789" },
       { "name": "Leo", "gender": "male", "phone": "987654321" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Yoga & Brunch",
@@ -20,7 +21,8 @@ const discoverEvents = [
     "member_list": [
       { name: "Manager", gender: "manager", phone: "99999" },
       { "name": "Sophie", "gender": "female", "phone": "111222333" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Ultimate Frisbee",
@@ -30,7 +32,8 @@ const discoverEvents = [
     "tags": ["frisbee", "outdoor", "sport"],
     "member_list": [
       { name: "Manager", gender: "manager", phone: "99999" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Cooking Fiesta",
@@ -43,7 +46,8 @@ const discoverEvents = [
       { "name": "Carlos", "gender": "male", "phone": "999999999" },
       { "name": "Marta", "gender": "female", "phone": "222333444" },
       { "name": "Chef Ana", "gender": "female", "phone": "555666777" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Board Game Showdown",
@@ -56,7 +60,8 @@ const discoverEvents = [
       { "name": "Carlos", "gender": "male", "phone": "999999999" },
       { "name": "Marta", "gender": "female", "phone": "222333444" },
       { "name": "Chef Ana", "gender": "female", "phone": "555666777" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Marathon Training",
@@ -69,7 +74,8 @@ const discoverEvents = [
       { "name": "Carlos", "gender": "male", "phone": "999999999" },
       { "name": "Marta", "gender": "female", "phone": "222333444" },
       { "name": "Chef Ana", "gender": "female", "phone": "555666777" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Startup Pitch Night",
@@ -82,7 +88,8 @@ const discoverEvents = [
       { "name": "Carlos", "gender": "male", "phone": "999999999" },
       { "name": "Marta", "gender": "female", "phone": "222333444" },
       { "name": "Chef Ana", "gender": "female", "phone": "555666777" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Salsa Dance Class",
@@ -92,7 +99,8 @@ const discoverEvents = [
     "tags": ["music", "party", "latin"],
     "member_list": [
       { name: "Manager", gender: "manager", phone: "99999" },
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Photography Walk",
@@ -105,7 +113,8 @@ const discoverEvents = [
       { "name": "Carlos", "gender": "male", "phone": "999999999" },
       { "name": "Marta", "gender": "female", "phone": "222333444" },
       { "name": "Chef Ana", "gender": "female", "phone": "555666777" }
-    ]
+    ],
+    "from": "discover"
   },
   {
     "name": "Beach Soccer Tournament",
@@ -118,7 +127,8 @@ const discoverEvents = [
       { "name": "Carlos", "gender": "male", "phone": "999999999" },
       { "name": "Marta", "gender": "female", "phone": "222333444" },
       { "name": "Chef Ana", "gender": "female", "phone": "555666777" }
-    ]
+    ],
+    "from": "discover"
   }
 ];
 
