@@ -1,0 +1,104 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const listContainer = document.getElementById('discover-list');
+    const searchInput = document.getElementById('discover-search-input');
+  
+    // 读取 myEvents 名单（你已加入的）
+    function getMyEvents() {
+      return JSON.parse(localStorage.getItem('myEvents')) || [];
+    }
+  
+    // 检查某 event 是否已加入
+    function isJoined(eventName) {
+      const myEvents = getMyEvents();
+      return myEvents.some(e => e.name === eventName);
+    }
+  
+    // 渲染 discover 页面列表
+    function renderDiscoverList(filter = '') {
+      // ✅ 恢复 detail 页的按钮状态（避免被隐藏后没还原）
+      const deleteBtn = document.getElementById('delete-event-btn');
+      if (deleteBtn) deleteBtn.style.display = 'block';
+
+      const removeBtn = document.getElementById('remove-member-confirm');
+      if (removeBtn) removeBtn.style.display = 'inline-block';
+      const events = window.discoverEvents || [];
+      listContainer.innerHTML = '';
+  
+      const lowerFilter = filter.toLowerCase();
+      const filtered = events.filter(ev => {
+        return (
+          ev.name.toLowerCase().includes(lowerFilter) ||
+          //ev.location.toLowerCase().includes(lowerFilter) || //location
+          ev.tags.some(tag => tag.toLowerCase().includes(lowerFilter))
+        );
+      });
+  
+      filtered.forEach(event => {
+        const card = document.createElement('div');
+        card.className = 'discover-card';
+  
+        // 左边信息
+        const info = document.createElement('div');
+        info.className = 'discover-info';
+  
+        const title = document.createElement('div');
+        title.className = 'discover-title';
+        title.textContent = event.name;
+  
+        const meta = document.createElement('div');
+        meta.className = 'discover-meta';
+        meta.textContent = `📅 ${event.date} · 📍 ${event.location}`;
+  
+        info.appendChild(title);
+        info.appendChild(meta);
+
+        
+  
+        // 右边按钮
+        const btn = document.createElement('button');
+        btn.className = 'join-btn';
+        const joined = isJoined(event.name);
+        btn.classList.add(joined ? 'exit' : 'join');
+        btn.textContent = joined ? 'Exit' : 'Join';
+  
+        // 点击按钮加入/退出事件
+        btn.addEventListener('click', () => {
+          const myEvents = getMyEvents();
+          if (joined) {
+            const updated = myEvents.filter(e => e.name !== event.name);
+            localStorage.setItem('myEvents', JSON.stringify(updated));
+          } else {
+            myEvents.push({ 
+                ...event, 
+                member_list: event.member_list || [],
+                members: (event.member_list?.length || 0) });
+            localStorage.setItem('myEvents', JSON.stringify(myEvents));
+          }
+          renderDiscoverList(searchInput.value);
+          window.updateEventList?.(); // 如果你定义了更新事件页面列表
+        });
+  
+        // 整个卡片点击跳转到详情页（不能点按钮）
+        card.addEventListener('click', (e) => {
+          if (e.target === btn) return;
+          window.showEventDetailFromDiscover?.(event);
+        });
+  
+        card.appendChild(info);
+        card.appendChild(btn);
+        listContainer.appendChild(card);
+      });
+    }
+  
+    // 监听搜索框
+    searchInput.addEventListener('input', () => {
+      renderDiscoverList(searchInput.value);
+    });
+  
+    // 初始化渲染
+    renderDiscoverList();
+
+    window.renderDiscoverList = renderDiscoverList;
+
+  });
+  

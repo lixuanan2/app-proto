@@ -1,0 +1,57 @@
+/* 标题栏：固定在顶部导航下方 */
+.home-header {
+    position: sticky;
+    top: 48px; /* 👉 跟 .phone-header 的高度一致 */
+    z-index: 2;
+    background-color: #f7f9fc;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* 内容区域：负责滚动 */
+  /* 内容区域：负责滚动 */
+.home-scroll-area {
+    height: 90%;
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 0;
+  }
+  
+  
+  /* 内容卡片 */
+  .home-content {
+    margin: 0 16px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+    text-align: justify;
+    line-height: 1.55;
+    font-size: 15px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .home-content:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  
+  .lang-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .lang-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .lang-icon:hover {
+    transform: scale(1.1);
+  }
+  

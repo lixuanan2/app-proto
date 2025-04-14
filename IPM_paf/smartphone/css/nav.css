@@ -1,0 +1,49 @@
+/* 底部导航栏整体样式 */
+.bottom-nav {
+    position: absolute; 
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: 94.7%;
+    height: 60px;               /* 导航栏高度，可自定义 */
+    background-color: grey;     /* 导航栏背景 */
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    border-radius: 0 0 28px 28px;    /* 导航栏下方再加点圆角 */
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.3); /* 顶部投影可选 */
+  }
+  
+  /* 每个导航项目 */
+  .nav-item {
+    display: flex;
+    flex-direction: column; /* 图标在上，文字在下 */
+    align-items: center;
+    justify-content: center;
+    color: white;            /* 默认文字颜色 */
+    font-size: 12px;        /* 文字大小 */
+    cursor: pointer;        /* 鼠标变小手，移动端可无 */
+    width: 20%;             /* 五个均分 */
+    text-decoration: none;  /* 防止文字链接下划线 */
+  }
+  
+  /* 图标大小可调 */
+  .nav-item .nav-icon {
+    width: 24px; 
+    height: 24px;
+    margin-bottom: 2px; /* 图标与文字之间留点空隙 */
+  }
+  
+  /* 激活的栏目：高亮 */
+  .nav-item.active {
+    color: #111;         /* 高亮文字颜色*/
+  }
+  
+  .nav-item.active .nav-icon {
+    filter: brightness(1.5); /* 或者换图标 */
+  }
+  
+  .phone-screen {
+    /* ... 其它已有样式 ... */
+    padding-bottom: 60px; /* 让内容能滚动到导航栏上方 */
+  }

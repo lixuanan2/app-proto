@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>phone + watch demo</title>
+
+  <!-- 整体布局 -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- 1. 手机 -->
+  <link rel="stylesheet" href="smartphone/css/phone.css">       <!-- 外壳 -->
+  <link rel="stylesheet" href="smartphone/css/nav.css">         <!-- 底部导航栏 -->
+  <link rel="stylesheet" href="smartphone/css/warn.css">         <!-- 警告框 -->
+  <!-- 多页面内容 -->
+  <link rel="stylesheet" href="smartphone/content/home-page/home.css">  <!-- home主页面 -->
+  <link rel="stylesheet" href="smartphone/content/content.css"> 
+  <link rel="stylesheet" href="smartphone/content/event/event.css">    <!-- event主页面 -->
+  <link rel="stylesheet" href="smartphone/content/event/new-event/new-event.css">    <!-- event子页面 添加new-event -->
+  <link rel="stylesheet" href="smartphone/content/event-detail/detail/detail.css">     <!-- event子页面 details -->
+  <link rel="stylesheet" href="smartphone/content/event-detail/detail/member/member.css">     <!-- event孙页面 addmember -->
+  <link rel="stylesheet" href="smartphone/content/discover/discover.css">      <!-- discover主页面 -->
+  <link rel="stylesheet" href="smartphone/content/help/help.css">     <!-- help主页面 -->
+  <link rel="stylesheet" href="smartphone/content/menu/menu.css">      <!-- menu主页面 -->
+
+  <!-- 2. 手表 -->
+  <link rel="stylesheet" href="smartwatch/css/watch.css">       <!-- 手表造型 -->
+  <link rel="stylesheet" href="smartwatch/css/content.css">       <!-- 手表造型 -->
+
+  <!-- 3. 外部按钮 -->
+  <link rel="stylesheet" href="buttons/btnstyle.css">       <!-- 按钮位置 -->
+
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- 外部按钮 -->
+    <div class="external-buttons">
+      <button id="toggleWatchBtn">Show Watch</button>
+      <button id="ResetLocalStg">Reset LocalStorage</button>
+      <button id="Other2">Other Action2</button>
+    </div>
+
+    <!-- === 手机部分 === -->
+    <div class="phone-frame">                                         <!-- 外层手机机身容器 -->
+      <div class="phone-notch"></div>                                 <!-- 刘海 -->
+      <div class="phone-screen">                                      <!-- 内部屏幕区域 -->
+        <!-- 功能未开发提示弹窗 -->
+        <div class="feature-popup" id="feature-popup">
+          <div class="feature-popup-content">
+            <p>⚠️ This feature is not available yet.</p>
+            <button id="popup-close-btn">OK</button>
+          </div>
+        </div>
+          <!-- 页面内容 -->
+        <div class="phone-header">
+          <img src="icons/header/personal.png" alt="personal" class="header-icon left" id="personal-icon">
+          <div class="dropdown-menu" id="personal-menu" style="display: none;">
+            <div class="dropdown-item" id="menu-personal">Personal Info</div>
+            <div class="dropdown-item" id="menu-gps">GPS</div>
+            <div class="dropdown-item" id="menu-settings">Settings</div>
+          </div>        
+          <h1>Home</h1>
+          <img src="icons/header/watch-green.png" alt="watch status" class="header-icon right" id="watch-status-icon" title="connected">
+        </div>
+        <hr>
+        <!-- ======= 📄 页面内容区域 ======= -->
+        <!-- === 1. Home 页面 === -->
+        <!-- === Home 页面 === -->
+        <!-- === Home 页面 === -->
+        <div class="page-section" id="page-home">
+          <!-- 固定标题栏 -->
+          <div class="home-header">
+            <span>📖 Introduction</span>
+            <div class="lang-buttons">
+              <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
+              <img src="icons/home/uk.png" class="lang-icon" data-lang="en" title="English">
+              <img src="icons/home/cn.png" class="lang-icon" data-lang="zh" title="中文">
+            </div>
+          </div>
+          <!-- 滚动内容区域 -->
+          <div class="home-scroll-area">
+            <div class="home-content">
+              <p id="home-message" class="home-message">...</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- === 2. Events 页面 === -->
+        <div class="page-section" id="page-events" style="display: none;">
+          <div class="event-header">
+            <span>My Events</span>
+          </div>
+          <div class="event-list">
+            <!-- 由 localstorage 动态填充 -->
+          </div>
+          <!-- Add Button -->
+          <div class="event-add-btn" id="event-add-btn">
+            <img src="icons/content/add-event.png" alt="Add">
+          </div>
+          <!-- 📋 添加表单（初始隐藏） -->
+          <div class="event-add-form" id="event-form">
+            <input type="text" id="event-title" placeholder="Event Title">
+            <input type="date" id="event-date">
+            <input type="number" id="event-members" placeholder="Members">
+            <button id="submit-event">Add Event</button>
+          </div>
+
+        </div>
+
+        <!-- === 2.1 Add New Event 子页面 === -->
+        <div class="page-section" id="page-events-add" style="display: none;">
+          <div class="event-add-page">
+            <h2>Add New Event</h2>
+        
+            <form class="event-create-form">
+              <!-- 活动名称（必填） -->
+              <label for="event-name">Event Name <span style="color:red;">*</span></label>
+              <input type="text" id="event-name" placeholder="e.g. Birthday Party" required>
+              
+              <!-- 活动日期（必填） -->
+              <label for="event-date">Date <span style="color:red;">*</span></label>
+              <input type="date" id="event-date-new" required>
+
+              <!-- 活动地点（可选） -->
+              <label for="event-location">Location </label>
+              <input type="text" id="event-location" placeholder="e.g. Central Park">
+        
+              <!-- 活动类型（自由填写） -->
+              <label for="event-type">Type </label>
+              <input type="text" id="event-type" placeholder="e.g. Party, Study, Sport">
+        
+              <!-- 标签输入与添加 -->
+              <label for="tag-input">Tags </label>
+              <div class="tag-area">
+                <input type="text" id="tag-input" placeholder="Add a tag">
+                <button type="button" id="add-tag-btn">➕</button>
+                <button type="button" id="remove-tag-btn">➖</button>
+              </div>
+        
+              <!-- 标签展示列表（初始为空） -->
+              <div id="tag-list" class="tag-list">
+                Tags:
+              </div>
+        
+              <!-- 创建 / 取消按钮 -->
+              <div class="btn-group">
+                <button type="submit" id="create-event-btn">✅ Create</button>
+                <button type="button" id="cancel-event-btn">❌ Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>        
+
+        <!-- === 2.2 Event Detail 页面 === -->
+        <div class="page-section" id="page-events-detail" style="display: none;">
+          <div class="event-detail-page">
+            <div class="event-detail-header">
+              <!-- 👇back 按钮 -->
+              <button id="back-to-events" class="back-btn" title="Back">
+                <img src="icons/content/back.png" alt="Back">
+              </button>              
+              <h2>Event Details</h2>
+            </div>
+        
+            <div class="event-detail-info">
+              <p><strong>🎉 Event:</strong> <span id="detail-name">...</span></p>
+              <p><strong>📅 Date:</strong> <span id="detail-date">...</span></p>
+              <p><strong>📍 Location:</strong> <span id="detail-location">...</span></p>
+              <p><strong>🏷️ Type:</strong> <span id="detail-type">...</span></p>
+              <p><strong>📌 Tags:</strong> <span id="detail-tags">...</span></p>
+            </div>
+        
+            <hr>
+        
+            <div class="member-list">
+              <p><strong>Members:</strong></p>
+              <div class="avatars" id="member-icons">
+                <!-- 模拟头像图标 -->
+                  <!-- 由 localstorage 动态填充 -->
+                <!-- 添加新成员按钮 -->
+                  <!-- 由 localstorage 动态填充 -->
+              </div>
+            </div>
+
+            <div class="event-delete-section">
+              <button id="delete-event-btn" class="delete-btn">🗑️ Remove Event</button>
+            </div>            
+          </div>
+        </div>
+        
+        <!-- === 2.2.1 添加成员弹窗 === -->
+        <div class="popup-overlay" id="member-popup" style="display: none;">
+          <div class="popup-content">
+            <h3>Add New Member</h3>
+
+            <label for="member-name">Name <span style="color:red;">*</span></label>
+            <input type="text" id="member-name" placeholder="e.g. Alice">
+
+            <label for="member-gender">Gender <span style="color:red;">*</span></label>
+            <select id="member-gender">
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+
+            <label for="member-phone">Phone</label>
+            <input type="tel" id="member-phone" placeholder="e.g. 1234567890">
+
+            <div class="btn-group">
+              <button type="button" id="create-member-btn">✅ Create</button>
+              <button type="button" id="cancel-member-btn">❌ Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.2.2 删除确认弹窗 -->
+        <div class="popup-overlay" id="delete-confirm-popup" style="display: none;">
+          <div class="popup-content">
+            <p style="margin-bottom: 16px;">Are you sure you want to delete this event?</p>
+            <div class="btn-group">
+              <button id="confirm-delete-btn" style="background-color: #f66; color: white;">✅ Confirm</button>
+              <button id="cancel-delete-btn">❌ Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.2.3 成员详情弹窗 -->
+        <div class="popup-overlay" id="member-info-popup" style="display: none;">
+          <div class="popup-content">
+            <h3>Member Details</h3>
+            <p><strong>Name:</strong> <span id="popup-member-name">-</span></p>
+            <p><strong>Gender:</strong> <span id="popup-member-gender">-</span></p>
+            <p><strong>Phone:</strong> <span id="popup-member-phone">-</span></p>
+            <div class="btn-group">
+              <button type="button" id="remove-member-confirm" style="background-color: #f66; color: white;">🗑️ Remove</button>
+              <button type="button" id="cancel-member-info">❌ Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- === 3. Discover 页面 === -->
+        <div class="page-section" id="page-discover" style="display: none;">
+          <!-- 顶部标题栏 -->
+          <div class="discover-header">
+            <span>Discover Events</span>
+          </div>
+        
+          <!-- 搜索框区域 -->
+          <div class="search-bar">
+            <input type="text" id="discover-search-input" placeholder="🔍 Search by name, tags...">
+          </div>
+        
+          <!-- 活动列表（由 JS 动态填充） -->
+          <div class="discover-list" id="discover-list">
+            <!-- 示例卡片将由 JS 插入 -->
+          </div>
+        </div>
+
+        <!-- === 4. Help 页面 === -->
+        <div class="page-section" id="page-help" style="display: none;">
+          <div class="help-section">
+            <h3>📌 How to?</h3>
+            <ul class="faq-list">
+              <li class="faq-item">
+                <div class="faq-question">✅ How to create an event?</div>
+                <div class="faq-answer">Go to the Events page, click the "+" button, fill out the form and press "Create".</div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-question">✅ How to invite a friend?</div>
+                <div class="faq-answer">Open an event's detail page, click the "Add Member" icon, and fill in their information.</div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-question">✅ How to remove a member?</div>
+                <div class="faq-answer">Click on a member icon to open their details and press "Remove".</div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-question">✅ How to search an event?</div>
+                <div class="faq-answer">Go to the Discover page and type keywords in the search bar.</div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-question">✅ How to reset the data?</div>
+                <div class="faq-answer">Click the "Reset LocalStorage" button at the top of the phone interface.</div>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="help-section">
+            <h3>👤 About the author</h3>
+            <p>If you'd like to know more about this prototype, click the button below:</p>
+            <a href="author-page/author.html" class="author-link">🔗 Go to author page</a>
+          </div>
+        </div>
+
+        <!-- === 5. Menu 页面 === -->
+        <div class="page-section" id="page-menu" style="display: none;">
+          <ul class="menu-list">
+            <li class="menu-item" onclick="showFeatureAlert()">👤 Personal Info</li>
+            <li class="menu-item" onclick="showFeatureAlert()">🧭 GPS Settings</li>
+            <li class="menu-item" onclick="showFeatureAlert()">⚙️ Settings</li>
+            <li class="menu-item" onclick="showFeatureAlert()">👥 Friends</li>
+            <li class="menu-item" onclick="showFeatureAlert()">⌚ Smartwatch</li>
+            <li class="menu-item" onclick="showFeatureAlert()">📢 Announcements</li>
+            <li class="menu-item" onclick="showFeatureAlert()">📦 Storage</li>
+            <li class="menu-item" onclick="showFeatureAlert()">🕓 History</li>
+            <li class="menu-item" onclick="showFeatureAlert()">🧩 More Features</li>
+            <li class="menu-item" onclick="showFeatureAlert()">❓ About</li>
+            <li class="menu-item" onclick="showFeatureAlert()">🚪 Log Out</li>
+          </ul>
+        </div>
+        <!-- ======= 页面区域 END ======= -->
+        
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+          <div class="nav-item active" data-name="home">
+            <img src="icons/nav/home-active.png" alt="home" class="nav-icon">
+            <span>Home</span>
+          </div>
+          <div class="nav-item" data-name="events">
+            <img src="icons/nav/events.png" alt="events" class="nav-icon">
+            <span>Events</span>
+          </div>
+          <div class="nav-item" data-name="discover">
+            <img src="icons/nav/discover.png" alt="discover" class="nav-icon">
+            <span>Discover</span>
+          </div>
+          <div class="nav-item" data-name="help">
+            <img src="icons/nav/help.png" alt="help" class="nav-icon">
+            <span>Help</span>
+          </div>
+          <div class="nav-item" data-name="menu">
+            <img src="icons/nav/menu.png" alt="menu" class="nav-icon">
+            <span>Menu</span>
+          </div>
+        </div>      
+        <!-- nav END -->
+      </div>
+      <!-- phone-screen END -->
+    </div>
+    <!-- phone-frame END -->
+
+    <!-- === 手表部分，默认隐藏 === -->
+    <div class="watch-frame" style="display:none;">
+      <!-- 上表带 -->
+      <div class="watch-band watch-band-top"></div>
+
+      <!-- 圆形表体 -->
+      <div class="watch-body">
+        <!-- 表盘内部显示 -->
+        <div class="watch-screen" id="watch-screen">
+          <!-- 时间放表头 -->
+          <div class="watch-header">
+            <div id="watch-clock">00:29</div>
+            <div id="watch-date">2025/4/14</div>
+          </div>
+          
+          <!-- 初始菜单 -->
+          <div id="watch-menu">
+            <div class="watch-line-container">
+              <div class="watch-line" id="watch-myapp">MyApp</div>
+            </div>            
+            <div class="watch-line-container">
+              <div class="watch-line">More+</div>
+            </div>
+          </div>
+        
+          <!-- check-in 页面 -->
+          <div id="watch-checkin" style="display: none;">
+            <!-- 横向布局容器（初始隐藏） -->
+            <div class="checkin-row" id="checkin-row" style="display: none;">
+              <p class="event-or-status checkin-message" id="checkin-message">✅ You arrived!<br>Check-in</p>
+              <img src="icons/smartwatch/arrow-up-right.png" class="blink-arrow" id="arrow-icon" style="display: block;">
+            </div>
+
+            <!-- 默认 Event 名字 -->
+            <p class="event-or-status" id="watch-event-text">🏷️ Party Sunset</p>
+            <img src="icons/smartwatch/gps.png" alt="gps" class="gps-icon" id="gps-icon">
+          </div>
+
+
+        </div>      
+        <!-- 右侧两个按钮 -->
+        <button class="watch-button watch-btn-start">R</button>
+        <button class="watch-button watch-btn-end">S</button>
+      </div>
+
+      <!-- 下表带 -->
+      <div class="watch-band watch-band-bottom"></div>
+    </div>
+  </div>
+  <!-- js部分 -->
+   
+  <!-- 手机 -->
+  <script src="smartphone/js/nav.js"></script>
+  <script src="smartphone/js/warn.js"></script>
+  <script src="smartphone/js/header.js"></script>
+  <!-- 数据 -->
+  <script src="data/init-data.js"></script>
+  <script src="data/discover-data.js"></script>
+  <!-- 内容 -->
+  <script src="smartphone/content/home-page/home.js"></script>
+  <script src="smartphone/content/event/event.js"></script>
+  <script src="smartphone/content/event/new-event/new-event.js"></script>
+  <script src="smartphone/content/event-detail/detail/detail.js"></script>
+  <script src="smartphone/content/event-detail/detail/member/member.js"></script>
+  <script src="smartphone/content/discover/discover.js"></script>
+  <script src="smartphone/content/event-detail/detail2/detail2.js"></script>
+  <script src="smartphone/content/help/help.js"></script>
+
+  <!-- 按钮 -->
+  <script src="buttons/btnscript.js"></script>
+  <script src="smartwatch/js/content.js"></script>
+</body>
+</html>

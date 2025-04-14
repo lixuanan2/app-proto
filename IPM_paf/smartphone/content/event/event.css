@@ -1,0 +1,105 @@
+.event-header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #f7f9fc;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  
+  .event-header span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+/* 🎯 页面中：展示加入的活动列表区域 */
+.event-list {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 600px;   /* 如果内容超出，可滚动 */
+    overflow-y: auto;
+  }
+  
+  /* 🧩 每个活动卡片的整体样式 */
+  .event-card {
+    background-color: #f0f8ff;                /* 背景淡蓝 */
+    border-left: 5px solid #4dabf7;           /* 左侧蓝色标识条 */
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    cursor: pointer;
+  }
+  
+  .event-card:hover {
+    background-color: #e6f2ff;
+  }
+  
+  /* 📌 活动标题 */
+  .event-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  /* ⏰ 活动时间 & 人数 */
+  .event-info {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* ➕ 浮动添加按钮，右下角固定 */
+  .event-add-btn {
+    position: absolute;
+    bottom: 90px;         /* 导航栏上方 */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #4dabf7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .event-add-btn:hover {
+    background-color: #3399dd;
+  }
+  
+  .event-add-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* 📝 添加页面表单样式 */
+  .event-add-form {
+    display: none;                /* 初始隐藏，由 JS 控制 */
+    padding: 20px;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 80px;         /* 避开底部导航栏 */
+  }
+  
+  .event-add-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .event-add-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

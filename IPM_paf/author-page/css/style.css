@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+  }
+  
+  main.container {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px 40px;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  
+  .navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  
+  .nav-logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 8px;
+  }
+  
+  .nav-item {
+    cursor: pointer;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+  }
+  
+  .nav-item:hover,
+  .nav-item.active {
+    color: #3182ce;
+    border-bottom: 2px solid #3182ce;
+  }
+  
+  
+  .content-section {
+    display: none;
+    padding: 30px 30px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* 阴影 */
+    border: 1px solid #e2e8f0;                /* 描边 */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .content-section.active {
+    display: block;
+  }
+  
+  .content-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .content-section p {
+    line-height: 1.7;
+    text-align: justify;
+  }
+  
+  .footer {
+    background-color: #fff;
+    border-top: 1px solid #e2e8f0;
+    padding: 16px 20px;           /* ✅ 和 .navbar 对齐的左右 padding */
+    text-align: center;
+    color: #666;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    max-width: 1000px;            /* ✅ 和 .navbar 保持一致宽度 */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+  
+  
+  .lang-switch {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .lang-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .lang-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* 优化列表整体左边距，避免太贴边 */
+.content-section ul {
+    padding-left: 24px; /* 或 30px，根据你视觉喜好调整 */
+  }
+  
+  .content-section ol {
+    padding-left: 24px; /* 或 30px，根据你视觉喜好调整 */
+  }
+  

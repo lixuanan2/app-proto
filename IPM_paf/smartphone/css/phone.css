@@ -1,0 +1,118 @@
+/* 外层手机框 */
+.phone-frame {
+  position: absolute;
+  width: 375px;
+  height: 812px;
+  background-color: #111;    /* 黑色外壳 */
+  border-radius: 40px;       /* 圆角，模拟 iPhone 边缘 */
+  
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  overflow: hidden;
+
+  /* 留 10px 边距，给内部屏幕留出黑边 */
+  padding: 10px; 
+  box-sizing: border-box;
+}
+
+/**************************************/
+.phone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 26px;
+  margin-bottom: 10px;
+}
+
+.phone-header h1 {
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  color: #222;
+}
+
+/* 左右图标样式 */
+.header-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.header-icon.left {
+  margin-right: auto;
+}
+
+.header-icon.right {
+  margin-left: auto;
+}
+/**************************************/
+
+/* Dropdown 菜单容器 */
+.dropdown-menu {
+  position: absolute;
+  top: 87px; /* 约略在头像下方 */
+  left: 30px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  width: 160px;
+}
+
+/* 每个选项 */
+.dropdown-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+/**************************************/
+
+/* notch刘海 */
+.phone-notch {
+  width: 210px;
+  height: 30px;
+  background-color: #111;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  top: 10px; /* 相对于 .phone-frame 的位置 */
+  left: 50%;
+  transform: translateX(-50%);
+  /* 可以微调 margin-top，让刘海紧贴或稍微离开 */
+}
+
+/* 内部屏幕区域 */
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  /* 给屏幕也加圆角，让其与外壳边缘相呼应 */
+  border-radius: 30px;
+
+  /* 给顶部留空间，不被notch覆盖 */
+  padding-top: 35px; 
+}
+
+/* 滚动条样式 */
+.phone-screen::-webkit-scrollbar {
+  width: 6px;
+}
+.phone-screen::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+  

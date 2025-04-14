@@ -1,0 +1,83 @@
+/* 整个手表容器 */
+.watch-frame {
+    position: absolute;
+    /* 假设放在页面中部略靠右，可以和手机错开 */
+    transform: translateY(-50%);
+    left: 45%;
+    top: 40%;
+    display: flex;
+    flex-direction: column;   /* 上表带 -> 表体 -> 下表带 */
+    align-items: center;
+    gap: 8px;                 /* 表带和表体之间留缝隙 */
+  
+    /* 可加一些 debug 背景或边框查看布局 
+    background: rgba(255,0,0,0.1); 
+    */
+    margin-top: 40px;   /* ✅ 轻微往下偏 */
+  }
+  
+  /* 上下表带共用基础 */
+  .watch-band {
+    width: 120px;       /* 表带宽度，可调 */
+    height: 40px;       /* 表带厚度，可调 */
+    background: #333;   /* 表带颜色 */
+    border-radius: 20px; /* 椭圆形 */
+  }
+  
+  /* 表体(圆形表盘) */
+  .watch-body {
+    position: relative;
+    width: 200px;       /* 表盘直径，可调 */
+    height: 200px;
+    background: #111;   /* 表盘外壳 */
+    border-radius: 50%; /* 圆形 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  
+  /* 内部屏幕 */
+  .watch-screen {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    border-radius: 50%;
+    padding: 8px; 
+    box-sizing: border-box;
+    display: flex;       /* 居中文字 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .watch-screen h2, .watch-screen p {
+    margin: 0;
+  }
+  
+  /* 右侧按钮 */
+  .watch-button {
+    position: absolute;
+    right: -28px;    /* 手表主体外侧一些 */
+    width: 22px;
+    height: 32px;
+    background: #666;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 32px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  }
+  /* 两个按钮位置：根据直径200px可微调 top 值 */
+  .watch-btn-start {
+    left: 170px;
+    top: 24px;
+  }
+  .watch-btn-end {
+    left: 170px;
+    top: 144px;
+  }
+  

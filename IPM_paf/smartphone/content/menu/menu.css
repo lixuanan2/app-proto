@@ -1,0 +1,20 @@
+
+.menu-list {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+    max-height: 600px;
+    overflow-y: auto;
+}
+  
+.menu-item {
+    padding: 22px 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+  
+.menu-item:hover {
+    background-color: #f7f7f7;
+}
+  

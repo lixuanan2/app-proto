@@ -1,0 +1,97 @@
+/* 整体页面容器：添加阴影边框 */
+.event-detail-page {
+    margin: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* 淡淡的阴影 */
+    background-color: #fff;
+  }
+  
+  /* 🔝 顶部标题悬浮（sticky） */
+  .event-detail-header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #ccc;
+    z-index: 3;
+  }
+  
+  /* ⬅️ 返回按钮样式（使用图标） */
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .back-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+  
+  /* 📋 事件信息部分 */
+  .event-detail-info {
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+  
+  .event-detail-info p {
+    margin: 6px 0;
+  }
+  
+  .event-detail-info span {
+    font-style: italic;
+    color: #333;
+  }
+  
+  /* 👤 成员区域 */
+  .member-list {
+    margin-top: 16px;
+  }
+  
+  .avatars {
+    display: flex;
+    flex-wrap: wrap; /* 允许自动换行 ✅ */
+    gap: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  /* 👥 小方块头像样式 */
+  .avatars img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px; /* ✅ 方块形状（非圆） */
+    border: 1px solid #ccc;
+    background-color: #eee;
+  }
+  
+  /* ➕ 添加成员按钮单独高亮 */
+  .add-member {
+    border: 2px dashed #4dabf7;
+    background-color: #f0f8ff;
+  }
+  
+  /* detail.css */
+  .event-delete-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .delete-btn {
+    background-color: #ffdddd;
+    border: 1px solid #f66;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+    
+  
