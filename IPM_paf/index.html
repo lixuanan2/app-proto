@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="smartphone/css/nav.css">         <!-- 底部导航栏 -->
   <link rel="stylesheet" href="smartphone/css/warn.css">         <!-- 警告框 -->
   <!-- 多页面内容 -->
+  <link rel="stylesheet" href="smartphone/content/login/login.css">  <!-- login页面 -->
   <link rel="stylesheet" href="smartphone/content/home-page/home.css">  <!-- home主页面 -->
   <link rel="stylesheet" href="smartphone/content/content.css"> 
   <link rel="stylesheet" href="smartphone/content/event/event.css">    <!-- event主页面 -->
@@ -58,11 +59,24 @@
             <div class="dropdown-item" id="menu-gps">GPS</div>
             <div class="dropdown-item" id="menu-settings">Settings</div>
           </div>        
-          <h1>Home</h1>
+          <h1>Login</h1>
           <img src="icons/header/watch-green.png" alt="watch status" class="header-icon right" id="watch-status-icon" title="connected">
         </div>
         <hr>
         <!-- ======= 📄 页面内容区域 ======= -->
+         <!-- === 0.登录页面 === -->
+         <div class="page-section" id="page-login">
+          <div class="login-wrapper">
+            <h2>Welcome Back</h2>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button id="login-btn">Login</button>
+        
+            <div class="login-helper">
+              <a href="#">Forgot Password?</a> | <a href="#">Sign Up</a>
+            </div>
+          </div>
+         </div>
         <!-- === 1. Home 页面 === -->
         <!-- === Home 页面总入口 === -->
         <div class="page-section" id="page-home">
@@ -134,8 +148,12 @@
                     <td><span class="diff-media">média</span></td>
                   </tr>
                 </tbody>
-              </table>              
-            </div>            
+              </table>    
+                  
+            </div>  
+            <div class="home-note">
+              💡 Note: Smartwatch is on the left panel. Click "Show Smartwatch" to display the watch interface.
+            </div>                
           </div>
         </div>
 
@@ -374,8 +392,8 @@
         
         <!-- 底部导航栏 -->
         <div class="bottom-nav">
-          <div class="nav-item active" data-name="home">
-            <img src="icons/nav/home-active.png" alt="home" class="nav-icon">
+          <div class="nav-item" data-name="home">
+            <img src="icons/nav/home.png" alt="home" class="nav-icon">
             <span>Home</span>
           </div>
           <div class="nav-item" data-name="events">
@@ -460,6 +478,7 @@
   <script src="data/init-data.js"></script>
   <script src="data/discover-data.js"></script>
   <!-- 内容 -->
+  <script src="smartphone/content/login/login.js"></script>
   <script src="smartphone/content/home-page/home.js"></script>
   <script src="smartphone/content/event/event.js"></script>
   <script src="smartphone/content/event/new-event/new-event.js"></script>

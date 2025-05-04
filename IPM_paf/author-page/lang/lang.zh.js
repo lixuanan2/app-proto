@@ -27,36 +27,44 @@ window.langZH = {
         <p>此外，由于下次课程将由同学们对本原型进行启发式评估，该部分反馈内容也将收录在该模块中。</p>
         <p>本次迭代版本中，代码结构整体保持不变（至少目前我自己是没动……有点晕乎了 😵‍💫），“🚀 后续优化方向”与“⚠️ 不足之处”部分也计划继续完善和续写，记录开发中的思路与遗憾。</p>
         <p>当前版本为 <strong>v1.0.1</strong>。</p>
+
+        <hr>
+
+        <p>在收到后续的教师反馈后，我又进行了小规模的改动，更新到了 <strong>v1.0.2</strong>：</p>
+        <ul>
+          <li>新增了一个 Login 登录界面，并做好了移动端适配与导航栏细节处理。</li>
+          <li>在 任务 页面，添加了一个 Smartwatch 使用提示（Note），帮助用户更方便找到手表界面。</li>
+          <li>同步更新了“📣 反馈”模块和“📂 代码结构”部分的描述，以保持文档与实际开发版本一致。</li>
+        </ul>
+        <p>本次更新工作量相对较小，主要集中在补充基础体验与完善文档记录。</p>
+        <p><strong>当前版本为 v1.0.2。</strong></p>
       `,
       structure: `
       <h2>📂 代码结构</h2>
-      <p>本项目使用了 HTML、CSS、JavaScript 以及 LocalStorage 技术。HTML 文件中包含了手机和手表的所有主要内容，各个页面和弹窗均集成在同一页面中，通过「显示 / 隐藏」元素的方式实现切换。这种设计虽然在实现上较为直接，但对于后续维护和功能拓展并不友好——这一点在项目早期已考虑到，但为降低开发复杂度，最终仍采用了当前方案。如果未来要进一步完善系统，可能会改为多 HTML 页面模块的架构方式。</p>
-      <p>在 CSS 和 JavaScript 层面，我使用了嵌套式文件结构，将各个功能模块清晰拆分，有效实现样式与逻辑的分离，有利于版面控制与事件绑定。然而，由于 CSS 部分组件间存在耦合关系，导致某些样式规则冲突，结构不稳定；又因为模块之间层级关系复杂，排查问题与修复相对困难。</p>
-      <p>以下是当前版本的核心目录结构（v1.0.0）：</p>
+      <p>本项目使用了 HTML、CSS、JavaScript 以及 LocalStorage 技术。HTML 文件中包含了手机和手表的所有主要内容，各个页面和弹窗均集成在同一页面中，通过「显示 / 隐藏」元素的方式实现切换。这种设计虽然在实现上较为直接，但对于后续维护和功能拓展并不友好——这一点在项目早期已考虑到，但为降低开发复杂度，最终仍采用了当前方案。未来版本可能采用多 HTML 页面模块化架构。</p>
+      <p>在 CSS 和 JavaScript 层面，我使用了模块化的嵌套结构，尽可能分离样式与逻辑，方便版面控制与事件绑定。但由于层级较深、样式之间存在冲突，导致排查与维护难度较高。</p>
+      <p>以下是当前版本的核心目录结构（更新至 v1.0.2）：</p>
       <ul style="padding-left: 24px;">
         <li><strong>main/</strong>：项目主目录，包含入口页面与核心资源</li>
         <li>├── index.html</li>
         <li>├── main.css</li>
-        <li><strong>author-page/</strong>：作者页面专属资源</li>
-        <li><strong>button/</strong>：通用按钮样式文件</li>
+        <li><strong>author-page/</strong>：作者页面资源</li>
+        <li><strong>button/</strong>：通用按钮样式</li>
         <li><strong>data/</strong>：示例数据（如初始化活动信息）</li>
-        <li><strong>icons/</strong>：全部图标资源（中英葡国旗、功能图标等）</li>
-        <li><strong>smartphone/</strong>：手机页面全部内容</li>
-        <li>├── css/：样式文件</li>
-        <li>│   ├── phone.css：手机模型外观布局</li>
-        <li>│   ├── nav.css：底部导航栏</li>
-        <li>│   └── warn.css：未开发功能弹窗反馈</li>
-        <li>├── js/：交互逻辑</li>
-        <li>│   ├── nav.js、warn.js、header.js 等</li>
+        <li><strong>icons/</strong>：全部图标资源（国旗、功能图标等）</li>
+        <li><strong>smartphone/</strong>：手机端内容</li>
+        <li>├── css/：样式文件（phone.css、nav.css、warn.css 等）</li>
+        <li>├── js/：交互逻辑（nav.js、warn.js、header.js 等）</li>
         <li>└── content/：内容区域页面</li>
-        <li>    ├── home/、event/、discover/、help/、menu/：五个主页面</li>
-        <li>    └── event-detail/：子页面，用于查看单个活动详情</li>
-        <li><strong>smartwatch/</strong>：智能手表内容</li>
-        <li>├── watch.css：手表造型及布局</li>
-        <li>└── content/：手表界面内容（如 Check-in 流程）</li>
+        <li>    ├── home/、event/、discover/、help/、menu/</li>
+        <li>    ├── login/（新增：登录页面）</li>
+        <li>    └── event-detail/（活动详情子页面，可由 Events 或 Discover 访问）</li>
+        <li><strong>smartwatch/</strong>：智能手表端内容</li>
+        <li>├── watch.css：手表布局与样式</li>
+        <li>└── content/：Check-in 流程界面</li>
       </ul>
-      <p>关于 <code>event-detail</code> 独立抽出作为独立页面，而非归入 <code>event</code> 文件夹，是因为该页面既可从 Events 页面跳转，也可从 Discover 页面进入，因此将其独立管理更加合理。</p>
-      <p>以上结构为当前版本（v1.0.0）设计方案，未来版本可能根据扩展与用户体验优化进一步迭代与调整。</p>
+      <p><code>event-detail</code> 单独管理，是因为既可从 Events 页面进入，也可从 Discover 页面访问。</p>
+      <p>本结构将随着未来功能拓展持续调整。（当前版本 v1.0.2）</p>
     `,
       drawbacks: `
         <h2>⚠️ 不足之处</h2>
@@ -89,7 +97,7 @@ window.langZH = {
         </ol>
         <p>当前版本为 <strong>v1.0.1</strong>。</p>
         `,
-        feedback: `
+      feedback: `
         <h2>📣 教师反馈 · v1.0.0 -> v1.0.1</h2>
         <ul>
           <li><strong>Event 页面无法区分来源：</strong> 初始事件为蓝色边框，用户创建事件使用绿色边框，Discover 导入的事件沿用黄色边框（与 Discover 页面保持一致）。</li>
@@ -105,5 +113,15 @@ window.langZH = {
           <li>📌 根据任务难度和优先级重新排序</li>
           <li>📌 进一步解决“不足之处”中提出的若干问题</li>
         </ul>
+
+        <hr>
+
+        <h2>📣 教师反馈 · v1.0.1 -> v1.0.2</h2>
+          <ul>
+            <li><strong>新增 Login 页面：</strong> 添加了登录界面，并针对手机屏幕适配，完善了底部导航栏锁定与跳转后标题动态更新。</li>
+            <li><strong>Smartwatch 找不到的问题：</strong> 在 任务 页模块新增提示 Note，引导用户使用左侧按钮打开 Smartwatch 界面。</li>
+          </ul>
+          <p>此次更新重点解决了 v1.0.1 版本中未覆盖的登录入口与引导问题，进一步优化了整体用户体验与界面细节。</p>
+          <p>当前版本为 <strong>v1.0.2</strong>。</p>
       ` 
   };

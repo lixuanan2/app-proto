@@ -1,0 +1,71 @@
+#page-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    height: 90%;
+    padding-top: 23%;
+  }
+  
+  .login-wrapper {
+    width: 87.5%;
+    max-width: 300px; /* 固定最大宽度，避免超出 */
+    background-color: white;
+    padding: 28px 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .login-wrapper h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  #page-login input {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #page-login button {
+    padding: 14px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 16px;
+  }
+  
+  #page-login button:hover {
+    background-color: #45a049;
+  }
+  
+  .login-helper {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .login-helper a {
+    color: #4caf50;
+    text-decoration: none;
+    margin: 0 4px;
+  }
+  
+  .login-helper a:hover {
+    text-decoration: underline;
+  }
+  

@@ -28,30 +28,43 @@ window.langPT = {
         <p>Além disso, como na próxima aula os colegas irão avaliar o protótipo com base em heurísticas, os resultados também serão incluídos nesse módulo.</p>
         <p>O código-fonte permanece estruturalmente inalterado (pelo menos que eu me lembre... estou meio confuso 😵‍💫). As secções “🚀 Melhorias Futuras” e “⚠️ Limitações” também serão atualizadas com mais conteúdo e reflexões.</p>
         <p>Versão atual: <strong>v1.0.1</strong>.</p>
+
+        <hr>
+        <p>Após receber mais feedback do professor, realizei alguns pequenos ajustes e atualizei para a versão <strong>v1.0.2</strong>:</p>
+        <ul>
+          <li>Adicionei uma página de Login com otimização para dispositivos móveis e ajustes na barra de navegação.</li>
+          <li>Adicionei uma nota de uso do Smartwatch na página Tarefa para ajudar os utilizadores a encontrar mais facilmente a interface do relógio.</li>
+          <li>Atualizei as descrições nas seções "📣 Feedback" e "📂 Estrutura de Código" para refletir a versão atual do desenvolvimento.</li>
+        </ul>
+        <p>Esta atualização envolveu uma carga de trabalho relativamente pequena, focando principalmente na melhoria da experiência básica do utilizador e da documentação.</p>
+        <p><strong>Versão atual: v1.0.2.</strong></p>
       `,
       structure: `
       <h2>📂 Estrutura do Código</h2>
-      <p>Este projeto utiliza HTML, CSS, JavaScript e LocalStorage. O conteúdo do aplicativo móvel e do smartwatch está contido em um único arquivo HTML, onde as seções são alternadas com <em>mostrar/esconder</em>. Essa abordagem é prática, mas limita a escalabilidade e manutenção. Por simplicidade, mantive este modelo na v1.0.0, mas uma versão futura pode adotar arquitetura multi-página.</p>
-      <p>Os arquivos CSS e JS são organizados modularmente. Isso ajuda na separação de lógica e estilo, especialmente na adição de eventos. No entanto, estilos conflitantes e profundidade de aninhamento causam instabilidade e dificultam a manutenção.</p>
-      <p>Segue a estrutura atual do projeto (v1.0.0):</p>
+      <p>Este projeto utiliza HTML, CSS, JavaScript e LocalStorage. O arquivo HTML incorpora os conteúdos principais do smartphone e do smartwatch, alternando as seções com lógica de mostrar/ocultar. Embora seja simples de implementar, esta abordagem limita a escalabilidade e a manutenção. Futuramente, poderá ser adotada uma arquitetura modular de múltiplas páginas.</p>
+      <p>Os arquivos CSS e JS são organizados de forma modular e aninhada, separando estilo e lógica. Contudo, o aninhamento profundo e conflitos de estilo ocasionais aumentam a complexidade da manutenção.</p>
+      <p>Abaixo está a estrutura atual do projeto (atualizada para v1.0.2):</p>
       <ul style="padding-left: 24px;">
-        <li><strong>main/</strong>: pasta principal com página de entrada</li>
+        <li><strong>main/</strong>: pasta raiz com a página de entrada e recursos principais</li>
         <li>├── index.html</li>
         <li>├── main.css</li>
-        <li><strong>author-page/</strong>: página do autor</li>
-        <li><strong>button/</strong>: botões reutilizáveis</li>
-        <li><strong>data/</strong>: dados de exemplo (eventos, etc.)</li>
-        <li><strong>icons/</strong>: ícones diversos</li>
+        <li><strong>author-page/</strong>: recursos da página do autor</li>
+        <li><strong>button/</strong>: estilos de botões reutilizáveis</li>
+        <li><strong>data/</strong>: dados de exemplo (eventos iniciais, etc.)</li>
+        <li><strong>icons/</strong>: todos os ícones (bandeiras, funções, etc.)</li>
         <li><strong>smartphone/</strong>: conteúdo da versão móvel</li>
-        <li>├── css/: phone.css, nav.css, warn.css</li>
-        <li>├── js/: nav.js, warn.js, header.js</li>
-        <li>└── content/: páginas home, event, discover, help, menu, event-detail</li>
+        <li>├── css/: estilos (phone.css, nav.css, warn.css, etc.)</li>
+        <li>├── js/: lógica (nav.js, warn.js, header.js, etc.)</li>
+        <li>└── content/: páginas principais</li>
+        <li>    ├── home/, event/, discover/, help/, menu/</li>
+        <li>    ├── login/ (novo: página de login)</li>
+        <li>    └── event-detail/ (página de detalhes acessada por Events ou Discover)</li>
         <li><strong>smartwatch/</strong>: conteúdo do smartwatch</li>
-        <li>├── watch.css</li>
-        <li>└── content/: tela de check-in</li>
+        <li>├── watch.css: layout e estilos do relógio</li>
+        <li>└── content/: tela e lógica de check-in</li>
       </ul>
-      <p>O <code>event-detail</code> está separado porque é acessado tanto pelo Events quanto Discover.</p>
-      <p>Esta estrutura (v1.0.0) poderá ser ajustada com base em melhorias futuras e feedback.</p>
+      <p><code>event-detail</code> é gerido separadamente pois é acessado tanto a partir de Events quanto de Discover.</p>
+      <p>Esta estrutura será ajustada conforme novas funcionalidades forem desenvolvidas. (Versão atual v1.0.2)</p>
     `,
       drawbacks: `
         <h2>⚠️ Limitações</h2>
@@ -100,6 +113,16 @@ window.langPT = {
           <li>📌 Reordenar tarefas por dificuldade e prioridade</li>
           <li>📌 Resolver mais pontos da secção “Limitações”</li>
         </ul>
+
+        <hr>
+
+        <h2>📣 Feedback do Professor · v1.0.1 -> v1.0.2</h2>
+        <ul>
+          <li><strong>Nova Página de Login:</strong> Foi adicionada uma página de login dedicada, otimizada para telas móveis. Implementado o bloqueio da navegação inferior e a atualização dinâmica do título do cabeçalho após o login.</li>
+          <li><strong>Problema de Acessibilidade ao Smartwatch:</strong> Foi adicionada uma nota abaixo da página de tarefas para orientar o utilizador a usar o botão esquerdo para abrir a interface do Smartwatch.</li>
+        </ul>
+        <p>Esta atualização corrige principalmente a ausência de entrada de login e problemas de orientação identificados na versão v1.0.1, melhorando ainda mais a experiência do utilizador e os detalhes da interface.</p>
+        <p>Versão atual: <strong>v1.0.2</strong>.</p>
       `
   };
   

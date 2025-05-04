@@ -28,35 +28,44 @@ window.langEN = {
         <p>Moreover, since the next class will include peer heuristic evaluations of the prototype, those evaluations will also be recorded there.</p>
         <p>The code structure remains mostly unchanged (at least... I *think* I didn’t touch anything 🤯). The sections “🚀 Future Improvements” and “⚠️ Limitations” are also planned to be updated with additional ideas and notes.</p>
         <p>Current version: <strong>v1.0.1</strong>.</p>
+
+        <hr>
+        <p>After receiving further feedback from the professor, I made some minor adjustments and updated to <strong>v1.0.2</strong>:</p>
+        <ul>
+          <li>Added a Login page with mobile optimization and navigation bar adjustments.</li>
+          <li>Added a Smartwatch usage note on the Tarefa page to help users more easily find the watch interface.</li>
+          <li>Updated the descriptions in the "📣 Feedback" and "📂 Code Structure" sections to align with the current development version.</li>
+        </ul>
+        <p>This update involved a relatively small workload, mainly focusing on enhancing the basic user experience and improving documentation.</p>
+        <p><strong>Current version: v1.0.2.</strong></p>
+
       `,
       structure: `
       <h2>📂 Code Structure</h2>
-      <p>This project is built using HTML, CSS, JavaScript, and LocalStorage. The HTML file contains all components of both the phone and smartwatch UIs. All pages and popups are embedded in a single document and shown/hidden as needed. While this method is simple and direct, it’s not scalable for future development and maintainability—something I anticipated early but postponed for simplicity. In future iterations, a multi-page architecture might be adopted.</p>
-      <p>CSS and JS files are organized modularly. This promotes separation of style and logic and makes adding event listeners easier. However, due to overlapping rules and deep nesting, CSS sometimes causes style conflicts and structural instability. Debugging and editing become harder as a result.</p>
-      <p>Below is the current directory structure (v1.0.0):</p>
+      <p>This project uses HTML, CSS, JavaScript, and LocalStorage. The HTML file embeds the main contents of both the smartphone and smartwatch, switching sections dynamically via show/hide logic. While simple to implement, this structure limits scalability and maintainability, a trade-off made for development simplicity. Future versions may adopt a modular multi-page architecture.</p>
+      <p>CSS and JS files are organized in a nested modular structure, promoting separation of style and logic. However, deep nesting and occasional style conflicts increase maintenance complexity.</p>
+      <p>Below is the current directory structure (updated to v1.0.2):</p>
       <ul style="padding-left: 24px;">
         <li><strong>main/</strong>: root folder with entry page and main assets</li>
         <li>├── index.html</li>
         <li>├── main.css</li>
-        <li><strong>author-page/</strong>: files for the author page</li>
-        <li><strong>button/</strong>: button component styles</li>
-        <li><strong>data/</strong>: sample data (e.g. initial events)</li>
-        <li><strong>icons/</strong>: all icons (flags, buttons, etc.)</li>
-        <li><strong>smartphone/</strong>: phone app content</li>
-        <li>├── css/</li>
-        <li>│   ├── phone.css (phone frame)</li>
-        <li>│   ├── nav.css (bottom navigation)</li>
-        <li>│   └── warn.css (popup warning for unfinished features)</li>
-        <li>├── js/: nav.js, warn.js, header.js etc.</li>
-        <li>└── content/: pages for each section</li>
+        <li><strong>author-page/</strong>: author page resources</li>
+        <li><strong>button/</strong>: reusable button styles</li>
+        <li><strong>data/</strong>: sample data (initial events, etc.)</li>
+        <li><strong>icons/</strong>: all icons (flags, functions, etc.)</li>
+        <li><strong>smartphone/</strong>: smartphone content</li>
+        <li>├── css/: styles (phone.css, nav.css, warn.css, etc.)</li>
+        <li>├── js/: logic (nav.js, warn.js, header.js, etc.)</li>
+        <li>└── content/: main pages</li>
         <li>    ├── home/, event/, discover/, help/, menu/</li>
-        <li>    └── event-detail/: reused by both Events and Discover pages</li>
-        <li><strong>smartwatch/</strong>: smartwatch UI</li>
-        <li>├── watch.css: watch layout and shape</li>
-        <li>└── content/: check-in logic and display</li>
+        <li>    ├── login/ (new: login page)</li>
+        <li>    └── event-detail/ (detail page accessed from Events or Discover)</li>
+        <li><strong>smartwatch/</strong>: smartwatch content</li>
+        <li>├── watch.css: watch layout and styling</li>
+        <li>└── content/: check-in logic and screens</li>
       </ul>
-      <p><code>event-detail</code> was placed outside <code>event/</code> because it is used by both Events and Discover pages.</p>
-      <p>This structure will evolve (v1.0.0). Adjustments will be made as new features are developed.</p>
+      <p><code>event-detail</code> is managed separately because it is accessed from both Events and Discover pages.</p>
+      <p>This structure will evolve with future feature expansions. (Current version v1.0.2)</p>
     `,
       drawbacks:  `
       <h2>⚠️ Limitations</h2>
@@ -105,6 +114,16 @@ window.langEN = {
           <li>📌 Reorder tasks based on difficulty and priority</li>
           <li>📌 Continue addressing issues listed in the “Limitations” section</li>
         </ul>
+
+        <hr>
+      
+        <h2>📣 Teacher Feedback · v1.0.1 -> v1.0.2</h2>
+        <ul>
+          <li><strong>New Login Page:</strong> A dedicated login interface was added, optimized for mobile screens. Navigation locking and dynamic header title update after login were implemented.</li>
+          <li><strong>Smartwatch Accessibility Issue:</strong> A note was added under the task page to guide users to the left panel to open the Smartwatch interface.</li>
+        </ul>
+        <p>This update mainly addresses the missing login entry and guidance issues from version v1.0.1, further improving the overall user experience and UI details.</p>
+        <p>Current version: <strong>v1.0.2</strong>.</p>
       `
   };
   

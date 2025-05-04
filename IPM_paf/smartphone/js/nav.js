@@ -1,7 +1,15 @@
 
   document.addEventListener('DOMContentLoaded', () => {
+    window.isLoggedIn = false;
+  
     document.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', () => {
+
+        // 🛑 如果没登录，禁止点击
+        if (!window.isLoggedIn) {
+          console.log("🚫 please login first!");
+          return false;
+        }
         // 1. 清除所有激活状态
         document.querySelectorAll('.nav-item').forEach(i => {
           i.classList.remove('active');
