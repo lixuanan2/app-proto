@@ -3,9 +3,12 @@ window.addEventListener('DOMContentLoaded', () => {
   const watchFrame = document.querySelector('.watch-frame');
   const toggleBtn = document.getElementById('toggleWatchBtn');
   const resetLSBtn = document.getElementById('ResetLocalStg');
+  const showTaskBtn = document.getElementById('ShowTaskBtn'); 
 
   const initialEvents = window.initialEvents;
 
+  let showingTaskPage = false; // 记录是不是正在看 Task 页
+  let previousPageId = 'page-home';
 
   // 初始
   let showingPhone = true;
@@ -40,5 +43,36 @@ window.addEventListener('DOMContentLoaded', () => {
     alert("✅ Local storage has been reset to default events.");
   
     updateEventList();
+  });
+
+  // 切换Task页面
+  showTaskBtn.addEventListener('click', () => {
+    // 闪烁！！
+    showTaskBtn.classList.remove('attention');
+
+    if (!window.isLoggedIn) {
+      alert('❗ Please login first!');
+      return;
+    }
+
+    const pageHome = document.getElementById('page-home');
+    const pageTarefa = document.getElementById('home-tarefa'); 
+
+    if (!showingTaskPage) {
+      if (document.querySelector('.page-section[style*="block"]')) {
+        previousPageId = document.querySelector('.page-section[style*="block"]').id;
+      }
+      document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+      pageTarefa.style.display = 'block';
+      showTaskBtn.textContent = 'Back';
+      showTaskBtn.style.backgroundColor = '#3498db';
+    } else {
+      document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+      const previousPage = document.getElementById(previousPageId);
+      if (previousPage) previousPage.style.display = 'block';
+      showTaskBtn.textContent = 'Show Task';
+      showTaskBtn.style.backgroundColor = '#e74c3c';
+    }
+    showingTaskPage = !showingTaskPage;
   });
 });
