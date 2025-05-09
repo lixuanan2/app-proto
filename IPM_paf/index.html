@@ -87,7 +87,8 @@
           <div class="home-scroll-area">
             <!-- 模块列表 -->
             <div class="home-card" data-target="home-intro">📖 Introduction</div>
-            <div class="home-card" data-target="home-tarefa">📝 Tarefa</div>
+            <div class="home-card" data-target="home-tarefa">📝 Tasks</div>
+            <div class="home-card" data-target="page-lang">🌐 Language</div>
             <!-- 可继续扩展其他模块 -->
           </div>
         </div>
@@ -102,8 +103,8 @@
         
             <!-- ✅ 语言切换按钮只出现在此 -->
             <div class="lang-buttons">
-              <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
               <img src="icons/home/uk.png" class="lang-icon" data-lang="en" title="English">
+              <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
               <img src="icons/home/cn.png" class="lang-icon" data-lang="zh" title="中文">
             </div>
           </div>
@@ -119,41 +120,72 @@
         <div class="page-section" id="home-tarefa" style="display: none;">
           <div class="home-header">
             <button class="back-home-btn">🔙</button>
-            <span>📝 Tarefa</span>
+            <span id="task-title">📝 Tasks
+            </span>
+
+            <div class="lang-buttons">
+              <img src="icons/home/uk.png" class="lang-icon" data-lang="en" title="English">
+              <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
+              <img src="icons/home/cn.png" class="lang-icon" data-lang="zh" title="中文">
+            </div>
           </div>
           <div class="home-scroll-area">
             <div class="home-content">
               <table class="task-table">
                 <thead>
                   <tr>
-                    <th>Tarefa</th>
-                    <th>Dificuldade</th>
+                    <th id="task-th1">Task</th>
+                    <th id="task-th2">Difficulty</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>📍 Juntar-se a um evento através da página Discover</td>
-                    <td><span class="diff-baixa">baixa</span></td>
+                    <td id="task-1">📍 Join an event through the Discover page</td>
+                    <td><span class="diff-baixa" id="diff-1">low</span></td>
                   </tr>
                   <tr>
-                    <td>📝 Criar um novo evento na página de Events</td>
-                    <td><span class="diff-media">média</span></td>
+                    <td id="task-2">📝 Create a new event on the Events page</td>
+                    <td><span class="diff-media" id="diff-2">medium</span></td>
                   </tr>
                   <tr>
-                    <td>👥 Remover e reinvitar um membro na página de Event Detail</td>
-                    <td><span class="diff-alta">alta</span></td>
+                    <td id="task-3">👥 Remove and reinvite a member on the Event Detail page</td>
+                    <td><span class="diff-alta" id="diff-3">high</span></td>
                   </tr>
                   <tr>
-                    <td>⌚ Concluir o check-in na aplicação MyApp do smartwatch</td>
-                    <td><span class="diff-media">média</span></td>
+                    <td id="task-4">⌚ Complete check-in on the Smartwatch MyApp</td>
+                    <td><span class="diff-media" id="diff-4">medium</span></td>
                   </tr>
                 </tbody>
-              </table>    
-                  
+              </table>
+            </div>
+            <div class="home-note" id="task-note">
+              💡 Note: The smartwatch is on the left panel. Click "Show Smartwatch" to display the watch interface.
+            </div>
+          </div>
+        </div>
+
+        <!-- === page-lang 页面 === -->
+        <div class="page-section" id="page-lang" style="display:none;">
+          <div class="home-header">
+            <button class="back-home-btn">🔙</button>
+            <span>🌐 Language Settings</span>
+          </div>
+
+          <div class="home-scroll-area">
+            <div class="home-content" style="text-align: center;">
+              <p>Please choose your preferred language:</p>
+              <div class="lang-buttons" style="justify-content: center;">
+                <img src="icons/home/uk.png" class="lang-icon" data-lang="en" title="English">
+                <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
+                <img src="icons/home/cn.png" class="lang-icon" data-lang="zh" title="中文">
+            </div>  
             </div>  
             <div class="home-note">
               💡 Note: Smartwatch is on the left panel. Click "Show Smartwatch" to display the watch interface.
-            </div>                
+              </div>
+            <div class="home-note">
+              💡 Note: Smartwatch is on the left panel. Click "Show Smartwatch" to display the watch interface.
+            </div>
           </div>
         </div>
 
@@ -316,16 +348,16 @@
         <div class="page-section" id="page-discover" style="display: none;">
           <!-- 顶部标题栏 -->
           <div class="discover-header">
-            <span>Discover Events</span>
+            <span id="discover-title">Discover Events</span>
           </div>
         
           <!-- 搜索框区域 -->
           <div class="search-bar">
             <div class="search-wrapper">
               <select id="discover-search-type">
-                <option value="name">🔤 Name</option>
-                <option value="tags">🏷️ Tags</option>
-                <option value="location">📍 Location</option>
+                <option value="name" id="discover-option-name">🔤 Name</option>
+                <option value="tags" id="discover-option-tags">🏷️ Tags</option>
+                <option value="location" id="discover-option-location">📍 Location</option>
               </select>
               <input type="text" id="discover-search-input" placeholder="🔍 Search events">
             </div>
@@ -339,36 +371,63 @@
 
         <!-- === 4. Help 页面 === -->
         <div class="page-section" id="page-help" style="display: none;">
+          <!-- 帮助页面 -->
           <div class="help-section">
             <h3>📌 How to?</h3>
             <ul class="faq-list">
               <li class="faq-item">
-                <div class="faq-question">✅ How to create an event?</div>
-                <div class="faq-answer">Go to the Events page, click the "+" button, fill out the form and press "Create".</div>
+                <div class="faq-question" data-open="false">
+                  <span class="question-text">✅ How to create an event?</span>
+                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                </div>
+                <div class="faq-answer">
+                  Go to the Events page, click the "+" button, fill out the form and press "Create".
+                </div>
               </li>
               <li class="faq-item">
-                <div class="faq-question">✅ How to invite a friend?</div>
-                <div class="faq-answer">Open an event's detail page, click the "Add Member" icon, and fill in their information.</div>
+                <div class="faq-question" data-open="false">
+                  <span class="question-text">✅ How to invite a friend?</span>
+                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                </div>
+                <div class="faq-answer">
+                  Open an event's detail page, click the "Add Member" icon, and fill in their information.
+                </div>
               </li>
               <li class="faq-item">
-                <div class="faq-question">✅ How to remove a member?</div>
-                <div class="faq-answer">Click on a member icon to open their details and press "Remove".</div>
+                <div class="faq-question" data-open="false">
+                  <span class="question-text">✅ How to remove a member?</span>
+                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                </div>
+                <div class="faq-answer">
+                  Click on a member icon to open their details and press "Remove".
+                </div>
               </li>
               <li class="faq-item">
-                <div class="faq-question">✅ How to search an event?</div>
-                <div class="faq-answer">Go to the Discover page and type keywords in the search bar.</div>
+                <div class="faq-question" data-open="false">
+                  <span class="question-text">✅ How to search an event?</span>
+                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                </div>
+                <div class="faq-answer">
+                  Go to the Discover page and type keywords in the search bar.
+                </div>
               </li>
               <li class="faq-item">
-                <div class="faq-question">✅ How to reset the data?</div>
-                <div class="faq-answer">Click the "Reset LocalStorage" button at the top of the phone interface.</div>
+                <div class="faq-question" data-open="false">
+                  <span class="question-text">✅ How to reset the data?</span>
+                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                </div>
+                <div class="faq-answer">
+                  Click the "Reset LocalStorage" button at the top of the phone interface.
+                </div>
               </li>
             </ul>
-          </div>
+          </div>          
         
+          <!-- 作者介绍区 -->
           <div class="help-section">
-            <h3>👤 About the author</h3>
-            <p>If you'd like to know more about this prototype, click the button below:</p>
-            <a href="author-page/author.html" class="author-link">🔗 Go to author page</a>
+            <h3 id="help-about-title">👤 About the author</h3>
+            <p id="help-about-text">If you'd like to know more about this prototype, click the button below:</p>
+            <a href="author-page/author.html" class="author-link" id="help-about-link">🔗 Go to author page</a>
           </div>
         </div>
 
@@ -378,6 +437,7 @@
             <li class="menu-item" onclick="showFeatureAlert()">👤 Personal Info</li>
             <li class="menu-item" onclick="showFeatureAlert()">🧭 GPS Settings</li>
             <li class="menu-item" onclick="showFeatureAlert()">⚙️ Settings</li>
+            <li class="menu-item" onclick="navigateTo('page-lang')">🌐 Language</li>
             <li class="menu-item" onclick="showFeatureAlert()">👥 Friends</li>
             <li class="menu-item" onclick="showFeatureAlert()">⌚ Smartwatch</li>
             <li class="menu-item" onclick="showFeatureAlert()">📢 Announcements</li>
@@ -469,7 +529,12 @@
     </div>
   </div>
   <!-- js部分 -->
-   
+
+  <!-- 语言包 -->
+  <script src="lang/lang-init.js"></script>
+  <script src="lang/lang-data.js"></script>         
+  <script src="lang/lang-handler.js"></script>    
+  <script src="lang/lang-controller.js"></script>  
   <!-- 手机 -->
   <script src="smartphone/js/nav.js"></script>
   <script src="smartphone/js/warn.js"></script>

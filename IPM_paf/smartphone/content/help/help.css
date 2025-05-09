@@ -27,28 +27,27 @@
     position: relative;
   }
   
-  .faq-question::after {
-    content: "▼";
-    position: absolute;
-    right: 0;
-    font-size: 11px;
-    transform: rotate(0deg);
-    transition: transform 0.2s ease;
-  }
-  
-  .faq-item.open .faq-question::after {
-    transform: rotate(180deg);
-  }
-  
   .faq-answer {
     display: none;
     font-size: 13px;
     color: #555;
     padding-left: 12px;
     line-height: 1.5;
-  }
-  
-  .faq-item.open .faq-answer {
+}
+
+.faq-item.open .faq-answer {
     display: block;
-  }
-  
+}
+
+.faq-question::after {
+    content: "▼";
+    position: absolute;
+    right: 0;
+    font-size: 11px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+.faq-item.open .faq-question::after {
+    transform: rotate(180deg);
+}

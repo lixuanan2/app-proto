@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 语言包
+    initLanguage();
+
     const personalIcon = document.getElementById('personal-icon');
     const personalMenu = document.getElementById('personal-menu');
     const watchIcon = document.getElementById('watch-status-icon');

@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => {
         featurePopup.style.display = 'none';
     });
+  
+    function navigateTo(pageId) {
+        document.querySelectorAll('.page-section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(pageId).style.display = 'block';
+    }
+  
 });
   
 
