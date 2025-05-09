@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const listContainer = document.getElementById('discover-list');
     const searchInput = document.getElementById('discover-search-input');
+
+    // ✅ 搜索类型变化后更新 placeholder 和重新渲染列表
+    const typeSelect = document.getElementById('discover-search-type');
+    if (typeSelect) {
+      typeSelect.addEventListener('change', () => {
+        window.updateDiscoverPlaceholder();
+        renderDiscoverList(searchInput.value); // 可选
+      });
+    }
+    
   
     // 读取 myEvents 名单（你已加入的）
     function getMyEvents() {

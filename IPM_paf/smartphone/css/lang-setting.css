@@ -1,0 +1,67 @@
+.lang-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    padding: 20px 10px;
+    margin: 80px auto 40px;
+    width: 90%;
+    max-width: 360px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  
+  .lang-icon-row {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .lang-icon {
+    width: 42px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .lang-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  #lang-hover-message {
+    font-size: 13px;
+    color: #999;
+    height: 18px;
+  }
+  
+  #lang-selected-message {
+    font-size: 15px;
+    font-weight: 600;
+    color: #27ae60;
+    margin-top: 4px;
+  }
+  
+  .pop {
+    animation: popFade 0.6s ease-out;
+  }
+  
+  @keyframes popFade {
+    0%   { transform: scale(1); opacity: 0; }
+    50%  { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  #page-lang .home-content {
+    overflow: hidden;
+  }
+  
+  #page-lang .home-scroll-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+  

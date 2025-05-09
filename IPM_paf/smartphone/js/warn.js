@@ -13,14 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
         featurePopup.style.display = 'none';
     });
   
-    function navigateTo(pageId) {
-        document.querySelectorAll('.page-section').forEach(sec => sec.style.display = 'none');
-        document.getElementById(pageId).style.display = 'block';
-    }
-  
 });
   
+window.navigateTo = function(pageId) {
+    // 隐藏所有页面
+    document.querySelectorAll(".page-section").forEach(p => p.style.display = "none");
 
+    // 显示目标页面
+    const target = document.getElementById(pageId);
+    if (target) target.style.display = "block";
+
+    // ✅ 显式更新标题
+    updateHeaderTexts(currentLang, pageId);
+};
 
 
 

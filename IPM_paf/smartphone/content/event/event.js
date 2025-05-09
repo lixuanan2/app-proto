@@ -47,12 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageEvents = document.getElementById('page-events');
   const pageEventsAdd = document.getElementById('page-events-add');
 
-  if (addBtn) {
-    addBtn.addEventListener('click', () => {
-      pageEvents.style.display = 'none';
-      pageEventsAdd.style.display = 'block';
-    });
-  }
+  addBtn.addEventListener('click', () => {
+    showPage('page-events-add');
+  });  
 
   const stored = localStorage.getItem('myEvents');
   if (!stored || JSON.parse(stored).length === 0) {

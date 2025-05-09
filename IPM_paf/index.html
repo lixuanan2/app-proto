@@ -14,7 +14,8 @@
   <!-- 多页面内容 -->
   <link rel="stylesheet" href="smartphone/content/login/login.css">  <!-- login页面 -->
   <link rel="stylesheet" href="smartphone/content/home-page/home.css">  <!-- home主页面 -->
-  <link rel="stylesheet" href="smartphone/content/content.css"> 
+  <link rel="stylesheet" href="smartphone/css/lang-setting.css">  <!-- lang-setting页面 -->
+  <link rel="stylesheet" href="smartphone/content/content.css">        
   <link rel="stylesheet" href="smartphone/content/event/event.css">    <!-- event主页面 -->
   <link rel="stylesheet" href="smartphone/content/event/new-event/new-event.css">    <!-- event子页面 添加new-event -->
   <link rel="stylesheet" href="smartphone/content/event-detail/detail/detail.css">     <!-- event子页面 details -->
@@ -179,13 +180,10 @@
                 <img src="icons/home/pt.png" class="lang-icon" data-lang="pt" title="Português">
                 <img src="icons/home/cn.png" class="lang-icon" data-lang="zh" title="中文">
             </div>  
-            </div>  
-            <div class="home-note">
-              💡 Note: Smartwatch is on the left panel. Click "Show Smartwatch" to display the watch interface.
-              </div>
-            <div class="home-note">
-              💡 Note: Smartwatch is on the left panel. Click "Show Smartwatch" to display the watch interface.
-            </div>
+            
+            <p id="lang-hover-message"></p>
+            <p id="lang-selected-message"></p>
+          </div>
           </div>
         </div>
 
@@ -546,6 +544,7 @@
   <!-- 内容 -->
   <script src="smartphone/content/login/login.js"></script>
   <script src="smartphone/content/home-page/home.js"></script>
+  <script src="smartphone/js/lang-setting.js"></script>
   <script src="smartphone/content/event/event.js"></script>
   <script src="smartphone/content/event/new-event/new-event.js"></script>
   <script src="smartphone/content/event-detail/detail/detail.js"></script>

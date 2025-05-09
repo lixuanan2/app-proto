@@ -37,10 +37,22 @@
           window.renderDiscoverList();
         }
     
-        // 4. 同步顶部标题
-        document.querySelector('.phone-header h1').textContent =
-          name.charAt(0).toUpperCase() + name.slice(1);
+        // 4. 同步顶部标题（使用语言包）
+        if (window.updateHeaderTexts && typeof window.updateHeaderTexts === 'function') {
+          window.updateHeaderTexts(currentLang, `page-${name}`);
+        }
+
       });
     });
   });
+  
+  // ✅ 显示页面
+  window.showPage = function(pageId) {
+    document.querySelectorAll(".page-section").forEach(p => p.style.display = "none");
+    const target = document.getElementById(pageId);
+    if (target) target.style.display = "block";
+    if (typeof updateHeaderTexts === 'function') {
+      updateHeaderTexts(currentLang, pageId);
+    }
+  };
   

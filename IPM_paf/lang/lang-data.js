@@ -141,6 +141,7 @@ const langData = {
         en: {
           header: "My Events",
           addEventBtn: "Add Event",
+          memberLabel: "members",
           form: {
             title: "Add New Event",
             nameLabel: "Event Name",
@@ -160,6 +161,7 @@ const langData = {
         pt: {
           header: "Meus Eventos",
           addEventBtn: "Adicionar Evento",
+          memberLabel: "membros",
           form: {
             title: "Adicionar Novo Evento",
             nameLabel: "Nome do Evento",
@@ -179,6 +181,7 @@ const langData = {
         zh: {
           header: "我的事件",
           addEventBtn: "添加事件",
+          memberLabel: "成员",
           form: {
             title: "添加新事件",
             nameLabel: "事件名称",
@@ -443,13 +446,18 @@ const langData = {
       zh: ["个人信息", "GPS", "设置"]
     },
 
-    // header 标题
+    // header 和 nav导航栏
     headerTexts: {
       en: {
         pageTitles: {
           "page-login": "Login",
           "page-home": "Home",
-          "page-events": "My Events",
+          "home-intro": "Introduction",
+          "home-tarefa": "Tasks",
+          "page-lang": "Language",
+          "page-events": "Events",
+          "page-events-add": "Add Event",
+          "page-events-detail": "Event Details",
           "page-discover": "Discover",
           "page-help": "Help",
           "page-menu": "Menu"
@@ -462,44 +470,104 @@ const langData = {
         watch: {
           connected: "connected",
           disconnected: "disconnected"
-        }
+        },
+        nav: ["Home", "Events", "Discover", "Help", "Menu"]
       },
       pt: {
         pageTitles: {
           "page-login": "Entrar",
           "page-home": "Início",
-          "page-events": "Meus Eventos",
-          "page-discover": "Explorar",
+          "home-intro": "Introdução",
+          "home-tarefa": "Tarefas",
+          "page-lang": "Idioma",
+          "page-events": "Eventos",
+          "page-events-add": "Adicionar Evento",
+          "page-events-detail": "Detalhes do Evento",
+          "page-discover": "Descobrir",
           "page-help": "Ajuda",
           "page-menu": "Menu"
         },
         menu: {
-          personal: "Perfil",
+          personal: "Dados Pessoais",
           gps: "GPS",
-          settings: "Configurações"
+          settings: "Definições"
         },
         watch: {
           connected: "conectado",
           disconnected: "desconectado"
-        }
+        },
+        nav: ["Início", "Eventos", "Descobrir", "Ajuda", "Menu"]
       },
       zh: {
         pageTitles: {
           "page-login": "登录",
-          "page-home": "首页",
-          "page-events": "我的事件",
+          "page-home": "主页",
+          "home-intro": "简介",
+          "home-tarefa": "任务",
+          "page-lang": "语言",
+          "page-events": "事件",
+          "page-events-add": "添加事件",
+          "page-events-detail": "事件详情",
           "page-discover": "发现",
           "page-help": "帮助",
           "page-menu": "菜单"
         },
         menu: {
           personal: "个人信息",
-          gps: "GPS",
+          gps: "定位设置",
           settings: "设置"
         },
         watch: {
           connected: "已连接",
           disconnected: "未连接"
+        },
+        nav: ["主页", "事件", "发现", "帮助", "菜单"]
+      }
+    },
+
+    
+    // discover 搜索栏
+    discoverPageTexts: {
+      en: {
+        title: "Discover Events",
+        searchType: {
+          name: "🔤 Name",
+          tags: "🏷️ Tags",
+          location: "📍 Location"
+        },
+        searchPlaceholder: "🔍 Search events",
+        placeholderMap: {
+          name: "Search by name...",
+          tags: "Search by tags...",
+          location: "Search by location..."
+        }
+      },
+      pt: {
+        title: "Descobrir Eventos",
+        searchType: {
+          name: "🔤 Nome",
+          tags: "🏷️ Etiquetas",
+          location: "📍 Localização"
+        },
+        searchPlaceholder: "🔍 Procurar eventos",
+        placeholderMap: {
+          name: "Pesquisar por nome...",
+          tags: "Pesquisar por etiquetas...",
+          location: "Pesquisar por localização..."
+        }
+      },
+      zh: {
+        title: "发现活动",
+        searchType: {
+          name: "🔤 名称",
+          tags: "🏷️ 标签",
+          location: "📍 地点"
+        },
+        searchPlaceholder: "🔍 搜索活动",
+        placeholderMap: {
+          name: "按名称搜索...",
+          tags: "按标签搜索...",
+          location: "按地点搜索..."
         }
       }
     }

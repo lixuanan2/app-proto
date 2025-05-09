@@ -325,25 +325,18 @@ function updateMenuTexts(lang) {
     });
   }
   
-// personalMenu 下拉窗口更新
-
-
 
 // header 标题更新
-function updateHeaderTexts(lang) {
+window.updateHeaderTexts = function(lang, currentPageId) {
     const t = langData.headerTexts?.[lang];
     if (!t) return;
   
-    // 页面顶部标题（如 Login, Home...）视情况更新
     const headerTitle = document.querySelector(".phone-header h1");
-    if (headerTitle) {
-      const currentPage = document.querySelector(".page-section:not([style*='display: none'])")?.id;
-      if (currentPage && t.pageTitles[currentPage]) {
-        headerTitle.innerText = t.pageTitles[currentPage];
-      }
+    if (headerTitle && t.pageTitles[currentPageId]) {
+      headerTitle.innerText = t.pageTitles[currentPageId];
     }
   
-    // 下拉菜单
+    // 下拉菜单（注意你用的是 menu-personal2 等）
     const menuPersonal = document.getElementById("menu-personal2");
     if (menuPersonal) menuPersonal.innerText = t.menu.personal;
   
@@ -353,11 +346,54 @@ function updateHeaderTexts(lang) {
     const menuSettings = document.getElementById("menu-settings2");
     if (menuSettings) menuSettings.innerText = t.menu.settings;
   
-    // 手表提示
+    // 手表状态提示
     const watchIcon = document.getElementById("watch-status-icon");
     if (watchIcon) {
       const isConnected = watchIcon.classList.contains("active");
       watchIcon.title = isConnected ? t.watch.connected : t.watch.disconnected;
     }
+  }
+  
+
+
+// 底部导航栏更新
+function updateNavTexts(lang) {
+    const navArray = langData.headerTexts?.[lang]?.nav || langData.headerTexts?.en?.nav;
+    if (!navArray) return;
+  
+    const navItems = document.querySelectorAll('.bottom-nav .nav-item');
+    navItems.forEach((item, index) => {
+      const span = item.querySelector('span');
+      if (span && navArray[index]) {
+        span.innerText = navArray[index];
+      }
+    });
+  }
+  
+  // discover 搜索栏更新
+  window.updateDiscoverTexts = function() {
+    const t = langData.discoverPageTexts[currentLang];
+    if (!t) return;
+  
+    const discoverTitle = document.getElementById("discover-title");
+    if (discoverTitle) discoverTitle.innerText = t.title;
+  
+    const searchType = document.getElementById("discover-search-type");
+    if (searchType) {
+      searchType.options[0].text = t.searchType.name;
+      searchType.options[1].text = t.searchType.tags;
+      searchType.options[2].text = t.searchType.location;
+    }
+  
+    updateDiscoverPlaceholder(); // ✅ 新加：更新 placeholder
+  }
+
+  window.updateDiscoverPlaceholder = function() {
+    const type = document.getElementById('discover-search-type')?.value || 'name';
+    const t = langData.discoverPageTexts?.[currentLang] || langData.discoverPageTexts.en;
+    const placeholderMap = t.placeholderMap || {};
+    const placeholder = placeholderMap[type] || t.searchPlaceholder;
+    const input = document.getElementById('discover-search-input');
+    if (input) input.placeholder = `🔍 ${placeholder}`;
   }
   
