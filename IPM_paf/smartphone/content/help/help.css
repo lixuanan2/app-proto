@@ -1,6 +1,6 @@
 .help-section {
-    padding: 0 20px; 
     margin-bottom: 0px;
+    padding: 0 10px;
   }
 
   .help-section p{
@@ -10,8 +10,11 @@
   
   .faq-list {
     list-style: none;
-    padding-left: 0;
+    padding-left: 5px;
     margin: 12px 0 0 0;
+    max-height: 420px;           /* ← 保持高度 */
+    overflow-y: auto;            /* ← 启用垂直滚动 */
+    box-sizing: content-box;     /* ← 避免滚动条挤压内容 */
   }
   
   .faq-item {
@@ -20,7 +23,7 @@
   }
   
   .faq-question {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     color: #333;
     padding: 8px 0;
@@ -31,7 +34,6 @@
     display: none;
     font-size: 13px;
     color: #555;
-    padding-left: 12px;
     line-height: 1.5;
 }
 
@@ -50,4 +52,36 @@
 
 .faq-item.open .faq-question::after {
     transform: rotate(180deg);
+}
+
+.page-section#page-help .faq-list {
+  max-height: 420px;
+  overflow-y: scroll;
+  scrollbar-width: none;     /* Firefox 隐藏 */
+  -ms-overflow-style: none;  /* IE/Edge 隐藏 */
+  overflow-x: hidden;
+  box-sizing: content-box;     /* ← 避免滚动条挤压内容 */
+}
+
+.page-section#page-help .help-about-text {
+    max-height: 100px;
+}
+
+#page-help .help-section:first-of-type h3 {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #f7f9fc;
+  padding: 12px 20px;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#page-help .help-section:last-of-type h3 {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #f7f9fc;
+  padding: 12px 20px;
+  margin: 0;
 }

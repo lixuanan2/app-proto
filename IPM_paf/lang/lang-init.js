@@ -2,6 +2,8 @@ function initLanguage() {
     const defaultLang = langData.defaultLang || 'en'; // 获取默认语言
     setLang(defaultLang); // 设置默认语言
 
+    updateHelpPage(defaultLang);
+
     // 确保语言图标存在并为每个语言图标绑定点击事件
     const langIcons = document.querySelectorAll(".lang-icon");
     

@@ -1,3 +1,15 @@
+// home 主页更新
+function updateHomeTexts(lang) {
+    const t = langData.homeTexts?.[lang] || langData.homeTexts.en;
+    if (!t) return;
+  
+    document.querySelector('#page-home .home-header span').innerText = t.title;
+    document.querySelector("div.home-card[data-target='home-intro']").innerText = t.intro;
+    document.querySelector("div.home-card[data-target='home-tarefa']").innerText = t.tasks;
+    document.querySelector("div.home-card[data-target='page-lang']").innerText = t.lang;
+  }
+  
+
 // 登录页更新
 function updateLoginTexts() {
     const t = langData.loginTexts[currentLang]; // 使用 currentLang
@@ -296,3 +308,56 @@ function updateHelpPage(lang) {
         }
     }
 }
+
+// menu 页面更新
+function updateMenuTexts(lang) {
+    const t = langData.menuTexts?.[lang] || langData.menuTexts.en;
+    if (!t) return;
+  
+    const ids = [
+      "menu-personal", "menu-gps", "menu-settings", "menu-lang",
+      "menu-friends", "menu-watch", "menu-announcements", "menu-storage",
+      "menu-history", "menu-more", "menu-about", "menu-logout"
+    ];
+    ids.forEach((id, index) => {
+      const el = document.getElementById(id);
+      if (el) el.innerText = t.items[index];
+    });
+  }
+  
+// personalMenu 下拉窗口更新
+
+
+
+// header 标题更新
+function updateHeaderTexts(lang) {
+    const t = langData.headerTexts?.[lang];
+    if (!t) return;
+  
+    // 页面顶部标题（如 Login, Home...）视情况更新
+    const headerTitle = document.querySelector(".phone-header h1");
+    if (headerTitle) {
+      const currentPage = document.querySelector(".page-section:not([style*='display: none'])")?.id;
+      if (currentPage && t.pageTitles[currentPage]) {
+        headerTitle.innerText = t.pageTitles[currentPage];
+      }
+    }
+  
+    // 下拉菜单
+    const menuPersonal = document.getElementById("menu-personal2");
+    if (menuPersonal) menuPersonal.innerText = t.menu.personal;
+  
+    const menuGps = document.getElementById("menu-gps2");
+    if (menuGps) menuGps.innerText = t.menu.gps;
+  
+    const menuSettings = document.getElementById("menu-settings2");
+    if (menuSettings) menuSettings.innerText = t.menu.settings;
+  
+    // 手表提示
+    const watchIcon = document.getElementById("watch-status-icon");
+    if (watchIcon) {
+      const isConnected = watchIcon.classList.contains("active");
+      watchIcon.title = isConnected ? t.watch.connected : t.watch.disconnected;
+    }
+  }
+  

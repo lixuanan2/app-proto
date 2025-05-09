@@ -14,6 +14,7 @@ function setLang(lang) {
     currentLang = lang;  // 更新当前语言
 
     // 更新各个页面内容
+    updateHomeTexts(currentLang);
     updateLoginTexts();
     updateIntroTexts();
     updateTaskTexts();
@@ -21,9 +22,9 @@ function setLang(lang) {
     updateEventsTexts();
     updateEventDetailTexts();
     updateDiscoverTexts();
-
-    // 更新 help 页面
-    updateHelpPage(lang);
+    updateHelpPage(lang); 
+    updateMenuTexts(currentLang);
+    updateHeaderTexts(currentLang);
 }
 
 // 按钮绑定

@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-height: 600px;   /* 如果内容超出，可滚动 */
+    max-height: 540px;   /* 如果内容超出，可滚动 */
     overflow-y: auto;
   }
   

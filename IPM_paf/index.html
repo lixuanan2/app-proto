@@ -52,16 +52,16 @@
           </div>
         </div>
           <!-- 页面内容 -->
-        <div class="phone-header">
-          <img src="icons/header/personal.png" alt="personal" class="header-icon left" id="personal-icon">
-          <div class="dropdown-menu" id="personal-menu" style="display: none;">
-            <div class="dropdown-item" id="menu-personal">Personal Info</div>
-            <div class="dropdown-item" id="menu-gps">GPS</div>
-            <div class="dropdown-item" id="menu-settings">Settings</div>
-          </div>        
-          <h1>Login</h1>
-          <img src="icons/header/watch-green.png" alt="watch status" class="header-icon right" id="watch-status-icon" title="connected">
-        </div>
+          <div class="phone-header">
+            <img src="icons/header/personal.png" alt="personal" class="header-icon left" id="personal-icon">
+            <div class="dropdown-menu" id="personal-menu" style="display: none;">
+              <div class="dropdown-item" id="menu-personal2">Personal Info</div>
+              <div class="dropdown-item" id="menu-gps2">GPS</div>
+              <div class="dropdown-item" id="menu-settings2">Settings</div>
+            </div>        
+            <h1 id="header-title">Login</h1> <!-- ← 增加 ID, 支持多语言切换 -->
+            <img src="icons/header/watch-green.png" alt="watch status" class="header-icon right" id="watch-status-icon" title="connected">
+          </div>
         <hr>
         <!-- ======= 📄 页面内容区域 ======= -->
          <!-- === 0.登录页面 === -->
@@ -268,13 +268,14 @@
               <h2>Event Details</h2>
             </div>
         
+            <!-- (内容由语言包填充) -->
             <div class="event-detail-info">
-              <p><strong>🎉 Event:</strong> <span id="detail-name">...</span></p>
-              <p><strong>📅 Date:</strong> <span id="detail-date">...</span></p>
-              <p><strong>📍 Location:</strong> <span id="detail-location">...</span></p>
-              <p><strong>🏷️ Type:</strong> <span id="detail-type">...</span></p>
-              <p><strong>📌 Tags:</strong> <span id="detail-tags">...</span></p>
-            </div>
+              <p><strong id="label-name"></strong> <span id="detail-name">...</span></p>
+              <p><strong id="label-date"></strong> <span id="detail-date">...</span></p>
+              <p><strong id="label-location"></strong> <span id="detail-location">...</span></p>
+              <p><strong id="label-type"></strong> <span id="detail-type">...</span></p>
+              <p><strong id="label-tags"></strong> <span id="detail-tags">...</span></p>
+            </div>            
         
             <hr>
         
@@ -378,7 +379,7 @@
               <li class="faq-item">
                 <div class="faq-question" data-open="false">
                   <span class="question-text">✅ How to create an event?</span>
-                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                  <!--<span class="arrow-icon">▼</span> -->
                 </div>
                 <div class="faq-answer">
                   Go to the Events page, click the "+" button, fill out the form and press "Create".
@@ -387,7 +388,7 @@
               <li class="faq-item">
                 <div class="faq-question" data-open="false">
                   <span class="question-text">✅ How to invite a friend?</span>
-                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                  <!--<span class="arrow-icon">▼</span> -->
                 </div>
                 <div class="faq-answer">
                   Open an event's detail page, click the "Add Member" icon, and fill in their information.
@@ -396,7 +397,7 @@
               <li class="faq-item">
                 <div class="faq-question" data-open="false">
                   <span class="question-text">✅ How to remove a member?</span>
-                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                  <!--<span class="arrow-icon">▼</span> -->
                 </div>
                 <div class="faq-answer">
                   Click on a member icon to open their details and press "Remove".
@@ -405,7 +406,7 @@
               <li class="faq-item">
                 <div class="faq-question" data-open="false">
                   <span class="question-text">✅ How to search an event?</span>
-                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                  <!--<span class="arrow-icon">▼</span> -->
                 </div>
                 <div class="faq-answer">
                   Go to the Discover page and type keywords in the search bar.
@@ -414,7 +415,7 @@
               <li class="faq-item">
                 <div class="faq-question" data-open="false">
                   <span class="question-text">✅ How to reset the data?</span>
-                  <span class="arrow-icon">▼</span> <!-- 小箭头 -->
+                  <!--<span class="arrow-icon">▼</span> -->
                 </div>
                 <div class="faq-answer">
                   Click the "Reset LocalStorage" button at the top of the phone interface.
@@ -434,18 +435,18 @@
         <!-- === 5. Menu 页面 === -->
         <div class="page-section" id="page-menu" style="display: none;">
           <ul class="menu-list">
-            <li class="menu-item" onclick="showFeatureAlert()">👤 Personal Info</li>
-            <li class="menu-item" onclick="showFeatureAlert()">🧭 GPS Settings</li>
-            <li class="menu-item" onclick="showFeatureAlert()">⚙️ Settings</li>
-            <li class="menu-item" onclick="navigateTo('page-lang')">🌐 Language</li>
-            <li class="menu-item" onclick="showFeatureAlert()">👥 Friends</li>
-            <li class="menu-item" onclick="showFeatureAlert()">⌚ Smartwatch</li>
-            <li class="menu-item" onclick="showFeatureAlert()">📢 Announcements</li>
-            <li class="menu-item" onclick="showFeatureAlert()">📦 Storage</li>
-            <li class="menu-item" onclick="showFeatureAlert()">🕓 History</li>
-            <li class="menu-item" onclick="showFeatureAlert()">🧩 More Features</li>
-            <li class="menu-item" onclick="showFeatureAlert()">❓ About</li>
-            <li class="menu-item" onclick="showFeatureAlert()">🚪 Log Out</li>
+            <li class="menu-item" id="menu-personal" onclick="showFeatureAlert()">👤 Personal Info</li>
+            <li class="menu-item" id="menu-gps" onclick="showFeatureAlert()">🧭 GPS Settings</li>
+            <li class="menu-item" id="menu-settings" onclick="showFeatureAlert()">⚙️ Settings</li>
+            <li class="menu-item" id="menu-lang" onclick="navigateTo('page-lang')">🌐 Language</li>
+            <li class="menu-item" id="menu-friends" onclick="showFeatureAlert()">👥 Friends</li>
+            <li class="menu-item" id="menu-watch" onclick="showFeatureAlert()">⌚ Smartwatch</li>
+            <li class="menu-item" id="menu-announcements" onclick="showFeatureAlert()">📢 Announcements</li>
+            <li class="menu-item" id="menu-storage" onclick="showFeatureAlert()">📦 Storage</li>
+            <li class="menu-item" id="menu-history" onclick="showFeatureAlert()">🕓 History</li>
+            <li class="menu-item" id="menu-more" onclick="showFeatureAlert()">🧩 More Features</li>
+            <li class="menu-item" id="menu-about" onclick="showFeatureAlert()">❓ About</li>
+            <li class="menu-item" id="menu-logout" onclick="showFeatureAlert()">🚪 Log Out</li>
           </ul>
         </div>
         <!-- ======= 页面区域 END ======= -->
@@ -454,25 +455,25 @@
         <div class="bottom-nav">
           <div class="nav-item" data-name="home">
             <img src="icons/nav/home.png" alt="home" class="nav-icon">
-            <span>Home</span>
+            <span id="nav-home">Home</span>
           </div>
           <div class="nav-item" data-name="events">
             <img src="icons/nav/events.png" alt="events" class="nav-icon">
-            <span>Events</span>
+            <span id="nav-events">Events</span>
           </div>
           <div class="nav-item" data-name="discover">
             <img src="icons/nav/discover.png" alt="discover" class="nav-icon">
-            <span>Discover</span>
+            <span id="nav-discover">Discover</span>
           </div>
           <div class="nav-item" data-name="help">
             <img src="icons/nav/help.png" alt="help" class="nav-icon">
-            <span>Help</span>
+            <span id="nav-help">Help</span>
           </div>
           <div class="nav-item" data-name="menu">
             <img src="icons/nav/menu.png" alt="menu" class="nav-icon">
-            <span>Menu</span>
+            <span id="nav-menu">Menu</span>
           </div>
-        </div>      
+        </div>           
         <!-- nav END -->
       </div>
       <!-- phone-screen END -->

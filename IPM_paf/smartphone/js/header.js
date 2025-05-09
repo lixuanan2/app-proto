@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     watchIcon.title = isConnected ? 'connected' : 'desconnected';
     });
 
-    document.getElementById('menu-personal').addEventListener('click', showFeatureAlert);
-    document.getElementById('menu-gps').addEventListener('click', showFeatureAlert);
-    document.getElementById('menu-settings').addEventListener('click', showFeatureAlert);
+    document.getElementById('menu-personal2').addEventListener('click', showFeatureAlert);
+    document.getElementById('menu-gps2').addEventListener('click', showFeatureAlert);
+    document.getElementById('menu-settings2').addEventListener('click', showFeatureAlert);
 });
 
   

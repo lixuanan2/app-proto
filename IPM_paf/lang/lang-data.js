@@ -1,6 +1,29 @@
 const langData = {
     defaultLang: 'en',
 
+    // home 主页
+    homeTexts: {
+      en: {
+        title: "📖 Home",
+        intro: "📖 Introduction",
+        tasks: "📝 Tasks",
+        lang: "🌐 Language"
+      },
+      pt: {
+        title: "📖 Início",
+        intro: "📖 Introdução",
+        tasks: "📝 Tarefas",
+        lang: "🌐 Idioma"
+      },
+      zh: {
+        title: "📖 首页",
+        intro: "📖 介绍",
+        tasks: "📝 任务",
+        lang: "🌐 语言"
+      }
+    },
+    
+
     // 登录页面
     loginTexts: {
         en: {
@@ -384,9 +407,103 @@ const langData = {
         aboutTitle: "👤 关于作者",
         aboutText: "如果你想了解更多，请点击下方按钮：",
         aboutLink: "🔗 前往作者页面"
+      }
+    },
+
+    // menu 页面
+    menuTexts: {
+      en: {
+        items: [
+          "👤 Personal Info", "🧭 GPS Settings", "⚙️ Settings", "🌐 Language",
+          "👥 Friends", "⌚ Smartwatch", "📢 Announcements", "📦 Storage",
+          "🕓 History", "🧩 More Features", "❓ About", "🚪 Log Out"
+        ]
+      },
+      pt: {
+        items: [
+          "👤 Informações Pessoais", "🧭 Configurações de GPS", "⚙️ Definições", "🌐 Idioma",
+          "👥 Amigos", "⌚ Smartwatch", "📢 Avisos", "📦 Armazenamento",
+          "🕓 Histórico", "🧩 Mais Funcionalidades", "❓ Sobre", "🚪 Sair"
+        ]
+      },
+      zh: {
+        items: [
+          "👤 个人信息", "🧭 GPS设置", "⚙️ 设置", "🌐 语言",
+          "👥 好友", "⌚ 智能手表", "📢 公告", "📦 存储空间",
+          "🕓 历史记录", "🧩 更多功能", "❓ 关于", "🚪 登出"
+        ]
+      }
+    },
+    
+
+    // personalMenu 下拉窗口
+    personalMenuTexts: {
+      en: ["Personal Info", "GPS", "Settings"],
+      pt: ["Informações Pessoais", "GPS", "Definições"],
+      zh: ["个人信息", "GPS", "设置"]
+    },
+
+    // header 标题
+    headerTexts: {
+      en: {
+        pageTitles: {
+          "page-login": "Login",
+          "page-home": "Home",
+          "page-events": "My Events",
+          "page-discover": "Discover",
+          "page-help": "Help",
+          "page-menu": "Menu"
+        },
+        menu: {
+          personal: "Personal Info",
+          gps: "GPS",
+          settings: "Settings"
+        },
+        watch: {
+          connected: "connected",
+          disconnected: "disconnected"
+        }
+      },
+      pt: {
+        pageTitles: {
+          "page-login": "Entrar",
+          "page-home": "Início",
+          "page-events": "Meus Eventos",
+          "page-discover": "Explorar",
+          "page-help": "Ajuda",
+          "page-menu": "Menu"
+        },
+        menu: {
+          personal: "Perfil",
+          gps: "GPS",
+          settings: "Configurações"
+        },
+        watch: {
+          connected: "conectado",
+          disconnected: "desconectado"
+        }
+      },
+      zh: {
+        pageTitles: {
+          "page-login": "登录",
+          "page-home": "首页",
+          "page-events": "我的事件",
+          "page-discover": "发现",
+          "page-help": "帮助",
+          "page-menu": "菜单"
+        },
+        menu: {
+          personal: "个人信息",
+          gps: "GPS",
+          settings: "设置"
+        },
+        watch: {
+          connected: "已连接",
+          disconnected: "未连接"
+        }
+      }
     }
-    }
-      
+    
       
 };
   
