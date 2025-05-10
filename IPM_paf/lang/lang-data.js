@@ -4,19 +4,19 @@ const langData = {
     // home 主页
     homeTexts: {
       en: {
-        title: "📖 Home",
+        title: "🏠 Home",
         intro: "📖 Introduction",
         tasks: "📝 Tasks",
         lang: "🌐 Language"
       },
       pt: {
-        title: "📖 Início",
+        title: "🏠 Início",
         intro: "📖 Introdução",
         tasks: "📝 Tarefas",
         lang: "🌐 Idioma"
       },
       zh: {
-        title: "📖 首页",
+        title: "🏠 首页",
         intro: "📖 介绍",
         tasks: "📝 任务",
         lang: "🌐 语言"
@@ -139,7 +139,7 @@ const langData = {
     // events 页面
     eventsPageTexts : {
         en: {
-          header: "My Events",
+          header: "🎫 My Events",
           addEventBtn: "Add Event",
           memberLabel: "members",
           form: {
@@ -159,7 +159,7 @@ const langData = {
           }
         },
         pt: {
-          header: "Meus Eventos",
+          header: "🎫 Meus Eventos",
           addEventBtn: "Adicionar Evento",
           memberLabel: "membros",
           form: {
@@ -179,7 +179,7 @@ const langData = {
           }
         },
         zh: {
-          header: "我的事件",
+          header: "🎫 我的事件",
           addEventBtn: "添加事件",
           memberLabel: "成员",
           form: {
@@ -529,7 +529,7 @@ const langData = {
     // discover 搜索栏
     discoverPageTexts: {
       en: {
-        title: "Discover Events",
+        title: "🧭Discover Events",
         searchType: {
           name: "🔤 Name",
           tags: "🏷️ Tags",
@@ -543,7 +543,7 @@ const langData = {
         }
       },
       pt: {
-        title: "Descobrir Eventos",
+        title: "🧭 Descobrir Eventos",
         searchType: {
           name: "🔤 Nome",
           tags: "🏷️ Etiquetas",
@@ -557,7 +557,7 @@ const langData = {
         }
       },
       zh: {
-        title: "发现活动",
+        title: "🧭 发现活动",
         searchType: {
           name: "🔤 名称",
           tags: "🏷️ 标签",

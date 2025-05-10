@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const msgBox = document.getElementById('lang-selected-message');
     const map = {
       en: "🎉 You selected English. Welcome!",
-      pt: "🎉 Selecionou o Português. Bem-vindo(a)!",
+      pt: "🎉 Selecionou o Português. Bem-vindo!",
       zh: "🎉 您已选择中文，欢迎使用本App！"
     };
     msgBox.innerText = map[lang] || "";
