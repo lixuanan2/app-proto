@@ -45,4 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Please enter username and password!');
     }
   });
+
+  // 忽略功能的按钮，提示原型信息
+  document.querySelectorAll('#page-login .login-helper a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      alert("🛠️ This is just a simple prototype.\nFeel free to input any username and password. Enjoy!");
+    });
+  });
+  
+
 });

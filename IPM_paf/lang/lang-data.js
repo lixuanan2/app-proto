@@ -240,36 +240,6 @@ const langData = {
         }
       },
 
-    // discover 页面
-    discoverPageTexts: {
-        en: {
-        title: "Discover Events",
-        searchType: {
-            name: "🔤 Name",
-            tags: "🏷️ Tags",
-            location: "📍 Location"
-        },
-        searchPlaceholder: "🔍 Search events"
-        },
-        pt: {
-        title: "Descobrir Eventos",
-        searchType: {
-            name: "🔤 Nome",
-            tags: "🏷️ Etiquetas",
-            location: "📍 Localização"
-        },
-        searchPlaceholder: "🔍 Procurar eventos"
-        },
-        zh: {
-        title: "发现活动",
-        searchType: {
-            name: "🔤 名称",
-            tags: "🏷️ 标签",
-            location: "📍 地点"
-        },
-        searchPlaceholder: "🔍 搜索活动"
-        }
-    },
   
     // memberPopup 页面
     memberPopupTexts: {
@@ -529,7 +499,7 @@ const langData = {
     // discover 搜索栏
     discoverPageTexts: {
       en: {
-        title: "🧭Discover Events",
+        title: "🧭 Discover Events",
         searchType: {
           name: "🔤 Name",
           tags: "🏷️ Tags",

@@ -8,8 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const gender = document.getElementById('member-gender').value;
     const phone = document.getElementById('member-phone').value.trim();
 
+    // 🚫 名字和性别不能为空
     if (!name || !gender) {
       alert("⚠️ Name and Gender are required.");
+      return;
+    }
+
+    // 🚫 名字中不能包含数字
+    if (/\d/.test(name)) {
+      alert("⚠️ Name cannot contain numbers.");
+      return;
+    }
+
+    // 🚫 电话中不能包含字母
+    if (/[a-zA-Z]/.test(phone)) {
+      alert("⚠️ Phone number cannot contain letters.");
       return;
     }
 
@@ -40,6 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('member-gender').value = '';
     document.getElementById('member-phone').value = '';
     popup.style.display = 'none';
+
+    // ✅ 添加提示信息
+    const toast = document.createElement('div');
+    toast.className = 'simple-toast';
+    toast.textContent = '✅ Member added!';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1500);
   });
 
 

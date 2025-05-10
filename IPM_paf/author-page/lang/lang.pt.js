@@ -24,6 +24,7 @@ window.langPT = {
         Versão atual: <strong>v1.0.0</strong>.</p>
 
         <hr>
+        
         <p>Com base no feedback do professor, fiz algumas melhorias e ajustes funcionais no protótipo nesta nova versão. Para documentar essas alterações, criei um novo módulo chamado “📣 Feedback” nesta página do autor, onde organizo os comentários recebidos, as soluções aplicadas e os planos futuros.</p>
         <p>Além disso, como na próxima aula os colegas irão avaliar o protótipo com base em heurísticas, os resultados também serão incluídos nesse módulo.</p>
         <p>O código-fonte permanece estruturalmente inalterado (pelo menos que eu me lembre... estou meio confuso 😵‍💫). As secções “🚀 Melhorias Futuras” e “⚠️ Limitações” também serão atualizadas com mais conteúdo e reflexões.</p>
@@ -38,6 +39,21 @@ window.langPT = {
         </ul>
         <p>Esta atualização envolveu uma carga de trabalho relativamente pequena, focando principalmente na melhoria da experiência básica do utilizador e da documentação.</p>
         <p><strong>Versão atual: v1.0.2.</strong></p>
+
+        <hr>
+
+        <p>Após receber o feedback dos colegas, desenvolvi a versão <strong>v1.0.3</strong> deste protótipo.</p>
+        <p>Esta atualização responde principalmente aos pontos levantados na avaliação heurística, incluindo problemas de consistência linguística, ausência de feedback em certas interações, falta de validação em campos de entrada e uma lógica confusa na interface do smartwatch. Com base nesses comentários, criei um esboço de pacote de idiomas, adicionei alguns avisos de feedback, melhorei a aparência visual via CSS e implementei algumas validações básicas, além de revisar o funcionamento do smartwatch.</p>
+        <p>Para ser honesto, não estou totalmente satisfeito com esta versão.</p>
+        <p>Em primeiro lugar, algumas sugestões dos colegas eram realmente boas, mas difíceis de implementar com a estrutura atual (que é baseada apenas em front-end e LocalStorage). Seriam necessárias reestruturações profundas para aplicar tudo.</p>
+        <p>Em segundo lugar, minha versão anterior era muito mais caprichada. Agora, por conta da pressa com prazos e funcionalidades obrigatórias, não tive tempo de cuidar dos detalhes. Isso acabou prejudicando um pouco a experiência final.</p>
+        <p>Além disso, o professor pediu que fossem incluídas mais três tarefas novas, que preciso implementar na próxima versão.</p>
+        <p>Sendo sincero: tenho outros projetos mais urgentes e relevantes em paralelo, e meu tempo e energia estão muito limitados neste momento.</p>
+        <p>Por isso, decidi não focar mais na “arte” deste protótipo. A partir de agora, o objetivo será apenas entregar a funcionalidade e garantir que o trabalho cumpra o necessário. Uma pequena concessão, digamos assim…</p>
+        <p><strong>Talvez eu tenha perdido a essência do projeto. Peço desculpa por isso.</strong></p>
+        <p>Enfim, agora vou trabalhar nas novas tarefas. A gente se vê na próxima versão.</p>
+        <p><strong>Versão atual: v1.0.3</strong></p>
+
       `,
       structure: `
       <h2>📂 Estrutura do Código</h2>
@@ -123,6 +139,30 @@ window.langPT = {
         </ul>
         <p>Esta atualização corrige principalmente a ausência de entrada de login e problemas de orientação identificados na versão v1.0.1, melhorando ainda mais a experiência do utilizador e os detalhes da interface.</p>
         <p>Versão atual: <strong>v1.0.2</strong>.</p>
+
+        <hr>
+
+        <h2>📣 Feedback dos colegas · v1.0.2 -> v1.0.3</h2>
+        <p>Esta atualização incremental baseia-se principalmente na atividade de Avaliação Heurística realizada em sala de aula. Com base no feedback dos colegas, foram feitas melhorias e ajustes no protótipo em termos de interações, validação de entrada e visibilidade do estado do sistema.</p>
+
+        <ul>
+          <li>🌐 Estrutura inicial do pacote de idiomas implementada, com suporte a três idiomas: chinês, inglês e português. Botões, títulos e placeholders agora estão sincronizados.</li>
+          <li>🧑‍💻 Restrições adicionadas em vários campos de entrada (ex.: nomes não podem conter apenas números; telefones não podem conter letras).</li>
+          <li>🎨 Adição de notificações tipo "toast" e animações em ações como adicionar membros ou efetuar check-in, aumentando a visibilidade do estado.</li>
+          <li>⛔ Controle de permissões melhorado: apenas o criador do evento pode remover membros.</li>
+          <li>⌚ Lógica do Smartwatch otimizada, com melhorias visuais e de usabilidade no processo de check-in.</li>
+        </ul>
+
+        <p>Algumas sugestões dos colegas são válidas, mas não foram implementadas neste momento devido à complexidade técnica, como a sincronização entre páginas Discover e Event Detail, ou a troca dinâmica de eventos no Smartwatch.</p>
+
+        <p>📄 Para mais detalhes sobre o feedback e as correções aplicadas, consulte os seguintes documentos (bilingues):</p>
+        <ul>
+          <li><a href="pdfs/同学评估/启发式评估.pdf" target="_blank">📘 Versão em chinês: Avaliação heurística</a></li>
+          <li><a href="pdfs/同学评估/AV.pdf" target="_blank">📗 Versão em português: Avaliação heurística</a></li>
+        </ul>
+
+        <p>Para mais detalhes técnicos e decisões de projeto, consulte as seções “Introdução do Autor” e “Pontos a Melhorar”.</p>
+        <p>Versão atual: <strong>v1.0.3</strong>.</p>
       `
   };
   

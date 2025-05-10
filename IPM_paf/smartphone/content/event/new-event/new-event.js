@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const tagList = document.getElementById('tag-list');
     const addTagBtn = document.getElementById('add-tag-btn');
     const removeTagBtn = document.getElementById('remove-tag-btn');
+
+    // 限制只能选择今天及以后的日期
+    const today = new Date().toISOString().split("T")[0]; // 格式为 yyyy-mm-dd
+
+    // 限制只能选择今天及以后的日期
+    const eventDateInput = document.getElementById('event-date-new');
+    if (eventDateInput) {
+      eventDateInput.setAttribute("min", today);
+    }
   
     let tags = [];
   
@@ -49,6 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("⚠️ Please fill in both Event Name and Date.");
             return;
         }
+      
+        // 限制不能只输入数字
+        if (/^\d+$/.test(name)) {
+          alert("⚠️ Event name cannot be only numbers.");
+          return;
+        }        
+
+        // 限制只能选择今天及以后的日期
+        if (date < today) {
+          alert("⚠️ Event date cannot be in the past.");
+          return;
+        }
+
 
         const newEvent = {
           name,

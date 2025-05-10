@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const eventText = document.getElementById('watch-event-text');
 
   let gpsActivated = false;
+  let hasCheckedIn = false;
 
   // 👉 点击 MyApp → 进入 check-in 页面
   document.getElementById('watch-myapp').addEventListener('click', () => {
@@ -23,14 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('watch-checkin').style.display = 'block';
     eventText.innerHTML = '🏷️ Party Sunset';
     header.style.display = 'flex';
-
-    gpsIcon.src = 'icons/smartwatch/gps.png';
-    gpsIcon.style.display = 'block';
-    gpsIcon.classList.add('blink'); // ✅ 加入闪烁
-    arrowIcon.style.display = 'none';
-
+  
     gpsActivated = false;
-  });
+  
+    const msg = document.getElementById('checkin-message');
+  
+    if (hasCheckedIn) {
+      // ✅ 已签到：直接显示“你已签到”状态
+      msg.innerHTML = '✅ You already checked in!';
+      msg.style.textAlign = 'center';
+      document.getElementById('checkin-row').style.display = 'flex';
+      document.getElementById('watch-event-text').style.display = 'none';
+      gpsIcon.style.display = 'none';
+      arrowIcon.style.display = 'none';
+      header.style.display = 'none';
+    } else {
+      // ✅ 未签到：初始化为 GPS 状态
+      gpsIcon.src = 'icons/smartwatch/gps.png';
+      gpsIcon.style.display = 'block';
+      gpsIcon.classList.add('blink');
+      document.getElementById('checkin-row').style.display = 'none';
+      document.getElementById('watch-event-text').style.display = 'block';
+      arrowIcon.style.display = 'none';
+      header.style.display = 'flex';
+    }
+  });  
 
   // 👉 点击 GPS 图标 → 激活 Check-in
   gpsIcon.addEventListener('click', () => {
@@ -51,15 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Please activate GPS first!');
       return;
     }
-
+  
+    hasCheckedIn = true; // ✅ 记录状态
+  
+    // ✅ 显示签到成功文本
     const msg = document.getElementById('checkin-message');
-    msg.innerHTML = '✅ Successfully checked in to<br><strong>Party Sunset</strong>';
+    msg.innerHTML = '🎉<strong>Successful!</strong>';
     msg.style.textAlign = 'center';
-
+  
+    // 加动画类
+    msg.classList.add('checkin-animate');
+    setTimeout(() => {
+      msg.classList.remove('checkin-animate');
+    }, 1000);
+  
+    // 同时隐藏其他按钮
     gpsIcon.style.display = 'none';
     arrowIcon.style.display = 'none';
     header.style.display = 'none';
   });
+  
 
   // 👉 点击 S 按钮 → 返回主菜单
   document.querySelector('.watch-btn-end').addEventListener('click', () => {
@@ -69,5 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('watch-event-text').style.display = 'block';
     header.style.display = 'flex';
     gpsActivated = false;
+  });
+
+  document.getElementById('watch-more')?.addEventListener('click', () => {
+    alert('🛠️ More+ has no functionality yet.');
   });
 });

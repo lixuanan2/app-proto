@@ -30,6 +30,7 @@ window.langEN = {
         <p>Current version: <strong>v1.0.1</strong>.</p>
 
         <hr>
+        
         <p>After receiving further feedback from the professor, I made some minor adjustments and updated to <strong>v1.0.2</strong>:</p>
         <ul>
           <li>Added a Login page with mobile optimization and navigation bar adjustments.</li>
@@ -38,6 +39,20 @@ window.langEN = {
         </ul>
         <p>This update involved a relatively small workload, mainly focusing on enhancing the basic user experience and improving documentation.</p>
         <p><strong>Current version: v1.0.2.</strong></p>
+
+        <hr>
+
+        <p>After receiving feedback from classmates, I developed version <strong>v1.0.3</strong> of this prototype.</p>
+        <p>This update mainly responds to issues raised during the heuristic evaluation, including language inconsistency, missing feedback for user actions, lack of input validation, and confusing logic in the smartwatch interface. Based on the feedback, I created a basic language package, added several user feedback prompts, improved the layout using CSS, introduced some form validation, and simplified the smartwatch behavior.</p>
+        <p>To be honest, I'm not very satisfied with this version.</p>
+        <p>Some of the suggestions were indeed valuable, but too difficult to implement given the current structure (pure frontend with LocalStorage). Properly supporting them would require a full logic refactor, which I couldn’t manage at this stage.</p>
+        <p>Also, my previous version was more polished. Now, rushing for deadlines and mandatory features, I didn’t have enough time to refine details — so the overall experience might have suffered a bit.</p>
+        <p>On top of that, the professor has asked for three new tasks to be added, which I’ll work on in the next version.</p>
+        <p>Frankly speaking, I’m handling several more important projects in parallel, and I’m really low on time and energy right now.</p>
+        <p>So from this version on, I’ve decided to stop “beautifying” the prototype. I’ll just focus on delivering functionality and meeting the requirements. It’s a small compromise, I suppose…</p>
+        <p><strong>Maybe I’ve lost my original intention. Sorry for that.</strong></p>
+        <p>Alright, I’ll go work on the new tasks now. See you in the next version.</p>
+        <p><strong>Current version: v1.0.3</strong></p>
 
       `,
       structure: `
@@ -124,6 +139,30 @@ window.langEN = {
         </ul>
         <p>This update mainly addresses the missing login entry and guidance issues from version v1.0.1, further improving the overall user experience and UI details.</p>
         <p>Current version: <strong>v1.0.2</strong>.</p>
+
+        <hr>
+
+        <h2>📣 Peer Evaluation Feedback · v1.0.2 -> v1.0.3</h2>
+        <p>This minor update is based on the Heuristic Evaluation activity conducted in class. According to feedback from classmates, improvements were made to the prototype regarding user interaction, input validation, and system visibility.</p>
+
+        <ul>
+          <li>🌐 Initial language package structure established, supporting Chinese, English, and Portuguese. Buttons, page titles, and placeholders are now consistent across languages.</li>
+          <li>🧑‍💻 Input restrictions added (e.g., event names cannot be only numbers; phone numbers must not contain letters).</li>
+          <li>🎨 Added toast notifications and animation feedback for key actions such as adding members and completing check-in.</li>
+          <li>⛔ Enhanced permission control: only the event creator can remove members.</li>
+          <li>⌚ Optimized smartwatch logic and visual feedback during the check-in process.</li>
+        </ul>
+
+        <p>Some suggestions, though valid, were not implemented due to technical complexity—such as syncing member lists between Discover and Event Detail, or switching between events on the smartwatch.</p>
+
+        <p>📄 For full feedback details and implementation notes, please see the following bilingual documents:</p>
+        <ul>
+          <li><a href="pdfs/同学评估/启发式评估.pdf" target="_blank">📘 Chinese: Heuristic Evaluation Summary</a></li>
+          <li><a href="pdfs/同学评估/AV.pdf" target="_blank">📗 Portuguese: Avaliação heurística</a></li>
+        </ul>
+
+        <p>For further technical reasoning and tradeoffs, please refer to the "Author Introduction" and "Drawbacks" sections on this page.</p>
+        <p>Current version: <strong>v1.0.3</strong>.</p>
       `
   };
   

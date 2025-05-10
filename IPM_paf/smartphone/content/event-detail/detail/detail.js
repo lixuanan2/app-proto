@@ -114,14 +114,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   removeMemberBtn?.addEventListener('click', () => {
     const events = JSON.parse(localStorage.getItem('myEvents')) || [];
+    const event = events[currentEventIndex];
+  
+    // 🚫 如果不是自己创建的活动，不允许删除成员
+    if (event.from !== 'self') {
+      alert("⛔ You cannot remove members from an event you did not create.");
+      return;
+    }
+  
+    // ✅ 正常删除流程
     if (currentEventIndex !== null && currentMemberIndex !== null) {
-      events[currentEventIndex].member_list.splice(currentMemberIndex, 1);
+      event.member_list.splice(currentMemberIndex, 1);
       localStorage.setItem('myEvents', JSON.stringify(events));
       window.showEventDetail(currentEventIndex);
       window.updateEventList?.();
     }
+  
     document.getElementById('member-info-popup').style.display = 'none';
   });
+  
 
   cancelMemberBtn?.addEventListener('click', () => {
     document.getElementById('member-info-popup').style.display = 'none';
