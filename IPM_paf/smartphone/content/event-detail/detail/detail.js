@@ -133,8 +133,42 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('member-info-popup').style.display = 'none';
   });
   
-
   cancelMemberBtn?.addEventListener('click', () => {
     document.getElementById('member-info-popup').style.display = 'none';
   });
+
+  document.getElementById('add-to-chat-btn')?.addEventListener('click', () => {
+    const eventName = document.getElementById('detail-name').textContent;
+  
+    let chats = JSON.parse(localStorage.getItem('myChats')) || [];
+  
+    const alreadyExists = chats.some(chat => chat.eventName === eventName);
+    if (alreadyExists) {
+      alert("ℹ️ This chat is already in your list.");
+      return;
+    }
+  
+    // 添加新的聊天
+    chats.push({
+      eventName: eventName,
+      avatar: "icons/content/group.png",
+      messages: [],
+      lastTime: "",
+      saved: true
+    });
+  
+    localStorage.setItem('myChats', JSON.stringify(chats));
+    showToast("✅ Event added to chat list.");
+    updateChatList(); // 可选，确保数据即时刷新
+  });
+  
+  function showToast(message, duration = 2000) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, duration);
+  }
+  
 });

@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    justify-content: space-between; /* 🧩 左右分布 */
     border-bottom: 1px solid #ccc;
     z-index: 3;
   }
@@ -88,12 +89,15 @@
   }
   
   /* detail.css */
-  .event-delete-section {
-    margin-top: 20px;
-    text-align: center;
+  .event-chat-section {
+    margin: 0;
+    display: flex;
+    align-items: center;
   }
+  
 
   .delete-btn {
+    margin-top: 12px;
     background-color: #ffdddd;
     border: 1px solid #f66;
     padding: 8px 16px;
@@ -101,4 +105,56 @@
     cursor: pointer;
   }
     
-  
+  /* 💬 Add to Chat 区域 */
+.event-chat-section {
+  margin-top: 16px;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 13px;
+}
+
+/* Chat 按钮 */
+.chat-btn {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.chat-btn:hover {
+  background-color: #e0f3ff;
+  transform: scale(1.05);
+}
+
+.chat-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  opacity: 0;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+

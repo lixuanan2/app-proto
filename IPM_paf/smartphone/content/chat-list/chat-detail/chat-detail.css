@@ -1,0 +1,111 @@
+/* 外部容器固定为纵向结构 */
+#page-chat-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部：顶部固定 */
+.chat-detail-header {
+  background-color: #f7f9fc;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* 消息区域：中间滚动区 */
+.chat-detail-msgs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  height: 480px;
+}
+
+/* 输入区域：底部固定 */
+.chat-input-bar {
+  display: flex;
+  padding: 10px 16px;
+  bottom: 140px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.chat-input-bar input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.chat-input-bar button {
+  background-color: #4dabf7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chat-input-bar button:hover {
+  background-color: #3399dd;
+}
+
+/* 气泡样式 */
+.chat-bubble {
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-bubble.left {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.chat-bubble.right {
+  align-self: flex-end;
+  background-color: #d2f4d2;
+  color: #222;
+}
+
+
+#delete-chat-btn {
+  height: 36px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 2px; /* 👈 轻微上移使垂直居中 */
+  background-color: #fceeee;
+  border: 1px solid #f66;
+  color: #c00;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+#delete-chat-btn:hover {
+  background-color: #f99;
+  color: white;
+}
+
+#chat-delete-popup .popup-content {
+  max-width: 280px;
+}

@@ -111,3 +111,31 @@
     cursor: pointer;
   }
   
+
+  .chat-list-btn {
+    position: absolute;
+    bottom: 580px; /* 比 Add Button 高一点 */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #3CAF41;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .chat-list-btn:hover {
+    background-color: #ffd591;
+    transform: scale(1.05);
+  }
+  
+  .chat-list-btn img {
+    width: 32px;
+    height: 32px;
+  }
+  

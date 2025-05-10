@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="smartphone/content/event/new-event/new-event.css">    <!-- event子页面 添加new-event -->
   <link rel="stylesheet" href="smartphone/content/event-detail/detail/detail.css">     <!-- event子页面 details -->
   <link rel="stylesheet" href="smartphone/content/event-detail/detail/member/member.css">     <!-- event孙页面 addmember -->
+  <link rel="stylesheet" href="smartphone/content/chat-list/chat-list.css">     <!-- chatlist子页面 -->
+  <link rel="stylesheet" href="smartphone/content/chat-list/chat-detail/chat-detail.css">     <!-- chatdetail孙页面 -->
   <link rel="stylesheet" href="smartphone/content/discover/discover.css">      <!-- discover主页面 -->
   <link rel="stylesheet" href="smartphone/content/help/help.css">     <!-- help主页面 -->
   <link rel="stylesheet" href="smartphone/content/menu/menu.css">      <!-- menu主页面 -->
@@ -197,6 +199,10 @@
           <div class="event-list">
             <!-- 由 localstorage 动态填充 -->
           </div>
+          <!-- Chat List Button -->
+          <div class="chat-list-btn" id="chat-list-btn" title="Open Chat List">
+            <img src="icons/content/wechat.png" alt="Chat">
+          </div>
           <!-- Add Button -->
           <div class="event-add-btn" id="event-add-btn">
             <img src="icons/content/add-event.png" alt="Add">
@@ -264,6 +270,13 @@
                 <img src="icons/content/back.png" alt="Back">
               </button>              
               <h2>Event Details</h2>
+
+              <!-- 💬 添加Chat至chatlist 按钮 -->
+              <div class="event-chat-section" id="event-chat-section">
+                <button class="chat-btn" id="add-to-chat-btn" title="Add to Chat">
+                  <img src="icons/content/add-chat.png" alt="Chat" class="chat-icon">
+                </button>
+              </div>
             </div>
         
             <!-- (内容由语言包填充) -->
@@ -290,6 +303,7 @@
             <div class="event-delete-section">
               <button id="delete-event-btn" class="delete-btn">🗑️ Remove Event</button>
             </div>            
+            <div id="toast" class="toast">Toast message</div>
           </div>
         </div>
         
@@ -341,6 +355,64 @@
               <button type="button" id="cancel-member-info">❌ Close</button>
             </div>
           </div>
+        </div>
+
+        <!-- 2.3 ChatList 子页面 -->
+        <div class="page-section" id="page-chatlist" style="display: none;">
+          <div class="chatlist-header">
+            <div class="chatlist-title-bar">
+              <button id="back-to-events-from-chat" class="back-btn" title="Back">
+                <img src="icons/content/back.png" alt="Back">
+              </button>
+              <span class="chatlist-title">💬 My Chats</span>
+            </div>
+          </div>          
+
+          <div class="chatlist-wrapper">
+            <!-- 动态插入聊天项 -->
+            <div class="chat-item">
+              <img src="icons/content/group.png" class="chat-avatar" />
+              <div class="chat-info">
+                <div class="chat-name">Coding Hackathon</div>
+                <div class="chat-preview">Last message preview...</div>
+              </div>
+              <div class="chat-time">14:20</div>
+            </div>
+            <!-- ... -->
+          </div>
+        </div>
+
+        <!-- 2.4 Chat Detail 子页面 -->
+        <div class="page-section" id="page-chat-detail" style="display: none;">
+          <div class="chat-detail-header">
+            <button id="back-to-chatlist" class="back-btn" title="Back">
+              <img src="icons/content/back.png" alt="Back">
+            </button>
+            <span id="chat-title">Chat Title</span>
+            <!-- ❌ 删除按钮 -->
+            <button id="delete-chat-btn" class="delete-btn" title="Delete Chat">🗑</button>
+          </div>
+
+          <div class="chat-detail-msgs" id="chat-detail-msgs">
+            <!-- JS 动态生成消息气泡 -->
+          </div>
+
+
+          <div class="chat-input-bar">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="chat-send-btn">Send</button>
+          </div>
+
+          <!-- 2.4.1 删除确认弹窗 -->
+          <div class="popup-overlay" id="chat-delete-popup" style="display: none;">
+            <div class="popup-content">
+              <p style="margin-bottom: 16px;">Are you sure you want to delete this chat?</p>
+              <div class="btn-group">
+                <button id="confirm-delete-chat" style="background-color: #f66; color: white;">✅ Confirm</button>
+                <button id="cancel-delete-chat">❌ Cancel</button>
+              </div>
+            </div>
+          </div>          
         </div>
 
         <!-- === 3. Discover 页面 === -->
@@ -541,6 +613,7 @@
   <!-- 数据 -->
   <script src="data/init-data.js"></script>
   <script src="data/discover-data.js"></script>
+  <script src="data/chat-data.js"></script>
   <!-- 内容 -->
   <script src="smartphone/content/login/login.js"></script>
   <script src="smartphone/content/home-page/home.js"></script>
@@ -549,6 +622,8 @@
   <script src="smartphone/content/event/new-event/new-event.js"></script>
   <script src="smartphone/content/event-detail/detail/detail.js"></script>
   <script src="smartphone/content/event-detail/detail/member/member.js"></script>
+  <script src="smartphone/content/chat-list/chat-list.js"></script>
+  <script src="smartphone/content/chat-list/chat-detail/chat-detail.js"></script>
   <script src="smartphone/content/discover/discover.js"></script>
   <script src="smartphone/content/event-detail/detail2/detail2.js"></script>
   <script src="smartphone/content/help/help.js"></script>

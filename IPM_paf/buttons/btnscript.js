@@ -40,9 +40,11 @@ window.addEventListener('DOMContentLoaded', () => {
   
     // ✅ 使用封装的数据
     localStorage.setItem('myEvents', JSON.stringify(initialEvents));
+    localStorage.setItem('myChats', JSON.stringify(window.initialChats));
     alert("✅ Local storage has been reset to default events.");
   
     updateEventList();
+    updateChatList();
   });
 
   // 切换Task页面
