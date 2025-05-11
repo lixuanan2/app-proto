@@ -24,24 +24,25 @@ window.langEN = {
         (e.g., user guide, heuristic evaluation). Current version: <strong>v1.0.0</strong>.</p>
 
         <hr>
-        <p>Following the instructor’s feedback, I’ve made several functional improvements and updates to the prototype in this new version. To clearly document these changes, I’ve added a new section on this author page called “📣 Feedback”, which organizes teacher comments, my responses, and future plans.</p>
-        <p>Moreover, since the next class will include peer heuristic evaluations of the prototype, those evaluations will also be recorded there.</p>
-        <p>The code structure remains mostly unchanged (at least... I *think* I didn’t touch anything 🤯). The sections “🚀 Future Improvements” and “⚠️ Limitations” are also planned to be updated with additional ideas and notes.</p>
-        <p>Current version: <strong>v1.0.1</strong>.</p>
+        <p>⚠️ Note: As the update history grows, this author page will now list version logs in <strong>reverse chronological order</strong>. The v1.0.0 introduction will always remain at the top for quick reference.</p>
 
         <hr>
-        
-        <p>After receiving further feedback from the professor, I made some minor adjustments and updated to <strong>v1.0.2</strong>:</p>
-        <ul>
-          <li>Added a Login page with mobile optimization and navigation bar adjustments.</li>
-          <li>Added a Smartwatch usage note on the Tarefa page to help users more easily find the watch interface.</li>
-          <li>Updated the descriptions in the "📣 Feedback" and "📂 Code Structure" sections to align with the current development version.</li>
-        </ul>
-        <p>This update involved a relatively small workload, mainly focusing on enhancing the basic user experience and improving documentation.</p>
-        <p><strong>Current version: v1.0.2.</strong></p>
+        <p>This version marks the second stage of the proto, which I define as <strong>v1.1.0</strong>.</p>
+
+        <p>In this update, I added three new tasks (Tarefas): a chat feature on the Events page that simulates group messaging, the ability to add an event to the chat list from the Event Detail page, and a "Discover in Map" function that includes the user's position and three event pins with clickable jump-to-detail logic. The goal was to simulate an exploratory experience.</p>
+
+        <p>To be honest, these features are quite rough. On one hand, I was very short on time; on the other, some changes in the course requirements were unexpected. One small complaint I have is that we were not informed in advance that three more tasks would be required. This last-minute demand heavily constrained my navigation (nav) structure. Due to limited space, I couldn’t fit three more entries into the main nav, so I had to rely on floating buttons and subpages — which was far from ideal and clearly impacted my design flow.</p>
+
+        <p>Of course, I’m also responsible. I didn’t take scalability into account early on, and that made things harder later. It’s a lesson learned — in future projects like this, I’ll pay more attention to flexibility and extensibility from the start.</p>
+
+        <p>Still, I didn’t give up. I spent considerable time thinking through the logic and ended up implementing a full set of features around chat and map interactions. The user experience — from message sending and deleting to map pin highlights and scroll-to-card transitions — is something I’m actually quite satisfied with. So even though this update came with frustration, I do feel some pride in what I pulled off.</p>
+
+        <p>Altogether, I’ve spent around 45–50 hours on this project. Probably more. Honestly, it’s been too much — a waste, in some sense. I don’t plan to continue working on this proto much further. I hope you understand.</p>
+
+        <p><strong>Current version: v1.1.0</strong></p>
+
 
         <hr>
-
         <p>After receiving feedback from classmates, I developed version <strong>v1.0.3</strong> of this prototype.</p>
         <p>This update mainly responds to issues raised during the heuristic evaluation, including language inconsistency, missing feedback for user actions, lack of input validation, and confusing logic in the smartwatch interface. Based on the feedback, I created a basic language package, added several user feedback prompts, improved the layout using CSS, introduced some form validation, and simplified the smartwatch behavior.</p>
         <p>To be honest, I'm not very satisfied with this version.</p>
@@ -54,33 +55,61 @@ window.langEN = {
         <p>Alright, I’ll go work on the new tasks now. See you in the next version.</p>
         <p><strong>Current version: v1.0.3</strong></p>
 
+        <hr>
+        <p>After receiving further feedback from the professor, I made some minor adjustments and updated to <strong>v1.0.2</strong>:</p>
+        <ul>
+          <li>Added a Login page with mobile optimization and navigation bar adjustments.</li>
+          <li>Added a Smartwatch usage note on the Tarefa page to help users more easily find the watch interface.</li>
+          <li>Updated the descriptions in the "📣 Feedback" and "📂 Code Structure" sections to align with the current development version.</li>
+        </ul>
+        <p>This update involved a relatively small workload, mainly focusing on enhancing the basic user experience and improving documentation.</p>
+        <p><strong>Current version: v1.0.2.</strong></p>
+
+        <hr>
+        <p>Following the instructor’s feedback, I’ve made several functional improvements and updates to the prototype in this new version. To clearly document these changes, I’ve added a new section on this author page called “📣 Feedback”, which organizes teacher comments, my responses, and future plans.</p>
+        <p>Moreover, since the next class will include peer heuristic evaluations of the prototype, those evaluations will also be recorded there.</p>
+        <p>The code structure remains mostly unchanged (at least... I *think* I didn’t touch anything 🤯). The sections “🚀 Future Improvements” and “⚠️ Limitations” are also planned to be updated with additional ideas and notes.</p>
+        <p>Current version: <strong>v1.0.1</strong>.</p>
       `,
       structure: `
       <h2>📂 Code Structure</h2>
-      <p>This project uses HTML, CSS, JavaScript, and LocalStorage. The HTML file embeds the main contents of both the smartphone and smartwatch, switching sections dynamically via show/hide logic. While simple to implement, this structure limits scalability and maintainability, a trade-off made for development simplicity. Future versions may adopt a modular multi-page architecture.</p>
-      <p>CSS and JS files are organized in a nested modular structure, promoting separation of style and logic. However, deep nesting and occasional style conflicts increase maintenance complexity.</p>
-      <p>Below is the current directory structure (updated to v1.0.2):</p>
+      <p>This project uses HTML, CSS, JavaScript, and LocalStorage. It adopts a single-page structure (SPA), where all pages and popups are handled by showing/hiding elements. Although not optimal for modular expansion, this approach greatly simplifies early development and is adopted in the current version. A multi-page structure may be considered in future updates.</p>
+      <p>CSS and JS are organized in modular folders by page or function, with separated styling and logic. Some components, such as event detail views, map popups, and language modules, are reused across pages. Structure overview:</p>
+      <p>The following is the core structure as of <code>v1.1.0</code>:</p>
+
       <ul style="padding-left: 24px;">
-        <li><strong>main/</strong>: root folder with entry page and main assets</li>
+        <li><strong>main/</strong>: Main directory with entry page and global styles</li>
         <li>├── index.html</li>
         <li>├── main.css</li>
-        <li><strong>author-page/</strong>: author page resources</li>
-        <li><strong>button/</strong>: reusable button styles</li>
-        <li><strong>data/</strong>: sample data (initial events, etc.)</li>
-        <li><strong>icons/</strong>: all icons (flags, functions, etc.)</li>
-        <li><strong>smartphone/</strong>: smartphone content</li>
-        <li>├── css/: styles (phone.css, nav.css, warn.css, etc.)</li>
-        <li>├── js/: logic (nav.js, warn.js, header.js, etc.)</li>
-        <li>└── content/: main pages</li>
-        <li>    ├── home/, event/, discover/, help/, menu/</li>
-        <li>    ├── login/ (new: login page)</li>
-        <li>    └── event-detail/ (detail page accessed from Events or Discover)</li>
-        <li><strong>smartwatch/</strong>: smartwatch content</li>
-        <li>├── watch.css: watch layout and styling</li>
-        <li>└── content/: check-in logic and screens</li>
+
+        <li><strong>author-page/</strong>: Author info and multilingual support</li>
+        <li><strong>buttons/</strong>: Floating buttons (style & logic)</li>
+        <li><strong>data/</strong>: Local data (events, chats, etc.)</li>
+        <li><strong>icons/</strong>: Icon resources (flags, avatars, UI icons)</li>
+        <li><strong>lang/</strong>: Language system (EN/PT/ZH)</li>
+
+        <li><strong>smartphone/</strong>: Smartphone UI</li>
+        <li>├── css/: Shell, navbar, alerts</li>
+        <li>├── js/: Navigation, alerts, language switching</li>
+        <li>└── content/: Functional page modules</li>
+        <li>　├── home-page/, event/, discover/, help/, menu/</li>
+        <li>　├── login/: Login screen</li>
+        <li>　├── chat-list/: Chat list & details (add/delete)</li>
+        <li>　├── event-detail/</li>
+        <li>　│　├── detail/: From Events page</li>
+        <li>　│　├── detail2/: From Discover page</li>
+        <li>　│　└── member/: Member popups (add/view/delete)</li>
+        <li>　└── discover/map/: Map popup + highlight on return</li>
+
+        <li><strong>smartwatch/</strong>: Smartwatch UI module</li>
+        <li>├── css/: Watch layout, flashing arrow</li>
+        <li>└── js/: Check-in logic</li>
       </ul>
-      <p><code>event-detail</code> is managed separately because it is accessed from both Events and Discover pages.</p>
-      <p>This structure will evolve with future feature expansions. (Current version v1.0.2)</p>
+
+      <p>The <code>event-detail</code> module is split into <code>detail</code> and <code>detail2</code> to handle logic based on the entry page (Events vs Discover).</p>
+      <p>This structure will evolve as more features and UI animations are introduced. (Current version: <strong><code>v1.1.0</code></strong>)</p>
+
+
     `,
       drawbacks:  `
       <h2>⚠️ Limitations</h2>

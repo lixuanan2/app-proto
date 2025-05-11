@@ -126,3 +126,9 @@
   hr {
     margin: 12px 0;
   }
+
+
+  .content-section {
+    max-height: 690px;
+    overflow-y: auto;
+  }

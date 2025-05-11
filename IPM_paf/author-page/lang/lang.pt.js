@@ -24,21 +24,22 @@ window.langPT = {
         Versão atual: <strong>v1.0.0</strong>.</p>
 
         <hr>
-        
-        <p>Com base no feedback do professor, fiz algumas melhorias e ajustes funcionais no protótipo nesta nova versão. Para documentar essas alterações, criei um novo módulo chamado “📣 Feedback” nesta página do autor, onde organizo os comentários recebidos, as soluções aplicadas e os planos futuros.</p>
-        <p>Além disso, como na próxima aula os colegas irão avaliar o protótipo com base em heurísticas, os resultados também serão incluídos nesse módulo.</p>
-        <p>O código-fonte permanece estruturalmente inalterado (pelo menos que eu me lembre... estou meio confuso 😵‍💫). As secções “🚀 Melhorias Futuras” e “⚠️ Limitações” também serão atualizadas com mais conteúdo e reflexões.</p>
-        <p>Versão atual: <strong>v1.0.1</strong>.</p>
+        <p>⚠️ Nota: Como o conteúdo de atualizações se tornou extenso, esta página do autor passará a listar os registros de versão em <strong>ordem cronológica inversa</strong>. A introdução da versão v1.0.0 será sempre exibida no topo.</p>
 
         <hr>
-        <p>Após receber mais feedback do professor, realizei alguns pequenos ajustes e atualizei para a versão <strong>v1.0.2</strong>:</p>
-        <ul>
-          <li>Adicionei uma página de Login com otimização para dispositivos móveis e ajustes na barra de navegação.</li>
-          <li>Adicionei uma nota de uso do Smartwatch na página Tarefa para ajudar os utilizadores a encontrar mais facilmente a interface do relógio.</li>
-          <li>Atualizei as descrições nas seções "📣 Feedback" e "📂 Estrutura de Código" para refletir a versão atual do desenvolvimento.</li>
-        </ul>
-        <p>Esta atualização envolveu uma carga de trabalho relativamente pequena, focando principalmente na melhoria da experiência básica do utilizador e da documentação.</p>
-        <p><strong>Versão atual: v1.0.2.</strong></p>
+        <p>Esta versão marca a segunda fase do protótipo, que defino como <strong>v1.1.0</strong>.</p>
+
+        <p>Na atualização, adicionei três novas tarefas (Tarefas): uma funcionalidade de chat na página de Eventos que simula mensagens em grupo, a opção de adicionar um evento à lista de conversas diretamente a partir da página de detalhes, e uma funcionalidade “Discover in Map”, com posição do utilizador e três marcadores de eventos clicáveis. A ideia era simular uma experiência de exploração.</p>
+
+        <p>Sinceramente, estas funcionalidades ficaram bastante cruas. Por um lado, o tempo era muito limitado; por outro, houve mudanças inesperadas nos requisitos da disciplina. Uma pequena crítica que deixo é que não fomos informados antecipadamente de que seriam exigidas mais três tarefas. Esta decisão de última hora complicou muito a estrutura do meu menu de navegação. Como não havia espaço para inserir três novas entradas, tive de recorrer a botões flutuantes e páginas secundárias — o que limitou bastante o meu raciocínio de design.</p>
+
+        <p>Claro que também houve falhas da minha parte. Não previ bem a escalabilidade do sistema desde o início, e isso tornou as alterações posteriores mais difíceis. Levo esta experiência como uma lição: em projetos futuros, vou dar mais atenção à flexibilidade da arquitetura.</p>
+
+        <p>Mesmo assim, não desisti. Pensei com cuidado sobre a lógica de interação e acabei por implementar um conjunto funcional de mensagens e interações com mapa. A experiência do utilizador — desde o envio e eliminação de mensagens até ao destaque e localização de eventos no mapa — ficou, na minha opinião, bastante satisfatória. Esta versão tem os seus pontos fracos, mas também me deixou algum orgulho.</p>
+
+        <p>No total, já gastei cerca de 45–50 horas neste projeto. Provavelmente mais. Foi tempo a mais — um desperdício, em certa medida. Não pretendo continuar a desenvolver este protótipo. Espero que compreendam.</p>
+
+        <p><strong>Versão atual: v1.1.0</strong></p>
 
         <hr>
 
@@ -54,33 +55,60 @@ window.langPT = {
         <p>Enfim, agora vou trabalhar nas novas tarefas. A gente se vê na próxima versão.</p>
         <p><strong>Versão atual: v1.0.3</strong></p>
 
+        <hr>
+        <p>Após receber mais feedback do professor, realizei alguns pequenos ajustes e atualizei para a versão <strong>v1.0.2</strong>:</p>
+        <ul>
+          <li>Adicionei uma página de Login com otimização para dispositivos móveis e ajustes na barra de navegação.</li>
+          <li>Adicionei uma nota de uso do Smartwatch na página Tarefa para ajudar os utilizadores a encontrar mais facilmente a interface do relógio.</li>
+          <li>Atualizei as descrições nas seções "📣 Feedback" e "📂 Estrutura de Código" para refletir a versão atual do desenvolvimento.</li>
+        </ul>
+        <p>Esta atualização envolveu uma carga de trabalho relativamente pequena, focando principalmente na melhoria da experiência básica do utilizador e da documentação.</p>
+        <p><strong>Versão atual: v1.0.2.</strong></p>
+
+        <hr>
+        <p>Com base no feedback do professor, fiz algumas melhorias e ajustes funcionais no protótipo nesta nova versão. Para documentar essas alterações, criei um novo módulo chamado “📣 Feedback” nesta página do autor, onde organizo os comentários recebidos, as soluções aplicadas e os planos futuros.</p>
+        <p>Além disso, como na próxima aula os colegas irão avaliar o protótipo com base em heurísticas, os resultados também serão incluídos nesse módulo.</p>
+        <p>O código-fonte permanece estruturalmente inalterado (pelo menos que eu me lembre... estou meio confuso 😵‍💫). As secções “🚀 Melhorias Futuras” e “⚠️ Limitações” também serão atualizadas com mais conteúdo e reflexões.</p>
+        <p>Versão atual: <strong>v1.0.1</strong>.</p>
       `,
       structure: `
       <h2>📂 Estrutura do Código</h2>
-      <p>Este projeto utiliza HTML, CSS, JavaScript e LocalStorage. O arquivo HTML incorpora os conteúdos principais do smartphone e do smartwatch, alternando as seções com lógica de mostrar/ocultar. Embora seja simples de implementar, esta abordagem limita a escalabilidade e a manutenção. Futuramente, poderá ser adotada uma arquitetura modular de múltiplas páginas.</p>
-      <p>Os arquivos CSS e JS são organizados de forma modular e aninhada, separando estilo e lógica. Contudo, o aninhamento profundo e conflitos de estilo ocasionais aumentam a complexidade da manutenção.</p>
-      <p>Abaixo está a estrutura atual do projeto (atualizada para v1.0.2):</p>
+      <p>Este projeto utiliza HTML, CSS, JavaScript e LocalStorage. Adota uma estrutura de página única (SPA), onde todas as páginas e janelas são exibidas/ocultadas dinamicamente. Embora não seja ideal para expansão modular, essa abordagem facilita bastante o desenvolvimento inicial e foi mantida nesta versão. Uma futura versão poderá adotar uma estrutura multipágina.</p>
+      <p>Os arquivos CSS e JS são organizados de forma modular por página/função, com separação entre estilo e lógica. Alguns componentes, como a visualização de eventos, o mapa e o sistema de idiomas, são reutilizados em diferentes páginas. A estrutura está resumida abaixo:</p>
+      <p>Segue a estrutura principal da versão <code>v1.1.0</code>:</p>
+
       <ul style="padding-left: 24px;">
-        <li><strong>main/</strong>: pasta raiz com a página de entrada e recursos principais</li>
+        <li><strong>main/</strong>: Diretório principal com página inicial e estilos globais</li>
         <li>├── index.html</li>
         <li>├── main.css</li>
-        <li><strong>author-page/</strong>: recursos da página do autor</li>
-        <li><strong>button/</strong>: estilos de botões reutilizáveis</li>
-        <li><strong>data/</strong>: dados de exemplo (eventos iniciais, etc.)</li>
-        <li><strong>icons/</strong>: todos os ícones (bandeiras, funções, etc.)</li>
-        <li><strong>smartphone/</strong>: conteúdo da versão móvel</li>
-        <li>├── css/: estilos (phone.css, nav.css, warn.css, etc.)</li>
-        <li>├── js/: lógica (nav.js, warn.js, header.js, etc.)</li>
-        <li>└── content/: páginas principais</li>
-        <li>    ├── home/, event/, discover/, help/, menu/</li>
-        <li>    ├── login/ (novo: página de login)</li>
-        <li>    └── event-detail/ (página de detalhes acessada por Events ou Discover)</li>
-        <li><strong>smartwatch/</strong>: conteúdo do smartwatch</li>
-        <li>├── watch.css: layout e estilos do relógio</li>
-        <li>└── content/: tela e lógica de check-in</li>
+
+        <li><strong>author-page/</strong>: Página do autor e conteúdo multilíngue</li>
+        <li><strong>buttons/</strong>: Botões flutuantes (estilo e lógica)</li>
+        <li><strong>data/</strong>: Dados locais (eventos, chats, etc.)</li>
+        <li><strong>icons/</strong>: Ícones (bandeiras, avatares, ícones do sistema)</li>
+        <li><strong>lang/</strong>: Sistema de idioma (EN/PT/ZH)</li>
+
+        <li><strong>smartphone/</strong>: Interface da versão smartphone</li>
+        <li>├── css/: Estrutura visual, navegação e alertas</li>
+        <li>├── js/: Navegação, alertas e mudança de idioma</li>
+        <li>└── content/: Conteúdo funcional dividido por página</li>
+        <li>　├── home-page/, event/, discover/, help/, menu/</li>
+        <li>　├── login/: Tela de login</li>
+        <li>　├── chat-list/: Lista de chats e detalhes (incluir/remover)</li>
+        <li>　├── event-detail/</li>
+        <li>　│　├── detail/: Acesso pela página de Eventos</li>
+        <li>　│　├── detail2/: Acesso pela página Discover</li>
+        <li>　│　└── member/: Janelas de membro (adicionar/visualizar/remover)</li>
+        <li>　└── discover/map/: Mapa com retorno e destaque</li>
+
+        <li><strong>smartwatch/</strong>: Interface do smartwatch</li>
+        <li>├── css/: Estilo do relógio e seta animada</li>
+        <li>└── js/: Lógica do Check-in</li>
       </ul>
-      <p><code>event-detail</code> é gerido separadamente pois é acessado tanto a partir de Events quanto de Discover.</p>
-      <p>Esta estrutura será ajustada conforme novas funcionalidades forem desenvolvidas. (Versão atual v1.0.2)</p>
+
+      <p>O módulo <code>event-detail</code> está dividido em <code>detail</code> e <code>detail2</code> para separar a lógica conforme a origem (Events vs Discover).</p>
+      <p>Essa estrutura continuará evoluindo com novas funcionalidades e melhorias visuais. (Versão atual: <strong><code>v1.1.0</code></strong>)</p>
+
     `,
       drawbacks: `
         <h2>⚠️ Limitações</h2>
