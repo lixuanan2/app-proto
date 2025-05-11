@@ -86,45 +86,64 @@ const langData = {
         title: "📝 Tarefa",
         th1: "Tarefa",
         th2: "Dificuldade",
-        task1: "📍 Juntar-se a um evento através da página Discover",
-        task2: "📝 Criar um novo evento na página de Events",
-        task3: "👥 Remover e reinvitar um membro na página de Event Detail",
-        task4: "⌚ Concluir o check-in na aplicação MyApp do smartwatch",
+        task1: "💬 Aceder ao chat do evento e enviar uma mensagem",
+        task2: "📤 Adicionar um evento ao chat e apagar uma conversa",
+        task3: "🗺️ Descobrir um evento no mapa e juntar-se a ele",
+        task4: "📍 Juntar-se a um evento através da página Discover",
+        task5: "📝 Criar um novo evento na página de Events",
+        task6: "👥 Remover e reinvitar um membro na página de Event Detail",
+        task7: "⌚ Concluir o check-in na aplicação MyApp do smartwatch",
         diff1: "baixa",
         diff2: "média",
-        diff3: "alta",
-        diff4: "média",
+        diff3: "média",
+        diff4: "baixa",
+        diff5: "média",
+        diff6: "alta",
+        diff7: "média",
         note: "💡 Nota: O Smartwatch está no painel esquerdo. Clique em 'Mostrar Smartwatch' para exibir a interface."
       },
       en: {
         title: "📝 Tasks",
         th1: "Task",
         th2: "Difficulty",
-        task1: "📍 Join an event through the Discover page",
-        task2: "📝 Create a new event on the Events page",
-        task3: "👥 Remove and reinvite a member on the Event Detail page",
-        task4: "⌚ Complete check-in on the Smartwatch MyApp",
+        task1: "💬 Enter the event chat and send a message",
+        task2: "📤 Add an event to chat and delete a chat record",
+        task3: "🗺️ Discover an event on the map and join it",
+        task4: "📍 Join an event through the Discover page",
+        task5: "📝 Create a new event on the Events page",
+        task6: "👥 Remove and reinvite a member on the Event Detail page",
+        task7: "⌚ Complete check-in on the Smartwatch MyApp",
         diff1: "low",
         diff2: "medium",
-        diff3: "high",
-        diff4: "medium",
+        diff3: "medium",
+        diff4: "low",
+        diff5: "medium",
+        diff6: "high",
+        diff7: "medium",
         note: "💡 Note: The smartwatch is on the left panel. Click 'Show Smartwatch' to display the watch interface."
       },
       zh: {
         title: "📝 任务",
         th1: "任务内容",
         th2: "难度",
-        task1: "📍 通过 Discover 页面加入一个事件",
-        task2: "📝 在 Events 页面创建一个新事件",
-        task3: "👥 在 Event Detail 页面移除并重新邀请一个成员",
-        task4: "⌚ 在智能手表 MyApp 中完成签到",
+        task1: "💬 进入事件聊天界面并发送一条消息",
+        task2: "📤 将一个事件添加至聊天并删除一个聊天记录",
+        task3: "🗺️ 在地图上发现一个事件并加入",
+        task4: "📍 通过 Discover 页面加入一个事件",
+        task5: "📝 在 Events 页面创建一个新事件",
+        task6: "👥 在 Event Detail 页面移除并重新邀请一个成员",
+        task7: "⌚ 在智能手表 MyApp 中完成签到",
         diff1: "低",
         diff2: "中",
-        diff3: "高",
-        diff4: "中",
+        diff3: "中",
+        diff4: "低",
+        diff5: "中",
+        diff6: "高",
+        diff7: "中",
         note: "💡 提示：Smartwatch 在左侧区域，点击“Show Smartwatch”即可显示手表界面。"
       }
     },
+    
 
     // lang 页面
     langPageTexts : {
@@ -301,87 +320,123 @@ const langData = {
 
     // helpPage 页面
     helpPageTexts: {
-    en: {
+      en: {
         title: "📌 How to?",
         items: [
-        {
+          {
             question: "✅ How to create an event?",
             answer: "Go to the Events page, click the \"+\" button, fill out the form and press \"Create\"."
-        },
-        {
+          },
+          {
             question: "✅ How to invite a friend?",
             answer: "Open an event's detail page, click the \"Add Member\" icon, and fill in their information."
-        },
-        {
+          },
+          {
             question: "✅ How to remove a member?",
             answer: "Click on a member icon to open their details and press \"Remove\"."
-        },
-        {
+          },
+          {
             question: "✅ How to search an event?",
             answer: "Go to the Discover page and type keywords in the search bar."
-        },
-        {
+          },
+          {
             question: "✅ How to reset the data?",
             answer: "Click the \"Reset LocalStorage\" button at the top of the phone interface."
-        }
+          },
+          {
+            question: "✅ How to chat with event members?",
+            answer: "Go to the Events page and click the green chat button. Then select a chat to enter and start typing."
+          },
+          {
+            question: "✅ How to add an event to the chat?",
+            answer: "Open the event detail page of an event you created, then click the chat icon to add it to your chat list."
+          },
+          {
+            question: "✅ How to discover events on the map?",
+            answer: "On the Discover page, click the red map pin button to open the map and explore events by location."
+          }
         ],
         aboutTitle: "👤 About the author",
         aboutText: "If you'd like to know more about this prototype, click the button below:",
         aboutLink: "🔗 Go to author page"
-    },
+      },
     
-    pt: {
+      pt: {
         title: "📌 Como fazer?",
         items: [
-        {
+          {
             question: "✅ Como criar um evento?",
             answer: "Vá para a página de Eventos, clique no botão \"+\", preencha o formulário e pressione \"Criar\"."
-        },
-        {
+          },
+          {
             question: "✅ Como convidar um amigo?",
             answer: "Abra a página de detalhes de um evento, clique no ícone \"Adicionar Membro\" e preencha as informações."
-        },
-        {
+          },
+          {
             question: "✅ Como remover um membro?",
             answer: "Clique no ícone de um membro para abrir os detalhes e pressione \"Remover\"."
-        },
-        {
+          },
+          {
             question: "✅ Como procurar um evento?",
             answer: "Vá até a página Discover e digite palavras-chave na barra de pesquisa."
-        },
-        {
+          },
+          {
             question: "✅ Como reiniciar os dados?",
             answer: "Clique no botão \"Reset LocalStorage\" no topo da interface do telefone."
-        }
+          },
+          {
+            question: "✅ Como conversar com membros do evento?",
+            answer: "Na página de Eventos, clique no botão verde de chat. Em seguida, escolha um chat e digite sua mensagem."
+          },
+          {
+            question: "✅ Como adicionar um evento à lista de chat?",
+            answer: "Abra os detalhes de um evento criado por você e clique no ícone de chat para adicioná-lo à lista."
+          },
+          {
+            question: "✅ Como descobrir eventos no mapa?",
+            answer: "Na página Discover, clique no botão vermelho de mapa para abrir o mapa e explorar eventos por localização."
+          }
         ],
         aboutTitle: "👤 Sobre o autor",
         aboutText: "Se quiser saber mais sobre este protótipo, clique no botão abaixo:",
         aboutLink: "🔗 Ir para a página do autor"
-    },
+      },
     
-    zh: {
+      zh: {
         title: "📌 如何操作？",
         items: [
-        {
+          {
             question: "✅ 如何创建事件？",
             answer: "进入 Events 页面，点击“+”按钮，填写表单并点击“创建”。"
-        },
-        {
+          },
+          {
             question: "✅ 如何邀请好友？",
             answer: "打开某个事件的详情页面，点击“添加成员”图标，填写信息。"
-        },
-        {
+          },
+          {
             question: "✅ 如何移除成员？",
             answer: "点击成员头像打开详情页面，点击“删除”按钮。"
-        },
-        {
+          },
+          {
             question: "✅ 如何搜索事件？",
             answer: "进入 Discover 页面，在搜索框中输入关键词即可。"
-        },
-        {
+          },
+          {
             question: "✅ 如何重置数据？",
             answer: "点击手机界面顶部的“Reset LocalStorage”按钮。"
-        }
+          },
+          {
+            question: "✅ 如何和事件成员聊天？",
+            answer: "进入 Events 页面，点击右侧绿色聊天按钮，进入聊天页面后输入文字发送即可。"
+          },
+          {
+            question: "✅ 如何将事件添加到聊天？",
+            answer: "打开你创建的事件详情页，点击聊天图标即可添加到聊天列表。"
+          },
+          {
+            question: "✅ 如何在地图上发现事件？",
+            answer: "进入 Discover 页面，点击右侧红色地图按钮，打开地图探索附近活动。"
+          }
         ],
         aboutTitle: "👤 关于作者",
         aboutText: "如果你想了解更多，请点击下方按钮：",

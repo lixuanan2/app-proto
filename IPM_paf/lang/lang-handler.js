@@ -50,45 +50,30 @@ function updateIntroTexts() {
 
 // task 页面更新
 function updateTaskTexts() {
-    const t = langData.taskTexts[currentLang];
-    if (!t) return;
-  
-    const taskTitle = document.getElementById("task-title");
-    if (taskTitle) taskTitle.innerText = t.title;
-  
-    const taskTh1 = document.getElementById("task-th1");
-    if (taskTh1) taskTh1.innerText = t.th1;
-  
-    const taskTh2 = document.getElementById("task-th2");
-    if (taskTh2) taskTh2.innerText = t.th2;
-  
-    const task1 = document.getElementById("task-1");
-    if (task1) task1.innerText = t.task1;
-  
-    const task2 = document.getElementById("task-2");
-    if (task2) task2.innerText = t.task2;
-  
-    const task3 = document.getElementById("task-3");
-    if (task3) task3.innerText = t.task3;
-  
-    const task4 = document.getElementById("task-4");
-    if (task4) task4.innerText = t.task4;
-  
-    const diff1 = document.getElementById("diff-1");
-    if (diff1) diff1.innerText = t.diff1;
-  
-    const diff2 = document.getElementById("diff-2");
-    if (diff2) diff2.innerText = t.diff2;
-  
-    const diff3 = document.getElementById("diff-3");
-    if (diff3) diff3.innerText = t.diff3;
-  
-    const diff4 = document.getElementById("diff-4");
-    if (diff4) diff4.innerText = t.diff4;
-  
-    const taskNote = document.getElementById("task-note");
-    if (taskNote) taskNote.innerText = t.note;
+  const t = langData.taskTexts[currentLang];
+  if (!t) return;
+
+  const taskTitle = document.getElementById("task-title");
+  if (taskTitle) taskTitle.innerText = t.title;
+
+  const taskTh1 = document.getElementById("task-th1");
+  if (taskTh1) taskTh1.innerText = t.th1;
+
+  const taskTh2 = document.getElementById("task-th2");
+  if (taskTh2) taskTh2.innerText = t.th2;
+
+  // 所有任务内容
+  for (let i = 1; i <= 7; i++) {
+    const task = document.getElementById(`task-${i}`);
+    const diff = document.getElementById(`diff-${i}`);
+    if (task) task.innerText = t[`task${i}`];
+    if (diff) diff.innerText = t[`diff${i}`];
+  }
+
+  const taskNote = document.getElementById("task-note");
+  if (taskNote) taskNote.innerText = t.note;
 }
+
 
 // language 设置页更新
 function updateLangPageTexts() {
