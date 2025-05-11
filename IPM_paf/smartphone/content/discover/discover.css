@@ -117,3 +117,31 @@
   }
   
   
+  /* 🌸 地图按钮 */
+  .map-discover-btn {
+    position: absolute;
+    bottom: 90px;       
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #f7a9a9; /* 🌸 柔和红色 */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .map-discover-btn:hover {
+    background-color: #f28f8f;
+    transform: scale(1.05);
+  }
+  
+  .map-discover-btn img {
+    width: 30px;
+    height: 30px;
+  }
+  

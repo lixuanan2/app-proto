@@ -53,6 +53,12 @@ const langData = {
       },
 
     // intro 页面
+    introPageTexts: {
+      pt: { title: "📖 Introdução" },
+      en: { title: "📖 Introduction" },
+      zh: { title: "📖 介绍" }
+    },
+
     introMessages: {
       pt: `Olá, caro(a) utilizador(a), bem-vindo(a) a este protótipo. Saudações!\n
   Este protótipo tem como tema "Organização de Eventos Sociais", ou seja, está vocacionado para a organização de atividades sociais. O nosso objetivo aqui é simular uma aplicação e criar um modelo de alta fidelidade (PAF).\n

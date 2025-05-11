@@ -40,6 +40,12 @@ function updateIntroTexts() {
     if (homeMessage) {
       homeMessage.innerHTML = m.replace(/\n/g, "<br>");
     }
+
+    const titleSpan = document.getElementById("intro-title");
+    const t = langData.introPageTexts?.[currentLang];
+    if (titleSpan && t?.title) {
+      titleSpan.innerText = t.title;
+    }
 }
 
 // task 页面更新

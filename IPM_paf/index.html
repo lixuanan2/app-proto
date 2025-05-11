@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="smartphone/content/chat-list/chat-list.css">     <!-- chatlist子页面 -->
   <link rel="stylesheet" href="smartphone/content/chat-list/chat-detail/chat-detail.css">     <!-- chatdetail孙页面 -->
   <link rel="stylesheet" href="smartphone/content/discover/discover.css">      <!-- discover主页面 -->
+  <link rel="stylesheet" href="smartphone/content/discover/map/map.css">      <!-- map弹窗 -->
   <link rel="stylesheet" href="smartphone/content/help/help.css">     <!-- help主页面 -->
   <link rel="stylesheet" href="smartphone/content/menu/menu.css">      <!-- menu主页面 -->
 
@@ -32,6 +33,11 @@
 
   <!-- 3. 外部按钮 -->
   <link rel="stylesheet" href="buttons/btnstyle.css">       <!-- 按钮位置 -->
+
+  <!-- Leaflet 地图样式  -->
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 </head>
 <body>
@@ -101,7 +107,7 @@
           <div class="home-header">
             <div style="display: flex; align-items: center;">
               <button class="back-home-btn">🔙</button>
-              <span style="margin-left: 8px;">📖 Introduction</span>
+              <span id="intro-title">📖 Introduction</span>
             </div>
         
             <!-- ✅ 语言切换按钮只出现在此 -->
@@ -438,6 +444,19 @@
           <div class="discover-list" id="discover-list">
             <!-- 示例卡片将由 JS 插入 -->
           </div>
+
+          <!-- 地图按钮 -->
+          <div class="map-discover-btn" id="map-discover-btn" title="Discover in Map">
+            <img src="icons/content/map.png" alt="Map">
+          </div>
+          
+          <!-- 地图弹窗容器（默认隐藏） -->
+          <div class="popup-overlay" id="map-popup" style="display: none;">
+            <div class="popup-content map-popup-content">
+              <button id="close-map-btn" class="popup-close-btn">❌</button>
+              <div id="map-container" style="width: 100%; height: 400px;"></div>
+            </div>
+          </div>
         </div>
 
         <!-- === 4. Help 页面 === -->
@@ -631,5 +650,9 @@
   <!-- 按钮 -->
   <script src="buttons/btnscript.js"></script>
   <script src="smartwatch/js/content.js"></script>
+
+  <!-- Leaflet 地图 -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="smartphone/content/discover/map/map.js"></script>
 </body>
 </html>
