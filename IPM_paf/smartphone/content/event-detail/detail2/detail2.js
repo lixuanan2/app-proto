@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
     avatarContainer.innerHTML = '';
 
     const memberList = eventObject.member_list || [];
+
+    if (window.lastDetailSource === 'discover') {
+      const chatBtn = document.getElementById('add-to-chat-btn');
+      if (chatBtn) {
+        chatBtn.disabled = true;
+        chatBtn.style.opacity = '0.5';
+        chatBtn.style.cursor = 'not-allowed';
+      }
+    }
+
     memberList.forEach(member => {
       const img = document.createElement('img');
       img.alt = member.name;

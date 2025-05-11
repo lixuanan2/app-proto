@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('detail-tags').textContent =
       event.tags?.length > 0 ? event.tags.map(t => `#${t}`).join(' ') : '-';
 
+      const chatBtn = document.getElementById('add-to-chat-btn');
+      if (chatBtn) {
+        chatBtn.disabled = false;
+        chatBtn.style.opacity = '1';
+        chatBtn.style.cursor = 'pointer';
+      }
+
     // 渲染成员头像
     const avatarContainer = document.getElementById('member-icons');
     avatarContainer.innerHTML = '';
@@ -137,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('member-info-popup').style.display = 'none';
   });
 
+  // ✅ 5. 添加到聊天
   document.getElementById('add-to-chat-btn')?.addEventListener('click', () => {
     const eventName = document.getElementById('detail-name').textContent;
   
