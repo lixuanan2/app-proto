@@ -64,6 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('page-events').style.display = 'none';
     document.getElementById('page-discover').style.display = 'none';
     document.getElementById('page-events-detail').style.display = 'block';
+
+    // 🧹 清除 Discover 中高亮的卡片（若有）
+    if (window.currentHighlightedCard) {
+      window.currentHighlightedCard.classList.remove('highlight');
+      window.currentHighlightedCard = null;
+    }
   }
 
   window.showEventDetailFromDiscover = showEventDetailFromDiscover;

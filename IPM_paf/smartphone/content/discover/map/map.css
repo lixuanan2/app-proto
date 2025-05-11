@@ -43,3 +43,68 @@
     color: #000;
   }
   
+
+  .highlight {
+    position: relative;
+    border-left: 5px solid #f1c40f; /* 左侧颜色标识条（例如黄色） */
+    border-radius: 10px;
+    background: #fff; /* 内部背景 */
+    padding: 12px 16px;
+    animation: rainbow-glow 4s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 0, 150, 0.4);
+    z-index: 1;
+  }
+  
+  .highlight::before {
+    content: "";
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-size: 400% 400%;
+    border-radius: 12px;
+    z-index: -1;
+    animation: rainbow-border 5s linear infinite;
+  }
+  
+  @keyframes rainbow-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes rainbow-glow {
+    0%, 100% { box-shadow: 0 0 6px rgba(255, 0, 0, 0.3); }
+    50% { box-shadow: 0 0 12px rgba(0, 255, 255, 0.7); }
+  }
+  
+  .highlight .discover-title, .highlight .discover-info-line {
+    animation: blink-black-white2 2s infinite alternate;
+    color: black;
+  }
+  
+  .highlight .join-btn {
+    animation: blink-black-white 2s infinite alternate;
+    color: black;
+    background-color: white;
+  }
+  
+  @keyframes blink-black-white {
+    0% {
+      background-color: white;
+      color: black;
+    }
+    100% {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  @keyframes blink-black-white2 {
+    0% {
+      color: black;
+    }
+    100% {
+      color: white;
+    }
+  }
+  
