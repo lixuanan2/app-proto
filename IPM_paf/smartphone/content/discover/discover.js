@@ -90,14 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('myEvents', JSON.stringify(updated));
           } else {
             myEvents.push({ 
-                ...event, 
-                member_list: event.member_list || [],
-                members: (event.member_list?.length || 0) });
+              ...event, 
+              member_list: event.member_list || [],
+              members: (event.member_list?.length || 0),
+              from: "discover"  // ✅ 可以加个标记
+            });
             localStorage.setItem('myEvents', JSON.stringify(myEvents));
+        
+            // ✅ 如果是从地图点进来的，就跳转到 Eventos 页面
+            if (window.autoReturnAfterJoin) {
+              window.autoReturnAfterJoin = false;
+              window.showPage('page-events');
+            }            
           }
+        
           renderDiscoverList(searchInput.value);
-          window.updateEventList?.(); // 如果你定义了更新事件页面列表
-        });
+          window.updateEventList?.(); // 更新事件页面列表
+        });        
   
         // 整个卡片点击跳转到详情页（不能点按钮）
         card.addEventListener('click', (e) => {

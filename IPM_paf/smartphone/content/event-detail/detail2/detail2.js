@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   function showEventDetailFromDiscover(eventObject) {
     window.lastDetailSource = "discover"; // 用于返回按钮判断来源
+    window.autoReturnAfterJoin = window.autoReturnAfterJoin || false;
 
     // 填入基本信息
     document.getElementById('detail-name').textContent = eventObject.name;
@@ -15,13 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const memberList = eventObject.member_list || [];
 
-    if (window.lastDetailSource === 'discover') {
-      const chatBtn = document.getElementById('add-to-chat-btn');
-      if (chatBtn) {
-        chatBtn.disabled = true;
-        chatBtn.style.opacity = '0.5';
-        chatBtn.style.cursor = 'not-allowed';
-      }
+    // 控制按钮禁用
+    const chatBtn = document.getElementById('add-to-chat-btn');
+    if (chatBtn) {
+      chatBtn.disabled = true;
+      chatBtn.style.opacity = '0.5';
+      chatBtn.style.cursor = 'not-allowed';
     }
 
     memberList.forEach(member => {
@@ -42,13 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
       img.style.border = '1px solid #ccc';
 
       img.addEventListener('click', () => {
-        // 打开成员信息弹窗
         document.getElementById('popup-member-name').textContent = member.name;
         document.getElementById('popup-member-gender').textContent = member.gender;
         document.getElementById('popup-member-phone').textContent = member.phone || '-';
         document.getElementById('member-info-popup').style.display = 'flex';
 
-        // ❌ 隐藏删除按钮
         const removeBtn = document.getElementById('remove-member-confirm');
         if (removeBtn) removeBtn.style.display = 'none';
       });
@@ -56,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       avatarContainer.appendChild(img);
     });
 
-    // ❌ 隐藏删除事件按钮
+    // 隐藏删除按钮
     const deleteBtn = document.getElementById('delete-event-btn');
     if (deleteBtn) deleteBtn.style.display = 'none';
 
@@ -70,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.currentHighlightedCard.classList.remove('highlight');
       window.currentHighlightedCard = null;
     }
+
+    // ✨ 一定要重置标志，避免影响下次跳转逻辑
+    window.autoReturnAfterJoin = false;
   }
 
   window.showEventDetailFromDiscover = showEventDetailFromDiscover;

@@ -51,8 +51,27 @@
     document.querySelectorAll(".page-section").forEach(p => p.style.display = "none");
     const target = document.getElementById(pageId);
     if (target) target.style.display = "block";
+  
+    // 🧠 自动同步 header 标题
     if (typeof updateHeaderTexts === 'function') {
       updateHeaderTexts(currentLang, pageId);
     }
+  
+    // 🧠 自动更新底部导航栏高亮状态
+    if (pageId.startsWith("page-")) {
+      const pageName = pageId.replace("page-", "");
+  
+      document.querySelectorAll('.nav-item').forEach(i => {
+        const name = i.dataset.name;
+        const icon = i.querySelector('.nav-icon');
+        const isActive = name === pageName;
+  
+        i.classList.toggle('active', isActive);
+        if (icon) {
+          icon.src = `icons/nav/${name}${isActive ? '-active' : ''}.png`;
+        }
+      });
+    }
   };
+  
   

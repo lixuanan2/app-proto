@@ -120,7 +120,7 @@
   /* 🌸 地图按钮 */
   .map-discover-btn {
     position: absolute;
-    bottom: 90px;       
+    bottom: 100px;       
     right: 20px;
     width: 50px;
     height: 50px;
@@ -141,7 +141,7 @@
   }
   
   .map-discover-btn img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
   
