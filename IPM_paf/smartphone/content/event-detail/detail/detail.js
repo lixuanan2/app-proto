@@ -166,9 +166,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     localStorage.setItem('myChats', JSON.stringify(chats));
+  
+    // ✅ 添加红点标记
+    let chatFlags = JSON.parse(localStorage.getItem('newChatFlags')) || {};
+    chatFlags[eventName] = true;
+    localStorage.setItem('newChatFlags', JSON.stringify(chatFlags));
+  
+    // ✅ 跳转到聊天页面
+    document.getElementById('page-events-detail').style.display = 'none';
+    document.getElementById('page-chatlist').style.display = 'block';
+  
+    // ✅ 更新底部导航栏图标状态
+    document.querySelectorAll('.nav-item').forEach(i => {
+      i.classList.remove('active');
+      const icon = i.querySelector('.nav-icon');
+      const name = i.dataset.name;
+      icon.src = `icons/nav/${name}.png`;
+    });
+    const eventsNav = document.querySelector('.nav-item[data-name="events"]');
+    if (eventsNav) {
+      eventsNav.classList.add('active');
+      const icon = eventsNav.querySelector('.nav-icon');
+      icon.src = `icons/nav/events-active.png`;
+    }
+  
     showToast("✅ Event added to chat list.");
     updateChatList(); // 可选，确保数据即时刷新
   });
+  
   
   function showToast(message, duration = 2000) {
     const toast = document.getElementById('toast');

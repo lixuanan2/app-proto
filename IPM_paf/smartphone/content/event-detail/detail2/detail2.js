@@ -64,13 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('page-events-detail').style.display = 'block';
 
     // 🧹 清除 Discover 中高亮的卡片（若有）
-    if (window.currentHighlightedCard) {
+    if (!window.autoReturnAfterJoin && window.currentHighlightedCard) {
       window.currentHighlightedCard.classList.remove('highlight');
       window.currentHighlightedCard = null;
-    }
+    }    
 
     // ✨ 一定要重置标志，避免影响下次跳转逻辑
     window.autoReturnAfterJoin = false;
+    window.lastDetailSource = "map";
   }
 
   window.showEventDetailFromDiscover = showEventDetailFromDiscover;

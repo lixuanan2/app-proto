@@ -88,25 +88,41 @@ document.addEventListener('DOMContentLoaded', () => {
           if (joined) {
             const updated = myEvents.filter(e => e.name !== event.name);
             localStorage.setItem('myEvents', JSON.stringify(updated));
+        
+            // 删除红点
+            const flags = JSON.parse(localStorage.getItem('newEventFlags')) || {};
+            if (flags[event.name]) {
+              delete flags[event.name];
+              localStorage.setItem('newEventFlags', JSON.stringify(flags));
+            }
+        
+            showDiscoverToast("❌ Removed from event.", false);
           } else {
             myEvents.push({ 
               ...event, 
               member_list: event.member_list || [],
               members: (event.member_list?.length || 0),
-              from: "discover"  // ✅ 可以加个标记
+              from: "discover"
             });
             localStorage.setItem('myEvents', JSON.stringify(myEvents));
         
-            // ✅ 如果是从地图点进来的，就跳转到 Eventos 页面
-            if (window.autoReturnAfterJoin) {
-              window.autoReturnAfterJoin = false;
+            // 加入红点
+            const flags = JSON.parse(localStorage.getItem('newEventFlags')) || {};
+            flags[event.name] = true;
+            localStorage.setItem('newEventFlags', JSON.stringify(flags));
+        
+            showDiscoverToast("✅ Joined successfully!");
+        
+            // ✅ 判断来源是否为 map
+            if (window.lastDetailSource === 'map') {
               window.showPage('page-events');
-            }            
+            }
           }
         
           renderDiscoverList(searchInput.value);
-          window.updateEventList?.(); // 更新事件页面列表
-        });        
+          window.updateEventList?.();
+        });
+                
   
         // 整个卡片点击跳转到详情页（不能点按钮）
         card.addEventListener('click', (e) => {
@@ -131,4 +147,18 @@ document.addEventListener('DOMContentLoaded', () => {
     window.renderDiscoverList = renderDiscoverList;
 
   });
+  
+  function showDiscoverToast(message, success = true) {
+    const toast = document.getElementById('discover-toast');
+    toast.textContent = message;
+    toast.style.backgroundColor = success ? '#4caf50' : '#f44336'; // green / red
+    toast.style.display = 'block';
+    toast.classList.remove('show'); // restart animation
+    void toast.offsetWidth;         // 强制重绘
+    toast.classList.add('show');
+  
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 2400);
+  }
   

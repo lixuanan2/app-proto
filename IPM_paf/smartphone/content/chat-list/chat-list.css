@@ -71,3 +71,16 @@
     margin-left: 10px;
   }
   
+  .chat-item {
+    position: relative; /* 📌 关键：让红点相对 .chat-item 定位 */
+  }
+
+  .chat-red-dot {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+  }

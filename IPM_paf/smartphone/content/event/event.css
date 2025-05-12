@@ -26,6 +26,7 @@
   
   /* 🧩 每个活动卡片的整体样式 */
   .event-card {
+    position: relative;
     background-color: #f0f8ff;                /* 背景淡蓝 */
     border-left: 5px solid #4dabf7;           /* 左侧蓝色标识条 */
     padding: 12px 16px;
@@ -137,5 +138,15 @@
   .chat-list-btn img {
     width: 32px;
     height: 32px;
+  }
+  
+  .red-dot {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 8px;
   }
   

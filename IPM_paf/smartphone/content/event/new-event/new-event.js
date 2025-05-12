@@ -45,59 +45,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // create按钮
     document.getElementById('create-event-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-      
-        const name = document.getElementById('event-name').value.trim();
-        const date = document.getElementById('event-date-new').value;
-        const location = document.getElementById('event-location').value.trim();
-        const type = document.getElementById('event-type').value;
-        const tags = Array.from(document.querySelectorAll('.tag')).map(tag => tag.textContent.replace(/^#/, ''));
-      
-        // 校验 name 和 date
-        if (!name || !date) {
-            alert("⚠️ Please fill in both Event Name and Date.");
-            return;
-        }
-      
-        // 限制不能只输入数字
-        if (/^\d+$/.test(name)) {
-          alert("⚠️ Event name cannot be only numbers.");
-          return;
-        }        
-
-        // 限制只能选择今天及以后的日期
-        if (date < today) {
-          alert("⚠️ Event date cannot be in the past.");
-          return;
-        }
-
-
-        const newEvent = {
-          name,
-          date,
-          location,
-          type,
-          tags,
-          member_list: [
-            { name: "Manager", gender: "manager", phone: "99999" }
-          ]
-        };    
-        newEvent.from = "self";
-      
-        let eventList = JSON.parse(localStorage.getItem('myEvents')) || [];
-        eventList.push(newEvent);
-        localStorage.setItem('myEvents', JSON.stringify(eventList));
-        console.log("✅ New event saved:", newEvent);
-      
-        // 显示主事件页面
-        document.getElementById('page-events-add').style.display = 'none';
-        document.getElementById('page-events').style.display = 'block';
-      
-        // 更新事件卡片展示
-        updateEventList();
-        
-        clearFormInputs();
-      });
+      e.preventDefault();
+    
+      const name = document.getElementById('event-name').value.trim();
+      const date = document.getElementById('event-date-new').value;
+      const location = document.getElementById('event-location').value.trim();
+      const type = document.getElementById('event-type').value;
+      const tags = Array.from(document.querySelectorAll('.tag')).map(tag => tag.textContent.replace(/^#/, ''));
+    
+      // 校验 name 和 date
+      if (!name || !date) {
+        alert("⚠️ Please fill in both Event Name and Date.");
+        return;
+      }
+    
+      if (/^\d+$/.test(name)) {
+        alert("⚠️ Event name cannot be only numbers.");
+        return;
+      }
+    
+      if (date < today) {
+        alert("⚠️ Event date cannot be in the past.");
+        return;
+      }
+    
+      const newEvent = {
+        name,
+        date,
+        location,
+        type,
+        tags,
+        from: "self",
+        member_list: [
+          { name: "Manager", gender: "manager", phone: "99999" }
+        ]
+      };
+    
+      let eventList = JSON.parse(localStorage.getItem('myEvents')) || [];
+      eventList.push(newEvent);
+      localStorage.setItem('myEvents', JSON.stringify(eventList));
+    
+      // ✅ 设置红点标记
+      const flags = JSON.parse(localStorage.getItem('newEventFlags')) || {};
+      flags[newEvent.name] = true;
+      localStorage.setItem('newEventFlags', JSON.stringify(flags));
+    
+      console.log("✅ New event saved:", newEvent);
+    
+      // 返回页面 & 更新列表
+      document.getElementById('page-events-add').style.display = 'none';
+      document.getElementById('page-events').style.display = 'block';
+      updateEventList();
+      clearFormInputs();
+    });
+    
     
       function clearFormInputs() {
         document.getElementById('event-name').value = '';

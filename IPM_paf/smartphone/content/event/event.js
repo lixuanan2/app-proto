@@ -28,13 +28,30 @@ function updateEventList() {
     card.addEventListener('click', () => {
       if (typeof showEventDetail === 'function') {
         showEventDetail(index);
+    
+        const flags = JSON.parse(localStorage.getItem('newEventFlags')) || {};
+        if (flags[event.name]) {
+          delete flags[event.name];
+          localStorage.setItem('newEventFlags', JSON.stringify(flags));
+          updateEventList(); // ✅ 重新渲染事件卡片列表，移除红点
+        }
       } else {
         console.warn("❗ showEventDetail 未定义");
       }
     });
+    
 
     card.appendChild(title);
     card.appendChild(info);
+
+    // 🔴 判断是否为新加入的事件，加小红点
+    const newEventFlags = JSON.parse(localStorage.getItem('newEventFlags')) || {};
+    if (newEventFlags[event.name]) {
+      const dot = document.createElement('span');
+      dot.className = 'red-dot';
+      card.appendChild(dot);
+    }
+
     eventListContainer.appendChild(card);
   });
 }
