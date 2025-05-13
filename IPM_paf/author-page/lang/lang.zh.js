@@ -217,7 +217,7 @@ window.langZH = {
 
         <p>📄 若想查看完整的同侪评估数据记录与分析，请访问以下文档（葡语）：</p>
         <ul>
-          <li><a href="pdfs/同学评估/Av_PF.pdf" target="_blank">📗 Avaliação com Utilizadores — Grupo 035</a></li>
+          <li><a href="pdfs/同学评估/Av_PF.pdf" target="_blank">📗 Avaliação com Utilizadores</a></li>
         </ul>
         <p>如果需要查看中文、英文或其他语言内容，建议配合浏览器插件《沉浸式翻译》使用。</p>
 
