@@ -67,11 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!window.autoReturnAfterJoin && window.currentHighlightedCard) {
       window.currentHighlightedCard.classList.remove('highlight');
       window.currentHighlightedCard = null;
-    }    
+    } 
 
     // ✨ 一定要重置标志，避免影响下次跳转逻辑
     window.autoReturnAfterJoin = false;
-    window.lastDetailSource = "map";
   }
 
   window.showEventDetailFromDiscover = showEventDetailFromDiscover;
