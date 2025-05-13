@@ -26,6 +26,15 @@ window.langEN = {
         <hr>
         <p>⚠️ Note: As the update history grows, this author page will now list version logs in <strong>reverse chronological order</strong>. The v1.0.0 introduction will always remain at the top for quick reference.</p>
 
+        
+        <hr>
+
+        <p>This update corresponds to the final submission of the course project and is considered the official delivery version in the university system. I made a few necessary adjustments based on feedback from the previous user evaluations. For details, please refer to the “📣 Feedback” section.</p>
+
+        <p>No more words—I'm currently busy with other priorities and have very limited energy left. If you've made it this far, thank you so much for your attention and time.</p>
+
+        <p><strong>Author page update complete. Over!</strong></p>
+        <p><strong>Current Version: v1.1.1</strong></p>
         <hr>
         <p>This version marks the second stage of the proto, which I define as <strong>v1.1.0</strong>.</p>
 
@@ -192,6 +201,29 @@ window.langEN = {
 
         <p>For further technical reasoning and tradeoffs, please refer to the "Author Introduction" and "Drawbacks" sections on this page.</p>
         <p>Current version: <strong>v1.0.3</strong>.</p>
+
+        <hr>
+
+        <h2>📣 Peer Evaluation Feedback · v1.1.0 -> v1.1.1</h2>
+        <p>This update is based on the user testing session, where peer evaluations were performed.</p>
+        <p>We invited 5 participants to interact with the prototype in a real-use setting, applying three evaluation methods (interaction tracking, Single Ease Question, and SUS questionnaire) to collect valuable feedback and apply targeted improvements.</p>
+
+        <ul>
+          <li>✅ Added visual feedback (toast) after joining/leaving events in the Discover page to enhance user awareness of action completion.</li>
+          <li>🔴 Introduced red dot indicators on newly added Events and Chats to help users identify new items (disappear after first interaction).</li>
+          <li>🔁 Optimized post-map behavior — joining an event from the map now automatically redirects the user to the Events page.</li>
+          <li>💬 After adding an event to Chat, the system now automatically navigates to the Chat interface, improving the user flow.</li>
+          <li>📱 Improved navigation state and visual consistency — the bottom navigation bar now properly reflects the active page.</li>
+        </ul>
+
+        <p>📄 For full records and analysis of the user evaluation, please consult the following document (in Portuguese):</p>
+        <ul>
+          <li><a href="pdfs/同学评估/Av_PF.pdf" target="_blank">📗 Avaliação com Utilizadores</a></li>
+        </ul>
+        <p>If you need the content in Chinese, English, or other languages, consider using the browser extension “Immersive Translate.”</p>
+
+        <p>Current version: <strong>v1.1.1</strong>.</p>
+
       `
   };
   

@@ -27,6 +27,15 @@ window.langPT = {
         <p>⚠️ Nota: Como o conteúdo de atualizações se tornou extenso, esta página do autor passará a listar os registros de versão em <strong>ordem cronológica inversa</strong>. A introdução da versão v1.0.0 será sempre exibida no topo.</p>
 
         <hr>
+
+        <p>Esta atualização corresponde à entrega final do projeto da disciplina, sendo considerada a versão oficial submetida no sistema da universidade. Fiz alguns ajustes necessários com base nos comentários recolhidos durante a avaliação com utilizadores. Para mais detalhes, consulte a secção “📣 Feedback”.</p>
+
+        <p>Sem mais palavras — estou ocupado com outras prioridades e com pouca energia neste momento. Se chegou até aqui, muito obrigado pela sua atenção e leitura.</p>
+
+        <p><strong>Página do autor concluída. Over!</strong></p>
+        <p><strong>Versão atual: v1.1.1</strong></p>
+
+        <hr>
         <p>Esta versão marca a segunda fase do protótipo, que defino como <strong>v1.1.0</strong>.</p>
 
         <p>Na atualização, adicionei três novas tarefas (Tarefas): uma funcionalidade de chat na página de Eventos que simula mensagens em grupo, a opção de adicionar um evento à lista de conversas diretamente a partir da página de detalhes, e uma funcionalidade “Discover in Map”, com posição do utilizador e três marcadores de eventos clicáveis. A ideia era simular uma experiência de exploração.</p>
@@ -191,6 +200,29 @@ window.langPT = {
 
         <p>Para mais detalhes técnicos e decisões de projeto, consulte as seções “Introdução do Autor” e “Pontos a Melhorar”.</p>
         <p>Versão atual: <strong>v1.0.3</strong>.</p>
+
+        <hr>
+
+        <h2>📣 Feedback de colegas · v1.1.0 -> v1.1.1</h2>
+        <p>Esta atualização baseia-se na atividade de Avaliação com Utilizadores.</p>
+        <p>Convidámos 5 participantes para interações reais com o protótipo. Foram aplicados três métodos de avaliação (registo de interações, Single Ease Question e questionário SUS), permitindo recolher feedback valioso e aplicar melhorias pontuais ao sistema.</p>
+
+        <ul>
+          <li>✅ Adicionado feedback visual (toast) após entrar/sair de eventos na página Discover, aumentando a perceção de conclusão da ação.</li>
+          <li>🔴 Inclusão de pontos vermelhos em novos Eventos e Chats, ajudando o utilizador a identificar conteúdos recém-adicionados (desaparecem após o primeiro clique).</li>
+          <li>🔁 Otimização do comportamento após clique em eventos no mapa — o botão de join agora redireciona diretamente para a área de eventos.</li>
+          <li>💬 Após adicionar um evento ao Chat, o sistema redireciona automaticamente para a interface de conversação, criando um fluxo mais natural.</li>
+          <li>📱 Melhorias nos botões de navegação e estados visuais — agora o estado da página corresponde corretamente ao ícone ativo da barra inferior.</li>
+        </ul>
+
+        <p>📄 Para consultar os dados e análise completos da avaliação com utilizadores, visite o seguinte documento (em português):</p>
+        <ul>
+          <li><a href="pdfs/同学评估/Av_PF.pdf" target="_blank">📗 Avaliação com Utilizadores</a></li>
+        </ul>
+        <p>Se precisar de visualizar o conteúdo em chinês, inglês ou outro idioma, recomendamos o uso da extensão “Immersive Translate”.</p>
+
+        <p>Versão atual: <strong>v1.1.1</strong>.</p>
+
       `
   };
   
